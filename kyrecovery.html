@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KyRecovery — Busnes.app</title>
+<meta name="description" content="Self-hosted storage for sealed Ky backups, with custodian-controlled recovery, offsite copies and integrity checks.">
+<meta name="theme-color" content="#f2efe8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'">
+<link rel="icon" href="busnes-icon.png" type="image/png">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body class="interior">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="shell nav-wrap"><a class="brand" href="index.html"><img src="busnes-icon.png" alt="" width="36" height="36"><span>busnes<span class="brand-dot">.</span>app</span></a><nav aria-label="Primary navigation"><a href="apps.html">Our apps</a><a href="how-it-works.html">How we work</a><a href="about.html">About</a><a class="nav-cta" href="index.html#start">Start a project <span aria-hidden="true">↗</span></a></nav></div></header>
+<main id="main-content">
+  <section class="page-hero shell product-hero">
+    <div>
+      <a class="back-link" href="apps.html">← All apps</a>
+      <p class="eyebrow">KyRecovery / Backups &amp; recovery</p>
+      <h1>Backups sealed.<br><em>Recovery shared.</em></h1>
+      <p class="page-lede">A home for encrypted backups that cannot open them. Your applications seal the data; your chosen custodians hold the shares needed to recover it.</p>
+      <span class="status-pill">Source available · Self-hosted</span>
+      <div class="actions"><a class="button button-dark" href="https://github.com/Busnes-app/KyRecovery-server#configuration">Read configuration guide ↗</a><a class="text-link" href="https://github.com/Busnes-app/KyRecovery-server">View source ↗</a></div>
+    </div>
+    <aside class="product-facts">
+      <p class="eyebrow">At a glance</p><h2>Is it for you?</h2>
+      <p>For operators of Ky applications who want a shared backup destination while keeping the ability to decrypt backups out of the storage server.</p>
+      <dl><dt>How you use it</dt><dd>Run the server behind HTTPS with persistent storage. Complete the recovery-key ceremony, distribute custodian cards, then pair compatible products.</dd><dt>Availability</dt><dd>Server source and operator documentation are available. Check each product’s current backup and restore instructions before connecting it.</dd></dl>
+    </aside>
+  </section>
+  <section class="page-section cream"><div class="shell">
+    <p class="eyebrow">Inside KyRecovery</p><h2>Store the backup.<br>Separate the keys.</h2>
+    <div class="feature-grid">
+      <article><span class="feature-number">01</span><h3>Sealed before upload</h3><p>Products encrypt their own backup containers before sending them. KyRecovery stores those sealed bytes, without the recovery private key or any custodian share.</p></article>
+      <article><span class="feature-number">02</span><h3>Recovery by agreement</h3><p>Choose how many custodian cards are needed to recover the data. For example, a three-of-five arrangement requires any three of five shares to open a backup.</p></article>
+      <article><span class="feature-number">03</span><h3>Copies beyond one server</h3><p>Replicate sealed containers to configured S3-compatible storage, SFTP, SMB or a local directory. Review the documented transport limitations and verify your offsite copies.</p></article>
+    </div>
+  </div></section>
+  <section class="page-section shell">
+    <p class="eyebrow">From backup to recovery</p><h2>Three distinct jobs.</h2>
+    <figure class="architecture"><ol><li>The product seals its backup to the suite’s public key</li><li>KyRecovery stores the sealed container and records its digest</li><li>Custodians supply enough shares to restore with the product’s tools</li></ol><figcaption>Conceptual overview · KyRecovery stores and delivers the backup; the product performs the restore.</figcaption></figure>
+    <div class="practical-note"><h3>Integrity is not a restore test.</h3><p>KyRecovery can check that stored bytes still match their recorded digest. It cannot decrypt a container or prove that your application will restore successfully. Follow the product’s recovery runbook and test your recovery process.</p></div>
+  </section>
+  <section class="page-section cream"><div class="shell">
+    <p class="eyebrow">For operators</p><h2>Keep track of what you keep.</h2>
+    <div class="feature-grid">
+      <article><h3>Pair with a short code</h3><p>An administrator generates a time-limited, single-use pairing code. The product receives the public recovery key and a deposit-only token: it cannot use that token to browse or download backups.</p></article>
+      <article><h3>Check stored copies</h3><p>On-demand checks and a daily integrity sweep compare containers with their recorded SHA-256 digests. A hash-chained audit ledger records deposits, verifications and administrative events.</p></article>
+      <article><h3>Control retention</h3><p>Keep recent backups plus weekly and monthly copies. Review the expiry preview before manually purging. Offsite destinations need their own retention policies; a purge can remove a product’s last local backup.</p></article>
+    </div>
+  </div></section>
+  <section class="page-section shell">
+    <p class="eyebrow">Prepare before you need it</p><h2>Recovery starts with people.</h2>
+    <div class="feature-grid">
+      <article><h3>Run the ceremony</h3><p>The recovery keypair is generated in the administrator’s browser. Print and distribute the custodian cards, then close the ceremony tab. Only the public key and threshold settings are sent to the server.</p></article>
+      <article><h3>Protect the cards</h3><p>Keep shares separately and choose a threshold your custodians can actually meet. If too few shares remain available, the server cannot unlock the backups for you. Recovery-key rotation is not yet implemented.</p></article>
+      <article><h3>Look after the store</h3><p>Back up the database, server secret key and capsule directory together. Plan storage capacity and monitor deposits. The server secret key protects its own credentials; it does not unlock the sealed backups.</p></article>
+    </div>
+    <div class="practical-note"><h3>Part of your Ky setup</h3><p><a href="kyidentity.html">KyIdentity</a> can provide dashboard sign-in; local administrator login is also available. Backup schedules and restore commands belong to the connected products. During pairing, compare recovery-key fingerprints or pin the public key by hand, following the product’s instructions.</p><p>KyRecovery still holds account information, backup metadata and audit records. “Blind store” refers to encrypted backup contents, not an absence of operational data. Operators are responsible for access and retention. <a href="privacy.html">Read the Busnes.app privacy policy</a>.</p></div>
+  </section>
+  <section class="page-section cream"><div class="shell page-ending">
+    <div><p class="eyebrow">Next step</p><h2>Plan your way back.</h2><p>Read the operating requirements, choose your custodians, and review the ceremony and restore instructions before pairing your first product.</p></div>
+    <div class="resource-links"><a href="https://github.com/Busnes-app/KyRecovery-server#configuration">Server configuration ↗</a><a href="https://github.com/Busnes-app/KyRecovery-server#ceremony-creating-the-suite-recovery-keypair">Custodian ceremony ↗</a><a href="https://github.com/Busnes-app/KyRecovery-server#restore">Restore overview ↗</a><a href="https://github.com/Busnes-app/KyRecovery-server/issues">Questions &amp; issues ↗</a><a href="apps.html">Explore the other apps →</a></div>
+  </div></section>
+</main>
+<footer class="site-footer"><div class="shell page-footer"><a class="brand" href="index.html">busnes.app</a><nav aria-label="Footer"><a href="apps.html">Our apps</a><a href="how-it-works.html">How we work</a><a href="about.html">About</a><a href="privacy.html">Privacy policy</a><a href="https://github.com/Busness-app">GitHub</a></nav><small>© 2026 Busnes.app</small></div></footer>
+</body>
+</html>

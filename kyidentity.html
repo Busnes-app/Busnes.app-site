@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KyIdentity — Busnes.app</title>
+<meta name="description" content="A self-hosted identity provider for your organization: shared sign-in, user accounts, multi-factor authentication and app access.">
+<meta name="theme-color" content="#f2efe8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'">
+<link rel="icon" href="busnes-icon.png" type="image/png">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body class="interior">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="shell nav-wrap"><a class="brand" href="index.html"><img src="busnes-icon.png" alt="" width="36" height="36"><span>busnes<span class="brand-dot">.</span>app</span></a><nav aria-label="Primary navigation"><a href="apps.html">Our apps</a><a href="how-it-works.html">How we work</a><a href="about.html">About</a><a class="nav-cta" href="index.html#start">Start a project <span aria-hidden="true">↗</span></a></nav></div></header>
+<main id="main-content">
+  <section class="page-hero shell product-hero">
+    <div>
+      <a class="back-link" href="apps.html">← All apps</a>
+      <p class="eyebrow">KyIdentity / Accounts &amp; access</p>
+      <h1>Your people.<br>Your apps.<br><em>One sign-in.</em></h1>
+      <p class="page-lede">A shared home for your organization’s accounts and app access. Run your own identity provider and let connected applications use the same sign-in.</p>
+      <span class="status-pill">Source available · Self-hosted</span>
+      <div class="actions"><a class="button button-dark" href="https://github.com/Busnes-app/KyIdentity-server#quickstart-with-docker-compose">Read setup guide ↗</a><a class="text-link" href="https://github.com/Busnes-app/KyIdentity-server">View source ↗</a></div>
+    </div>
+    <aside class="product-facts">
+      <p class="eyebrow">At a glance</p>
+      <h2>Is it for you?</h2>
+      <p>For an organization that wants to manage its own user directory and sign-in across connected applications, with control over who can access each one.</p>
+      <dl><dt>How you use it</dt><dd>Run the server with Docker Compose and a persistent data volume. Configure a stable public HTTPS address and register the applications you want to connect.</dd><dt>Availability</dt><dd>Server source and setup documentation are available. KyIdentity is designed for a single organization; consult the repository for current integration requirements.</dd></dl>
+    </aside>
+  </section>
+  <section class="page-section cream"><div class="shell">
+    <p class="eyebrow">Inside KyIdentity</p><h2>Give access a clear home.</h2>
+    <div class="feature-grid">
+      <article><span class="feature-number">01</span><h3>Manage people and apps</h3><p>Invite users, organize groups, and assign access to applications. An app launcher gives people a place to find their connected tools.</p></article>
+      <article><span class="feature-number">02</span><h3>Strengthen sign-in</h3><p>Use authenticator codes, paired-device push approval, or passkeys as a second factor. Recovery codes help people regain access when a factor is lost.</p></article>
+      <article><span class="feature-number">03</span><h3>Connect your software</h3><p>OpenID Connect provides shared sign-in. Configured provisioning connections can keep downstream accounts and groups in sync, including supported SCIM integrations.</p></article>
+    </div>
+  </div></section>
+  <section class="page-section shell">
+    <p class="eyebrow">How it fits together</p><h2>Sign in here.<br>Get to work there.</h2>
+    <figure class="architecture"><ol><li>Open a connected application</li><li>Sign in with KyIdentity and complete the required checks</li><li>Return to the app with your identity and assigned roles</li></ol><figcaption>Conceptual overview · OpenID Connect sign-in with KyIdentity</figcaption></figure>
+    <div class="practical-note">
+      <h3>How KyVault uses KyIdentity</h3>
+      <p><a href="kyvault.html">KyVault</a> requires KyIdentity for sign-in. Your KyVault master password has a separate job: it unlocks your vault key in your browser. Signing in and decrypting the vault are distinct steps.</p>
+      <p>If KyIdentity is unavailable, new KyVault sign-ins are unavailable too. Prepare KyVault’s offline access in advance with a downloaded vault and its Offline Vault Key.</p>
+    </div>
+  </section>
+  <section class="page-section cream"><div class="shell">
+    <p class="eyebrow">For administrators</p><h2>Know who has access, and why.</h2>
+    <div class="feature-grid">
+      <article><h3>Access by user or group</h3><p>Assign people directly or through groups, map application roles, and preview effective access. Each connected application still needs to enforce the permissions it receives.</p></article>
+      <article><h3>Account lifecycle</h3><p>Manage invitations, password resets and account deactivation. Configure email delivery for mailed invitations and self-service resets; without it, an administrator hands over activation links.</p></article>
+      <article><h3>An audit trail</h3><p>Search recorded events by actor, action, time and outcome, and export filtered records. Use the log to investigate access changes and administrative activity.</p></article>
+    </div>
+  </div></section>
+  <section class="page-section shell">
+    <p class="eyebrow">Running your own identity service</p><h2>A foundation to look after.</h2>
+    <div class="feature-grid">
+      <article><h3>A stable address</h3><p>Use HTTPS and choose the service address before enrolling devices and connecting applications. Changes to the identity service’s address can affect existing integrations and passkeys.</p></article>
+      <article><h3>Backups and recovery</h3><p>Protect the database and deployment keys, plan administrator recovery, and follow the project’s backup and restore instructions. <a class="text-link" href="kyrecovery.html">KyRecovery</a> integration supports sealed backups.</p></article>
+      <article><h3>Integration matters</h3><p>Register application callback addresses exactly. Account revocation and sign-out also depend on the receiving app’s token and session handling; a launcher link alone does not secure that app.</p></article>
+    </div>
+    <div class="practical-note">
+      <h3>Your directory, your responsibility</h3>
+      <p>The operator manages accounts, authentication factors, app connections and audit records, and is responsible for access, updates and retention. Connected apps receive identity information according to their configured scopes and roles.</p>
+      <p><a href="privacy.html">Read the Busnes.app privacy policy</a>. For data held by an independently operated KyIdentity installation, contact its operator.</p>
+    </div>
+  </section>
+  <section class="page-section cream"><div class="shell page-ending">
+    <div><p class="eyebrow">Next step</p><h2>Connect your first app.</h2><p>Start with the server setup guide, then review the integration requirements for your application.</p></div>
+    <div class="resource-links">
+      <a href="https://github.com/Busnes-app/KyIdentity-server#quickstart-with-docker-compose">Server setup ↗</a>
+      <a href="https://github.com/Busnes-app/KyIdentity-server#integration-requirements">Integration guide ↗</a>
+      <a href="https://github.com/Busnes-app/KyIdentity-server/issues">Questions &amp; issues ↗</a>
+      <a href="apps.html">Explore the other apps →</a>
+    </div>
+  </div></section>
+</main>
+<footer class="site-footer"><div class="shell page-footer"><a class="brand" href="index.html">busnes.app</a><nav aria-label="Footer"><a href="apps.html">Our apps</a><a href="how-it-works.html">How we work</a><a href="about.html">About</a><a href="privacy.html">Privacy policy</a><a href="https://github.com/Busness-app">GitHub</a></nav><small>© 2026 Busnes.app</small></div></footer>
+</body>
+</html>
