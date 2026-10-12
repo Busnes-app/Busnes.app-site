@@ -5,24 +5,67 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KyNotes — Busnes.app</title>
 <meta name="description" content="Encrypted notes and attachments, hosted on infrastructure you control, with content decrypted in your browser.">
-<meta name="theme-color" content="#f2efe8">
+<meta name="theme-color" content="#f8f6f0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'">
-<link rel="icon" href="busnes-icon.png" type="image/png">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'">
+<link rel="icon" href="icons/kynotes.png" type="image/png">
+<link rel="canonical" href="https://busnes.app/kynotes.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://busnes.app/kynotes.html">
+<meta property="og:title" content="KyNotes — Busnes.app">
+<meta property="og:description" content="Encrypted notes and attachments, hosted on infrastructure you control, with content decrypted in your browser.">
+<meta property="og:image" content="https://busnes.app/icons/kynotes.png">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="styles.css">
+<script src="theme.js"></script>
 <link rel="stylesheet" href="pages.css">
 </head>
 <body class="interior">
 <a class="skip-link" href="#main-content">Skip to content</a>
-<header class="site-header"><div class="shell nav-wrap"><a class="brand" href="index.html"><img src="busnes-icon.png" alt="" width="36" height="36"><span>busnes<span class="brand-dot">.</span>app</span></a><nav aria-label="Primary navigation"><a href="apps.html">Our apps</a><a href="how-it-works.html">How we work</a><a href="about.html">About</a><a class="nav-cta" href="index.html#start">Start a project <span aria-hidden="true">↗</span></a></nav></div></header>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="index.html" aria-label="Busnes.app home">
+        <img src="icons/busnes.png" alt="Busnes.app Systems mark" width="36" height="36">
+        <span>busnes<span class="brand-dot">.</span>app</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="apps.html" aria-current="true"><span class="nav-index">01</span>Our apps</a>
+        <a href="how-it-works.html"><span class="nav-index">02</span>How we work</a>
+        <a href="about.html"><span class="nav-index">03</span>About</a>
+        <a class="nav-cta" href="index.html#start">Start with the problem <span aria-hidden="true">↗</span></a>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
 <main id="main-content">
 <section class="page-hero shell product-hero">
-<div><a class="back-link" href="apps.html">← All apps</a><p class="eyebrow">KyNotes / Notes & attachments</p><h1>A place for<br><em>private thoughts.</em></h1><p class="page-lede">Encrypted notes and attachments, hosted on infrastructure you control, with content decrypted in your browser.</p><span class="status-pill">Source available · Self-hosted</span><div class="actions"><a class="button button-dark" href="https://github.com/Busness-app/kynotes-server/blob/master/docs/DEPLOYMENT.md">Read setup guide ↗</a><a class="text-link" href="https://github.com/Busness-app/kynotes-server">View source ↗</a></div></div>
-<aside class="product-facts"><p class="eyebrow">At a glance</p><h2>Is it for you?</h2><p>For people and teams who want to keep notes and attached material on their own infrastructure and are comfortable operating a web application.</p><dl><dt>How you use it</dt><dd>A server environment configured according to the deployment guide, a browser, and a backup plan covering both the database and encrypted attachment blobs.</dd><dt>Availability</dt><dd>The server source and deployment documentation are available. Review the repository for current changes and setup requirements; this page does not promise a managed hosting plan or app-store release.</dd></dl></aside>
+<div><a class="back-link" href="apps.html">← All apps</a><img class="product-icon" src="icons/kynotes.png" alt="" width="56" height="56">
+<p class="eyebrow">KyNotes / Notes & attachments</p><h1>A place for<br><span class="h1-soft">private thoughts.</span></h1><p class="page-lede">Encrypted notes and attachments, hosted on infrastructure you control, with content decrypted in your browser.</p><span class="status-pill">Open source (MIT) · Self-hosted</span><div class="actions"><a class="button button-dark" href="https://github.com/Busnes-app/KyNotes-server/blob/master/docs/DEPLOYMENT.md">Read setup guide ↗</a><a class="text-link" href="https://github.com/Busnes-app/KyNotes-server">View source ↗</a></div></div>
+<aside class="product-facts"><p class="eyebrow">At a glance</p><h2>Is it for you?</h2><p>For people and teams who want to keep notes and attached material on their own infrastructure and are comfortable operating a web application.</p><dl><dt>How you use it</dt><dd>A server environment configured according to the deployment guide, a browser, and a backup plan covering both the database and the encrypted blob store that holds attachments and note history.</dd><dt>Availability</dt><dd>The server source and deployment documentation are available. Review the repository for current changes and setup requirements; this page does not promise a managed hosting plan or app-store release.</dd></dl></aside>
 </section>
-<section class="page-section cream"><div class="shell"><p class="eyebrow">Inside KyNotes</p><h2>Built with a purpose.</h2><div class="feature-grid"><article><span class="feature-number">01</span><h3>Encrypted content</h3><p>The server stores encrypted notes and attachments. Your browser handles content decryption.</p></article><article><span class="feature-number">02</span><h3>Use your own infrastructure</h3><p>Deploy the service yourself and choose the access, storage and operational setup that fits your environment.</p></article><article><span class="feature-number">03</span><h3>Plan for recovery</h3><p>Administration includes recovery-key pinning, scheduled backups, local sealed copies and restore drills. Attachment storage has its own mirror and recovery path.</p></article></div></div></section>
-<section class="page-section shell"><p class="eyebrow">How it fits together</p><h2>Know where the pieces live.</h2><figure class="architecture"><ol><li>Notes & attachments in your browser</li><li>Encrypted storage on your server</li><li>Capsules + separate encrypted blob mirror</li></ol><figcaption>Conceptual overview · KyNotes</figcaption></figure><div class="practical-note"><h3>Before you get started</h3><p>A database capsule alone does not recover all attachment data. Follow the restore guide and configure the separate encrypted blob mirror.</p><p><a href="privacy.html">Read the Busnes.app privacy policy</a>. For data on an independently operated installation, contact its operator.</p></div></section>
-<section class="page-section cream"><div class="shell page-ending"><div><p class="eyebrow">Next step</p><h2>Take a closer look.</h2><p>The project documentation is the place for current requirements and instructions.</p></div><div class="resource-links"><a href="https://github.com/Busness-app/kynotes-server/blob/master/docs/DEPLOYMENT.md">Documentation ↗</a><a href="https://github.com/Busness-app/kynotes-server/issues">Questions &amp; issues ↗</a><a href="apps.html">Explore the other apps →</a></div></div></section></main>
-<footer class="site-footer"><div class="shell page-footer"><a class="brand" href="index.html">busnes.app</a><nav aria-label="Footer"><a href="apps.html">Our apps</a><a href="how-it-works.html">How we work</a><a href="about.html">About</a><a href="privacy.html">Privacy policy</a><a href="https://github.com/Busness-app">GitHub</a></nav><small>© 2026 Busnes.app</small></div></footer>
+<section class="page-section shell"><p class="eyebrow">Screenshots</p><h2>See it in use.</h2><div class="screens"><figure><img src="screenshots/kynotes-1.webp" alt="KyNotes workspace with an open, end-to-end encrypted note containing a project scope, budget and checklist." width="1440" height="900" loading="lazy"><figcaption>Notes are decrypted in your browser, not on the server.</figcaption></figure><figure><img src="screenshots/kynotes-2.webp" alt="KyNotes team workspace with shared notes, a proposal open in the editor and a member list showing each person’s role." width="1440" height="900" loading="lazy"><figcaption>Shared team workspaces, with roles for each member.</figcaption></figure></div></section>
+<section class="page-section cream"><div class="shell"><p class="eyebrow">Inside KyNotes</p><h2>Built with a purpose.</h2><div class="feature-grid"><article><span class="feature-number">01</span><h3>Encrypted content</h3><p>Notes and attachments are encrypted in your browser. Shared team notebooks use their own keys, wrapped for each member, so neither the server nor the administrator who created your account can read them.</p></article><article><span class="feature-number">02</span><h3>Notebooks your way</h3><p>Organize notebooks into sections, pages, subpages and section groups. Canvas pages add free-form text boxes and pen ink.</p></article><article><span class="feature-number">03</span><h3>Built for teams</h3><p>Sign in with KyIdentity or another OpenID Connect provider; directory provisioning disables people who leave. Administrator accounts are kept apart from everyday accounts and cannot open note content.</p></article><article><span class="feature-number">04</span><h3>Link another device</h3><p>Add a browser or device with a one-time key bundle, released only after you confirm a matching check code on both screens.</p></article><article><span class="feature-number">05</span><h3>Plan for recovery</h3><p>Administration includes recovery-key pinning, scheduled backups to <a class="text-link" href="kyrecovery.html">KyRecovery</a>, local sealed copies and restore drills.</p></article><article><span class="feature-number">06</span><h3>Use your own infrastructure</h3><p>Deploy the service yourself and choose the access, storage and operational setup that fits your environment.</p></article></div></div></section>
+<section class="page-section shell"><p class="eyebrow">How it fits together</p><h2>Know where the pieces live.</h2><figure class="architecture"><ol><li>Notes & attachments in your browser</li><li>Encrypted storage on your server</li><li>Sealed capsules + encrypted blob backup</li></ol><figcaption>Conceptual overview · KyNotes</figcaption></figure><div class="practical-note"><h3>Before you get started</h3><p>A database capsule alone does not recover attachments or note history. Back up the encrypted blob store separately, with restic or the built-in mirror, and follow the restore guide.</p><p><a href="privacy.html">Read the Busnes.app privacy policy</a>. For data on an independently operated installation, contact its operator.</p></div></section>
+<section class="page-section cream"><div class="shell page-ending"><div><p class="eyebrow">Next step</p><h2>Take a closer look.</h2><p>The project documentation is the place for current requirements and instructions.</p></div><div class="resource-links"><a href="https://github.com/Busnes-app/KyNotes-server/blob/master/docs/DEPLOYMENT.md">Documentation ↗</a><a href="https://github.com/Busnes-app/KyNotes-server/issues">Questions &amp; issues ↗</a><a href="apps.html">Explore the other apps →</a></div></div></section></main>
+  <footer class="site-footer">
+    <div class="shell footer-bottom">
+      <a class="brand footer-brand" href="index.html" aria-label="Busnes.app home">
+        <img src="icons/busnes.png" alt="" width="28" height="28">
+        <span>busnes<span class="brand-dot">.</span>app</span>
+      </a>
+      <p class="footer-tagline">Focused software for real work.</p>
+      <nav aria-label="Footer navigation">
+        <a href="apps.html">Our apps</a>
+        <a href="how-it-works.html">How we work</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="https://github.com/Busnes-app">GitHub</a>
+      </nav>
+      <small class="footer-copy">© 2026 Busnes.app</small>
+    </div>
+  </footer>
 </body>
 </html>
