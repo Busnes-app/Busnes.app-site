@@ -573,10 +573,11 @@ h3 {
 }
 
 .foundation-links {
+  flex-basis: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 22px;
-  flex-wrap: wrap;
 }
 
 .foundation-item {
@@ -787,6 +788,14 @@ button:focus-visible {
 }
 
 /* Responsive Breakpoints */
+@media (max-width: 1140px) {
+  .foundation-links {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px 22px;
+  }
+}
+
 @media (max-width: 960px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -815,6 +824,10 @@ button:focus-visible {
 }
 
 @media (max-width: 680px) {
+  .foundation-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .site-header .nav-wrap {
     flex-wrap: wrap;
     row-gap: 10px;
