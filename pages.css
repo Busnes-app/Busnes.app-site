@@ -39,6 +39,8 @@
 .screens { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; margin:0; }
 .screens figure { margin:0; }
 .screens img { display:block; width:100%; height:auto; border:1px solid var(--line-strong); border-radius:10px; background:var(--paper); }
+.screens a { display:block; border-radius:10px; cursor:zoom-in; }
+.screens a:hover img { border-color:var(--orange); }
 .screens figcaption { margin-top:12px; color:var(--muted); font-size:13px; }
 .practical-note { padding:30px; border:1px solid var(--line-strong); background:var(--surface-subtle); border-radius:8px; }
 .practical-note h2, .practical-note h3 { font-size:26px; }
