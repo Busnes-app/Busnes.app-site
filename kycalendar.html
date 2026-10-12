@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KyCalendar — Busnes.app</title>
+<meta name="description" content="A self-hosted calendar for your team, used in the browser and synced to phone and desktop calendar apps over CalDAV.">
+<meta name="theme-color" content="#f8f6f0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'">
+<link rel="icon" href="icons/kycalendar.png" type="image/png">
+<link rel="canonical" href="https://busnes.app/kycalendar.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://busnes.app/kycalendar.html">
+<meta property="og:title" content="KyCalendar — Busnes.app">
+<meta property="og:description" content="A self-hosted calendar for your team, used in the browser and synced to phone and desktop calendar apps over CalDAV.">
+<meta property="og:image" content="https://busnes.app/icons/kycalendar.png">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="styles.css">
+<script src="theme.js"></script>
+<link rel="stylesheet" href="pages.css">
+</head>
+<body class="interior">
+<a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="index.html" aria-label="Busnes.app home">
+        <img src="icons/busnes.png" alt="Busnes.app Systems mark" width="36" height="36">
+        <span>busnes<span class="brand-dot">.</span>app</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="apps.html" aria-current="true"><span class="nav-index">01</span>Our apps</a>
+        <a href="how-it-works.html"><span class="nav-index">02</span>How we work</a>
+        <a href="about.html"><span class="nav-index">03</span>About</a>
+        <a class="nav-cta" href="index.html#start">Start with the problem <span aria-hidden="true">↗</span></a>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+<main id="main-content">
+<section class="page-hero shell product-hero">
+<div><a class="back-link" href="apps.html">← All apps</a><img class="product-icon" src="icons/kycalendar.png" alt="" width="56" height="56">
+<p class="eyebrow">KyCalendar / Calendars &amp; scheduling</p><h1>Your schedule.<br><span class="h1-soft">On your server.</span></h1><p class="page-lede">A self-hosted calendar for your team, used in the browser and synced to phone and desktop calendar apps over CalDAV.</p><span class="status-pill">Open source (MIT) · Self-hosted</span><div class="actions"><a class="button button-dark" href="https://github.com/Busnes-app/KyCalendar#readme">Read setup guide ↗</a><a class="text-link" href="https://github.com/Busnes-app/KyCalendar">View source ↗</a></div></div>
+<aside class="product-facts"><p class="eyebrow">At a glance</p><h2>Is it for you?</h2><p>For small organizations that want personal and shared team calendars on their own server, with single sign-on and group calendars managed by an administrator.</p><dl><dt>How you use it</dt><dd>Docker Compose with the published image, or a build from source. SQLite by default, with PostgreSQL as an option. Phones need the server on HTTPS.</dd><dt>Availability</dt><dd>The source and a container image built from every change to the main branch are available. There are no versioned releases yet; review the repository for current setup requirements.</dd></dl></aside>
+</section>
+<section class="page-section shell"><p class="eyebrow">Screenshots</p><h2>See it in use.</h2><div class="screens"><figure><img src="screenshots/kycalendar-1.webp" alt="KyCalendar week view with colour-coded personal, client and studio team calendars, and the calendar list open for editing a calendar’s name and colour." width="1280" height="800" loading="lazy"><figcaption>Personal and shared team calendars side by side in the week view.</figcaption></figure><figure><img src="screenshots/kycalendar-2.webp" alt="KyCalendar event editor in the Busnes Dark theme, editing a client brand review with time, location, description and repeat settings." width="1280" height="800" loading="lazy"><figcaption>Edit events in the browser, shown here in Busnes Dark; changes sync to phones over CalDAV.</figcaption></figure></div></section>
+<section class="page-section cream"><div class="shell"><p class="eyebrow">Inside KyCalendar</p><h2>Built with a purpose.</h2><div class="feature-grid"><article><span class="feature-number">01</span><h3>Sync with the apps you have</h3><p>Calendar on iPhone and Mac, DAVx5 on Android and Thunderbird connect over CalDAV, with incremental sync so phones only fetch what changed.</p></article><article><span class="feature-number">02</span><h3>A password per device</h3><p>Each phone gets its own app password, shown once and revocable on its own, so a lost device never means changing your sign-in.</p></article><article><span class="feature-number">03</span><h3>A calendar in the browser</h3><p>Month, week, day and list views with colour-coded calendars. Drag to reschedule, and change one occurrence of a repeating event or the whole series.</p></article><article><span class="feature-number">04</span><h3>Group calendars with roles</h3><p>Administrators create shared calendars and grant groups reader, editor or manager access. Remove someone from a group and their access ends at the next sync.</p></article><article><span class="feature-number">05</span><h3>Sign-in that fits your team</h3><p>Local passwords with authenticator codes and recovery codes, or single sign-on through <a class="text-link" href="kyidentity.html">KyIdentity</a> or another OpenID Connect provider, with SCIM provisioning for users and groups.</p></article><article><span class="feature-number">06</span><h3>Built on proven parts</h3><p>CalDAV comes from go-webdav, calendar data from go-ical and rrule-go, and the web view from FullCalendar. Ky supplies the sign-in, access rules and sealed backups that tie them together.</p></article></div></div></section>
+<section class="page-section shell"><p class="eyebrow">How it fits together</p><h2>Know where the pieces live.</h2><figure class="architecture"><ol><li>Phones and browsers connect over CalDAV and HTTPS</li><li>KyCalendar checks every request against your groups</li><li>Sealed capsule backups to KyRecovery</li></ol><figcaption>Conceptual overview · KyCalendar</figcaption></figure><div class="practical-note"><h3>Before you get started</h3><p>Capsule backups to <a class="text-link" href="kyrecovery.html">KyRecovery</a> cover SQLite installations; with PostgreSQL, back up the database and the encryption key separately. Administrators manage the instance and cannot see anyone’s events.</p><p><a href="privacy.html">Read the Busnes.app privacy policy</a>. For data on an independently operated installation, contact its operator.</p></div></section>
+<section class="page-section cream"><div class="shell page-ending"><div><p class="eyebrow">Next step</p><h2>Take a closer look.</h2><p>The README covers installation, phone setup, sign-in, group calendars and recovery.</p></div><div class="resource-links"><a href="https://github.com/Busnes-app/KyCalendar#readme">Documentation ↗</a><a href="https://github.com/Busnes-app/KyCalendar/issues">Questions &amp; issues ↗</a><a href="apps.html">Explore the other apps →</a></div></div></section></main>
+  <footer class="site-footer">
+    <div class="shell footer-bottom">
+      <a class="brand footer-brand" href="index.html" aria-label="Busnes.app home">
+        <img src="icons/busnes.png" alt="" width="28" height="28">
+        <span>busnes<span class="brand-dot">.</span>app</span>
+      </a>
+      <p class="footer-tagline">Focused software for real work.</p>
+      <nav aria-label="Footer navigation">
+        <a href="apps.html">Our apps</a>
+        <a href="how-it-works.html">How we work</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="https://github.com/Busnes-app">GitHub</a>
+      </nav>
+      <small class="footer-copy">© 2026 Busnes.app</small>
+    </div>
+  </footer>
+</body>
+</html>

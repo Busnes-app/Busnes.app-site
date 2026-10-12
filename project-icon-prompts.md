@@ -33,7 +33,7 @@ KyRecovery sealed backups and restore: a broad counterclockwise circular restore
 The pages load `icons/<name>.png`, not the masters. Regenerate after changing a master:
 
 ```sh
-for f in busnes kypost kyyard kynotes kyidentity kyrecovery kydns kyauth kypulse; do
+for f in busnes kypost kyyard kynotes kyidentity kyrecovery kydns kyauth kypulse kycalendar kydrive kymessages; do
   magick "$f-icon.png" -alpha set -fuzz 10% -fill none -draw 'color 0,0 floodfill' \
     -trim +repage -resize 256x256 -background none -gravity center -extent 256x256 -strip "icons/$f.png"
 done
@@ -46,6 +46,9 @@ Generated with the built-in image-generation tool using the approved Busnes stam
 - `kydns-icon.png`: network hub with three broad ivory endpoints, connected by thick ivory bars to one orange central node. All interior ivory shapes are opaque; only the outer canvas is removed for exports.
 - `kyauth-icon.png`: chunky ivory shield containing a single orange keyhole.
 - `kypulse-icon.png`: hand-drawn in `kypulse-icon.svg` (render with `rsvg-convert`), not generated: a thick ivory heartbeat line ending in one orange live dot.
+- `kycalendar-icon.png`: hand-drawn in `kycalendar-icon.svg`: an ivory calendar page with two binder rings, a header seam and a grid of charcoal day cells, one of them orange.
+- `kydrive-icon.png`: hand-drawn in `kydrive-icon.svg`: an ivory folder with a charcoal flap seam and one orange upload arrow.
+- `kymessages-icon.png`: hand-drawn in `kymessages-icon.svg`: an ivory speech bubble with three typing dots, the last one orange.
 
 ## Application exports
 
