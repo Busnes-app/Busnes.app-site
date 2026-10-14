@@ -67,7 +67,7 @@
         <ul>
           <li><strong>KyPost for Android</strong>: Google Play package <code>org.kysecurity.mail</code>. The same app is also published on GitHub as <code>org.kysecurity.mail.github</code> and for F-Droid as <code>org.kysecurity.mail.fdroid</code>.</li>
           <li><strong>KyPost for Linux</strong> (Flatpak <code>com.kysecurity.mail</code>), <strong>KyPost for iPhone</strong> and <strong>KyPost for Mac</strong> (bundle ID <code>org.kysecurity.mail</code>, in testing), and the browser client that ships with KyPost Server.</li>
-          <li><strong>KyAuth</strong>, the sign-in approver for KyIdentity: Android <code>org.kysecurity.authenticator</code> (GitHub and F-Droid builds), iPhone (in development) and Linux phones (<code>kyauth.busnes</code>, in development).</li>
+          <li><strong>KyAuth</strong>, the sign-in approver for KyIdentity: Android <code>org.kysecurity.authenticator</code> (Google Play, GitHub and F-Droid builds), iPhone (in development) and Linux phones (<code>kyauth.busnes</code>, in development).</li>
           <li><strong>Self-hosted server software</strong>: KyPost Server, KyIdentity, KyNotes, KyCalendar, KyDrive, KyMessages, KyRecovery, KyDNS, KyPulse, KyYard, and the KyQuickStart installer.</li>
           <li><strong>Services we operate</strong>: the KyPost and KyIdentity push relays, and this website.</li>
         </ul>
@@ -117,7 +117,29 @@
           <tr><td>One-time-code secrets and the device signing key</td><td>Generate codes and sign approvals</td><td>Device only, in the Android Keystore or iOS Keychain or an encrypted file, excluded from backups</td><td>Required</td></tr>
         </tbody></table>
         <p>KyIdentity stores accounts, devices, sessions, and audit events, including the IP address and browser of each sign-in. Audit events are deleted automatically after 180 days. By default it also contacts Google’s Android attestation revocation list and, for Linux phones, the UBports push service, which receives encrypted payloads only.</p>
-        <p>Unpairing in KyAuth removes the pairing from the phone only; ask your operator, or use your KyIdentity account page, to remove the device from the server.</p>
+        <p>On iPhone and Linux phones, unpairing in KyAuth removes the pairing from the phone only; ask your operator, or use your KyIdentity account page, to remove the device from the server. KyAuth for Android also asks the server to delete it, as described below.</p>
+
+        <h3 id="kyauth-android">KyAuth for Android</h3>
+        <p>KyAuth for Android (<code>org.kysecurity.authenticator</code>) only works with a KyIdentity server that you or your organization runs. Busnes.app receives no KyAuth data, apart from what our push relay needs to deliver Firebase sign-in requests (section 4). Whoever operates your KyIdentity server controls the data KyAuth sends to it; send requests about that data to them.</p>
+        <table><thead><tr><th scope="col">When</th><th scope="col">What KyAuth sends to your KyIdentity server</th><th scope="col">Why</th></tr></thead><tbody>
+          <tr><td>Pairing</td><td>Your KyIdentity user ID, the phone’s model name, a random installation ID, the device’s public key, an Android Key Attestation certificate chain, and the push address (a Firebase token, or a UnifiedPush endpoint and its encryption keys)</td><td>To pair this phone with your account and let the server send it sign-in requests. The attestation chain proves the device key lives in secure hardware; it includes the bootloader state, OS patch level, KyAuth’s package name and its signing certificate.</td></tr>
+          <tr><td>Answering a sign-in request</td><td>The request ID, the number you picked, approve or deny, and a signature from the device key</td><td>To approve or deny the sign-in. The signature shows the answer came from this phone.</td></tr>
+          <tr><td>Signing in to another suite app, such as KyPost</td><td>A signed device assertion</td><td>To get an identity token for that app. KyAuth passes the token to the app only after you approve with biometrics or screen lock.</td></tr>
+          <tr><td>Unpairing</td><td>A signed request</td><td>To ask the server to delete this phone’s record.</td></tr>
+        </tbody></table>
+        <p><strong>Google services.</strong> Only the Google Play and GitHub builds include these; the F-Droid build contains no Google code. See <a href="https://policies.google.com/privacy">Google’s privacy policy</a>.</p>
+        <ul>
+          <li><strong>Firebase Cloud Messaging</strong>, only if you pair using Firebase delivery. Google then receives a Firebase installation ID, the FCM token, the app version and basic device information, to deliver sign-in requests. Nothing is sent to Firebase before you pair, in demo mode, or if you choose UnifiedPush. The token is deleted when you unpair, reset the app or switch to UnifiedPush. Firebase push messages carry your device ID and user ID through Google unencrypted. UnifiedPush messages are end-to-end encrypted (RFC 8291), and the distributor cannot read them.</li>
+          <li><strong>Google code scanner</strong> (ML Kit, run by Google Play services), only when you tap Scan. Google may collect device information, the app’s package name and version, an installation ID and performance diagnostics. You can type codes in instead.</li>
+        </ul>
+        <p><strong>What never leaves your phone.</strong> One-time-code secrets and account names, kept in an encrypted vault that opens only with biometrics, screen lock or your optional PIN; your PIN; and biometric data, since KyAuth only learns whether the check succeeded or failed. KyAuth has no backup, export, sync, ads, analytics or crash reporting.</p>
+        <p><strong>Keeping and deleting data.</strong></p>
+        <ul>
+          <li><strong>On your phone:</strong> “Unpair” removes the pairing, the device key and the push token. “Reset KyAuth” erases everything. Five wrong PINs erase everything. Uninstalling erases everything.</li>
+          <li><strong>On the server:</strong> unpairing asks KyIdentity to delete the device record, on servers that support it. You can also remove the phone on your KyIdentity devices page, or ask your server operator.</li>
+          <li><strong>At Google:</strong> under Google’s <a href="https://firebase.google.com/support/privacy">Firebase privacy and security terms</a> and its <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit data disclosure</a>.</li>
+        </ul>
+        <p><strong>Security.</strong> All traffic to KyIdentity uses HTTPS only, and KyAuth follows no redirects. KyAuth blocks screenshots and Android backup. KyAuth is not directed to children under 13.</p>
 
         <h2 id="servers">7. Other Ky server apps</h2>
         <p>KyNotes, KyCalendar, KyDrive, KyMessages, KyRecovery, KyDNS, KyPulse and KyYard are server software with a browser interface. None of them ships a phone app or contacts a Busnes.app service by default. Their browser interfaces load no third-party scripts and use cookies only to keep you signed in and protect forms, plus local storage for your light or dark theme.</p>
