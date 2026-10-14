@@ -42,7 +42,7 @@
   </header>
 
   <main id="main-content">
-    <section class="policy-hero"><div class="shell"><p class="eyebrow">Busnes.app / Privacy</p><h1>Privacy policy</h1><p class="effective">Effective and last updated September 16, 2026.</p></div></section>
+    <section class="policy-hero"><div class="shell"><p class="eyebrow">Busnes.app / Privacy</p><h1>Privacy policy</h1><p class="effective">Effective and last updated October 13, 2026.</p></div></section>
 
     <section class="summary"><div class="shell">
       <div class="section-heading"><p class="eyebrow">The short version</p><h2>Clear about what we know.</h2><p>This summary helps you understand the policy. The full policy below controls.</p></div>
@@ -50,12 +50,13 @@
         <div><dt>This website</dt><dd>No advertising, analytics, cookies, accounts, or embedded third-party content. The host receives ordinary request logs.</dd></div>
         <div><dt>Project inquiries</dt><dd>If you email us, we use your contact details and message to answer you, assess fit, and manage the conversation.</dd></div>
         <div><dt>Ky applications</dt><dd>Self-hosted Ky applications are controlled by the person or organization operating the installation. We do not receive their data merely because they use Ky software.</dd></div>
+        <div><dt>KyAuth</dt><dd>KyAuth talks only to the KyIdentity server you or your organization runs. Busnes.app sees only what its push relay needs to deliver Firebase sign-in requests. Google is involved only if you choose Firebase push or tap Scan, and never in the F-Droid build.</dd></div>
         <div><dt>Your choices</dt><dd>You can choose not to provide inquiry information, ask us to delete it, or contact the relevant operator about data held by a self-hosted application.</dd></div>
       </dl>
     </div></section>
 
     <section class="policy-content"><div class="shell policy-layout">
-      <nav class="policy-toc" aria-label="Privacy policy contents"><strong>Contents</strong><a href="#who">1. Who we are</a><a href="#scope">2. Scope and roles</a><a href="#website">3. This website</a><a href="#inquiries">4. Project inquiries</a><a href="#apps">5. Ky applications and services</a><a href="#sharing">6. Where information may go</a><a href="#retention">7. Retention and security</a><a href="#rights">8. Your rights</a><a href="#children">9. Children</a><a href="#changes">10. Changes</a><a href="#contact">11. Contact</a></nav>
+      <nav class="policy-toc" aria-label="Privacy policy contents"><strong>Contents</strong><a href="#who">1. Who we are</a><a href="#scope">2. Scope and roles</a><a href="#website">3. This website</a><a href="#inquiries">4. Project inquiries</a><a href="#apps">5. Ky applications and services</a><a href="#kyauth">6. KyAuth</a><a href="#kypost-apps">7. KyPost apps</a><a href="#sharing">8. Where information may go</a><a href="#retention">9. Retention and security</a><a href="#rights">10. Your rights</a><a href="#children">11. Children</a><a href="#changes">12. Changes</a><a href="#contact">13. Contact</a></nav>
       <article>
         <h2 id="who">1. Who we are</h2>
         <p>Busnes.app is a d/b/a operated by <strong>Matthew Beacher</strong>. In this policy, “Busnes.app,” “we,” and “us” refer to Matthew Beacher doing business as Busnes.app. Contact us at <a href="mailto:privacy@busnes.app">privacy@busnes.app</a>.</p>
@@ -80,26 +81,133 @@
         <p>KyPost’s built-in classifier runs using the model configured on the operator’s server. The default design does not send inbox contents to a cloud AI provider. An operator can change the software or connect other services, so users should ask that operator about its actual configuration. Busnes.app does not receive KyPost mail or account data merely because someone installs or uses KyPost.</p>
         <p>If an operator enables a Busnes.app-operated push relay, the relay may process a server identifier, device token, delivery provider, notification payload, timestamp, and limited security or failure-log information to deliver Apple, Google, or UnifiedPush notifications. Generic notifications do not contain sender names, subjects, or message bodies. Preview content is included only when the user enables previews.</p>
 
-        <h2 id="sharing">6. Where information may go</h2>
-        <ul><li><strong>Website infrastructure:</strong> the hosting provider and its infrastructure providers.</li><li><strong>Support and correspondence:</strong> GitHub and relevant email providers when you contact us.</li><li><strong>Push delivery:</strong> Cloudflare, Apple, Google, or a UnifiedPush provider when the corresponding KyPost option is enabled.</li><li><strong>Project operations:</strong> service providers needed to host, secure, maintain, back up, or support an agreed application.</li><li><strong>Legal and safety:</strong> authorities or other parties when required by law or reasonably necessary to protect rights, safety, and service security.</li></ul>
+        <h2 id="kyauth">6. KyAuth</h2>
+        <p>KyAuth is an authenticator app published by Busnes.app. It approves sign-ins to KyIdentity and keeps one-time codes. Questions about KyAuth go to <a href="mailto:privacy@busnes.app">privacy@busnes.app</a>.</p>
+        <p><strong>You or your organization run the server.</strong> KyAuth only works with a KyIdentity server that you or your organization runs. Apart from the push relay described below, Busnes.app receives no KyAuth data. Whoever operates that KyIdentity server controls the data KyAuth sends to it, so send requests about that data to the operator.</p>
+
+        <h3 id="kyauth-android">KyAuth for Android (org.kysecurity.authenticator)</h3>
+        <p><strong>What KyAuth sends to your KyIdentity server, and why</strong></p>
+        <table><thead><tr><th scope="col">When</th><th scope="col">What is sent</th><th scope="col">Why</th></tr></thead><tbody>
+          <tr><td>Pairing</td><td>Your KyIdentity user ID, the phone’s model name, a random installation ID, the device’s public key, an Android Key Attestation certificate chain, and the push address (a Firebase token, or a UnifiedPush endpoint and its encryption keys)</td><td>To pair this phone with your account and let the server send it sign-in requests. The attestation chain proves the device key lives in secure hardware; it includes the bootloader state, OS patch level, KyAuth’s package name and its signing certificate.</td></tr>
+          <tr><td>Answering a sign-in request</td><td>The request ID, the number you picked, approve or deny, and a signature from the device key</td><td>To approve or deny the sign-in. The signature shows the answer came from this phone.</td></tr>
+          <tr><td>Signing in to another suite app, such as KyPost</td><td>A signed device assertion</td><td>To get an identity token for that app. KyAuth passes the token to the app only after you approve with biometrics or screen lock.</td></tr>
+          <tr><td>Unpairing</td><td>A signed request</td><td>To ask the server to delete this phone’s record.</td></tr>
+        </tbody></table>
+
+        <p><strong>Google services</strong></p>
+        <p>The Play and GitHub builds include the two Google services below. The F-Droid build contains no Google code. See <a href="https://policies.google.com/privacy">Google’s privacy policy</a>.</p>
+        <ul>
+          <li><strong>Firebase Cloud Messaging</strong>, only if you pair using Firebase delivery. Google then receives a Firebase installation ID, the FCM token, the app version and basic device information, so it can deliver sign-in requests. Nothing is sent to Firebase before you pair, in demo mode, or if you choose UnifiedPush. The token is deleted when you unpair, reset the app or switch to UnifiedPush. Firebase push messages carry your device ID and user ID through Google unencrypted. UnifiedPush messages are end-to-end encrypted (RFC 8291), and the distributor cannot read them.</li>
+          <li><strong>Google code scanner</strong> (ML Kit, run by Google Play services), only when you tap Scan. Google may collect device information, the app’s package name and version, an installation ID and performance diagnostics. You can type codes in instead.</li>
+        </ul>
+
+        <p><strong>Busnes.app push relay</strong></p>
+        <p>When your KyIdentity server sends a Firebase sign-in request through the push relay Busnes.app runs, the relay processes your KyIdentity server’s address, the FCM token, your device ID and user ID, the request ID, its purpose and its expiry time. It holds the request only in memory while delivering it, counts each delivery in Cloudflare Analytics, and keeps security and failure logs for 180 days.</p>
+
+        <p><strong>What never leaves your phone</strong></p>
+        <ul>
+          <li>One-time-code secrets and account names. They are kept in an encrypted vault that opens only with biometrics, screen lock or your optional PIN.</li>
+          <li>Your PIN.</li>
+          <li>Biometric data. KyAuth only learns whether the check succeeded or failed.</li>
+        </ul>
+        <p>KyAuth has no backup, export, sync, ads, analytics or crash reporting.</p>
+
+        <p><strong>Keeping and deleting data</strong></p>
+        <ul>
+          <li><strong>On your phone:</strong> “Unpair” removes the pairing, the device key and the push token. “Reset KyAuth” erases everything. Five wrong PINs erase everything. Uninstalling erases everything.</li>
+          <li><strong>On the server:</strong> unpairing asks KyIdentity to delete the device record, on servers that support it. You can also remove the phone on your KyIdentity devices page, or ask your server operator.</li>
+          <li><strong>At Google:</strong> Google keeps data under its <a href="https://firebase.google.com/support/privacy">Firebase privacy and security terms</a> and its <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit data disclosure</a>.</li>
+        </ul>
+
+        <p><strong>Security</strong></p>
+        <p>All traffic to KyIdentity uses HTTPS only, and KyAuth follows no redirects. KyAuth blocks screenshots and Android backup.</p>
+
+        <p><strong>Children</strong></p>
+        <p>KyAuth is not directed to children under 13.</p>
+
+        <h2 id="kypost-apps">7. KyPost apps</h2>
+        <p>The KyPost apps connect to the KyPost server you or your organization runs. Section 5 covers that server. This section covers what each app sends and what it keeps on your device.</p>
+
+        <h3 id="kypost-android">KyPost for Android (org.kysecurity.mail)</h3>
+        <p><strong>What the app sends to your KyPost server</strong></p>
+        <table><thead><tr><th scope="col">When</th><th scope="col">What is sent</th><th scope="col">Why</th></tr></thead><tbody>
+          <tr><td>Pairing</td><td>Your subscriber ID and pairing token, a random device ID, the phone’s model name, the app version, and the push address (a Firebase token, or a UnifiedPush endpoint and its encryption keys)</td><td>To link this phone to your mailbox. The server returns a device credential that the app sends with later requests.</td></tr>
+          <tr><td>Signing in with KyAuth (optional)</td><td>An identity token from KyAuth</td><td>To pair using your KyIdentity account instead of a pairing link.</td></tr>
+          <tr><td>Using your mail</td><td>Requests to read, search, send and draft mail, manage folders, contacts and groups, and look up encryption keys</td><td>To run the mail app.</td></tr>
+          <tr><td>Contact sync (off unless you turn it on)</td><td>Contacts you import from other accounts on the phone</td><td>To add them to your KyPost contacts.</td></tr>
+          <tr><td>Unpairing</td><td>A request to remove this device</td><td>To ask the server to delete this phone’s registration.</td></tr>
+        </tbody></table>
+        <p>You choose how new mail reaches the phone: Firebase push, UnifiedPush (end-to-end encrypted, RFC 8291), or App Pull, where the app checks your server about every 15 minutes and no push service is involved.</p>
+
+        <p><strong>Google services</strong></p>
+        <p>The Play and GitHub builds include Firebase Cloud Messaging, for Firebase push, and the Google code scanner, which runs only when you tap Scan. The Play build also uses Google Play Billing for the optional tip jar. The F-Droid build contains no Google code. See <a href="https://policies.google.com/privacy">Google’s privacy policy</a>.</p>
+
+        <p><strong>What stays on your phone</strong></p>
+        <ul>
+          <li>Cached mail, contacts and groups, in a database encrypted with a key protected by the Android Keystore.</li>
+          <li>Your OpenPGP private key, sealed by the Android Keystore.</li>
+          <li>Pairing credentials, in encrypted storage.</li>
+          <li>Your recent notifications (the last 30), in the app’s private storage.</li>
+          <li>Attachments are opened from memory and written to disk only when you save them.</li>
+        </ul>
+        <p>An optional app lock uses an 8- to 12-digit PIN or strong biometrics. You can set the app to erase its data after 10, 20 or 30 wrong PINs. Hostile Location Protection keeps everything in memory only. Remote images stay blocked until you tap “Show images” for a message. KyPost has no ads, analytics or crash reporting. Android backup and screenshots are blocked.</p>
+
+        <p><strong>Deleting data</strong></p>
+        <p>Unpairing asks your server to remove the device, deletes the push token, and erases this account’s mail, contacts (including synced device contacts) and settings from the phone. A wrong-PIN wipe or uninstalling erases everything. Ask your server operator about data held on the server.</p>
+
+        <p><strong>Security and permissions</strong></p>
+        <p>The app uses HTTPS only, follows no redirects, and pins your server’s certificate on first use. It asks for notifications; contacts, only for contact sync; and the camera, only in the F-Droid build, for scanning codes.</p>
+
+        <h3 id="kypost-apple">KyPost for iPhone, iPad and Mac (org.kysecurity.mail)</h3>
+        <p><strong>What the app sends to your KyPost server</strong></p>
+        <table><thead><tr><th scope="col">When</th><th scope="col">What is sent</th><th scope="col">Why</th></tr></thead><tbody>
+          <tr><td>Pairing</td><td>Your subscriber ID and pairing token, a random device ID, the platform, the device name (on a Mac, the computer name you set), and the Apple push token</td><td>To link this device to your mailbox.</td></tr>
+          <tr><td>Desktop pairing (Mac)</td><td>A pairing code, the app name and version, and the computer name with its OS and processor type</td><td>To link this Mac to your mailbox.</td></tr>
+          <tr><td>Signing in with KyAuth (iPhone and iPad, optional)</td><td>An identity token from KyAuth, which KyPost does not keep</td><td>To pair using your KyIdentity account.</td></tr>
+          <tr><td>Using your mail</td><td>Requests to read, search, send and draft mail, manage contacts and groups, and look up encryption keys</td><td>To run the mail app.</td></tr>
+          <tr><td>Apple Contacts sync (off unless you turn it on)</td><td>Contacts you add in Apple Contacts after turning on sync</td><td>To keep KyPost and Apple Contacts in step, in both directions.</td></tr>
+          <tr><td>Unpairing</td><td>A request to remove this device</td><td>To ask the server to delete this device’s registration.</td></tr>
+        </tbody></table>
+        <p>New mail arrives through Apple Push Notification service, or in pull mode, where the app checks your server in the background about every 15 minutes.</p>
+
+        <p><strong>Apple services</strong></p>
+        <p>The app uses Apple Push Notification service and, for the optional tip jar, the App Store. It contains no third-party analytics, advertising or crash-reporting code.</p>
+
+        <p><strong>What stays on your device</strong></p>
+        <ul>
+          <li>Cached mail, contacts and recent notifications, protected by your device’s standard data protection and excluded from backups.</li>
+          <li>Pairing credentials, in the Keychain on this device only.</li>
+          <li>Your OpenPGP private key, protected by a Secure Enclave key.</li>
+          <li>Decrypted attachments, as temporary files with full file protection, excluded from backups.</li>
+        </ul>
+        <p>An optional app lock uses Face ID, Touch ID or your passcode, plus an optional PIN. You can set the app to erase its data after 10, 20 or 30 wrong PINs. Hostile Location Protection keeps everything in memory only. Remote content stays blocked until you tap “Load Remote Content” for a message; that loads all of that message’s remote content. The app hides its content during screen recording and mirroring on iPhone and iPad, and hides its window from screen sharing on a Mac. It does not block screenshots.</p>
+
+        <p><strong>Deleting data</strong></p>
+        <p>Unpairing asks your server to remove the device and erases this account’s mail, OpenPGP key, notification history and signature from the device. Cached contacts and cards exported to Apple Contacts remain until you use “Remove exported contacts” or “Reset KyPost on This Device”. A reset or a wrong-PIN wipe erases everything. Ask your server operator about data held on the server.</p>
+
+        <p><strong>Security and permissions</strong></p>
+        <p>The app uses HTTPS only, refuses redirects to other hosts or to plain HTTP, and pins your server’s certificate on first use. It asks for notifications, the camera (iPhone and iPad, for scanning codes), Contacts (for Apple Contacts sync), calendar write access (for “Add to Calendar”) and Face ID (for app lock).</p>
+
+        <h2 id="sharing">8. Where information may go</h2>
+        <ul><li><strong>Website infrastructure:</strong> the hosting provider and its infrastructure providers.</li><li><strong>Support and correspondence:</strong> GitHub and relevant email providers when you contact us.</li><li><strong>Push delivery:</strong> Cloudflare, Apple, Google, or a UnifiedPush provider when the corresponding KyPost option is enabled.</li><li><strong>KyAuth:</strong> Google, only for Firebase push or the code scanner, and the Busnes.app push relay on Cloudflare for Firebase push, as described in section 6. Everything else goes only to your own KyIdentity server.</li><li><strong>Project operations:</strong> service providers needed to host, secure, maintain, back up, or support an agreed application.</li><li><strong>Legal and safety:</strong> authorities or other parties when required by law or reasonably necessary to protect rights, safety, and service security.</li></ul>
         <p>Some recipients may process information outside your country. The safeguards available for a particular transfer depend on the service, the operator’s location, and the provider’s terms.</p>
 
-        <h2 id="retention">7. Retention and security</h2>
+        <h2 id="retention">9. Retention and security</h2>
         <p>We keep information under our control only as long as we have a legitimate business, support, security, legal, or dispute-resolution reason to retain it. When it is no longer needed, we delete or anonymize it where reasonably practicable. Project records may be retained for the duration of an engagement and for a reasonable period afterward to support maintenance, accounting, legal obligations, and continuity.</p>
         <p>Maintainer-operated push relay request content is held only in memory for delivery where the service design permits; security and failure logs are retained for 180 days. Self-hosted operators determine their own retention and backup schedules.</p>
         <p>We use access controls, encryption in transit, restricted service credentials, backups, and limited logging appropriate to the information we control. No system is completely secure. Never send passwords, recovery shares, private keys, or credentials by ordinary email.</p>
 
-        <h2 id="rights">8. Your privacy rights</h2>
+        <h2 id="rights">10. Your privacy rights</h2>
         <p>Depending on where you live, you may have rights to access, correct, delete, restrict, or receive a copy of personal information; object to certain processing; withdraw consent; and complain to a privacy regulator.</p>
         <p>Send requests concerning Busnes.app, this website, or maintainer-operated services to <a href="mailto:privacy@busnes.app">privacy@busnes.app</a>. For information held by a self-hosted Ky application, contact that application’s operator. We may need to verify your identity before completing a request.</p>
 
-        <h2 id="children">9. Children</h2>
+        <h2 id="children">11. Children</h2>
         <p>Busnes.app services and this website are not directed to children under 13, and we do not knowingly collect personal information from children through the website. If you believe a child has provided information to a maintainer-operated service, contact us so we can review and delete it where appropriate.</p>
 
-        <h2 id="changes">10. Changes to this policy</h2>
+        <h2 id="changes">12. Changes to this policy</h2>
         <p>We will post revisions here and update the date at the top. If a change materially affects a maintainer-operated service, we will also provide notice through an appropriate project or service channel before the change takes effect when reasonably possible.</p>
 
-        <h2 id="contact">11. Contact</h2>
+        <h2 id="contact">13. Contact</h2>
         <p>Privacy questions and requests: <a href="mailto:privacy@busnes.app">privacy@busnes.app</a></p>
       </article>
     </div></section>

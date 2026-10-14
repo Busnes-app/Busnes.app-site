@@ -38,3 +38,4 @@
   .policy-layout article h2 { margin-top:36px; }
   .policy-layout table { display:block; overflow-x:auto; white-space:normal; }
 }
+.policy-layout article h3 { margin:36px 0 12px; font-size:18px; line-height:1.25; letter-spacing:-.02em; font-weight:600; }
