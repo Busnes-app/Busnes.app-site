@@ -2,11 +2,13 @@
 
 ## Purpose
 
-The launch website presents Busnes.app as a focused software studio, with Ky as its reusable foundation and the Ky applications as proof of work.
+The launch website presents the Ky Suite: small self-hosted apps that share one sign-in (KyIdentity) and one sealed backup store (KyRecovery). Busnes.app custom work is secondary and lives under "Custom work" (`how-it-works.html`).
 
 ## Ownership
 
-- `index.html` owns the public narrative and links to the maintained KyPost site.
+- `index.html` owns the public narrative: the suite pitch, the launch-series trailer slot, the five reasons, the KyIdentity/KyRecovery diagram and the status board. Status labels are `In daily use` and `Tested`; keep them in line with the `status-pill` text on `apps.html` and the product pages.
+- `install.html` owns the three installation paths (KyQuickStart AI, KyQuickStart, one app at a time). Copy commands from those repositories' READMEs; do not invent flags.
+- Every page shares the primary navigation Apps · Install · Custom work · About with a GitHub button, and the same footer links.
 - `apps.html` owns the app directory; `kypost.html`, `kyyard.html`, `kynotes.html`, `kycalendar.html`, `kydrive.html`, `kymessages.html`, `kyidentity.html`, `kyrecovery.html`, `kydns.html`, and `kypulse.html` explain each product, availability, setup requirements and documentation.
 - `how-it-works.html` and `about.html` explain the engagement and company; `pages.css` supplies their shared layouts and product-page styles.
 - `styles.css` owns the visual system and responsive layout, including the light and dark token sets.
