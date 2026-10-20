@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="How Busnes.app and the Ky apps, including KyPost for Android, handle personal information: what stays on your device, what goes to the server you run, and what our push relays see.">
+  <meta name="description" content="How Busnes.app and the Ky apps handle personal information, including email, identity, notes, calendars, files, chat, recovery, DNS, monitoring and installation tools.">
   <meta name="theme-color" content="#f8f6f0">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'">
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://busnes.app/privacy.html">
   <meta property="og:title" content="Privacy policy — Busnes.app">
-  <meta property="og:description" content="How Busnes.app and the Ky apps, including KyPost for Android, handle personal information: what stays on your device, what goes to the server you run, and what our push relays see.">
+  <meta property="og:description" content="How Busnes.app and the Ky apps handle personal information, including email, identity, notes, calendars, files, chat, recovery, DNS, monitoring and installation tools.">
   <meta property="og:image" content="https://busnes.app/icons/busnes.png">
   <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="styles.css">
@@ -42,38 +42,40 @@
   </header>
 
   <main id="main-content">
-    <section class="policy-hero"><div class="shell"><p class="eyebrow">Busnes.app / Privacy</p><h1>Privacy policy</h1><p class="effective">Effective and last updated October 13, 2026.</p></div></section>
+    <section class="policy-hero"><div class="shell"><p class="eyebrow">Busnes.app / Privacy</p><h1>Privacy policy</h1><p class="effective">Effective and last updated October 20, 2026.</p></div></section>
 
     <section class="summary"><div class="shell">
       <div class="section-heading"><p class="eyebrow">The short version</p><h2>Your data goes to the server you run.</h2><p>This summary helps you understand the policy. The full policy below controls.</p></div>
       <dl class="ledger">
-        <div><dt>Self-hosted by design</dt><dd>Ky apps talk to a server that you, or an operator you choose, runs. Your mail, contacts, notes, files and accounts live there and on your devices, not with us.</dd></div>
+        <div><dt>Self-hosted by design</dt><dd>Ky apps talk to a server that you, or an operator you choose, runs. Your content and accounts are held there and on your devices. Sharing, sync, backups and integrations can send data to other destinations you or your operator choose.</dd></div>
         <div><dt>What we run</dt><dd>Push notification relays that pass a notification from your server to Google or Apple, and this website. The relays see a device token and the notification text. By default that text is generic, with no sender or subject.</dd></div>
         <div><dt>No Busnes account</dt><dd>None of our apps create an account with us. We do not sell personal information, show ads, or track you across apps and websites.</dd></div>
         <div><dt>Third parties</dt><dd>On Google Play builds, Google handles push delivery, QR-code scanning and optional tips. Apple handles push on Apple devices. Each is listed below with what it receives.</dd></div>
-        <div><dt>Your choices</dt><dd>Contact upload is off until you pick accounts. Notification previews are off until you turn them on. Unpairing a device deletes its data from that device.</dd></div>
+        <div><dt>Your choices</dt><dd>KyPost for Android uploads phone contacts only from accounts you select. Notification previews are off by default. Revoking access stops future use; downloaded files, exports and backups may still exist.</dd></div>
       </dl>
     </div></section>
 
     <section class="policy-content"><div class="shell policy-layout">
-      <nav class="policy-toc" aria-label="Privacy policy contents"><strong>Contents</strong><a href="#who">1. Who we are</a><a href="#scope">2. Apps this policy covers</a><a href="#model">3. How Ky apps handle data</a><a href="#relays">4. Services we operate</a><a href="#kypost">5. KyPost</a><a href="#kyauth">6. KyAuth and KyIdentity</a><a href="#servers">7. Other Ky server apps</a><a href="#permissions">8. App permissions</a><a href="#payments">9. Tips and payments</a><a href="#third-parties">10. Third parties</a><a href="#dont">11. What we do not do</a><a href="#delete">12. Deleting data and unpairing</a><a href="#security">13. Security</a><a href="#rights">14. Your rights</a><a href="#children">15. Children</a><a href="#website">16. This website and correspondence</a><a href="#changes">17. Changes</a><a href="#contact">18. Contact</a></nav>
+      <nav class="policy-toc" aria-label="Privacy policy contents"><strong>Contents</strong><a href="#who">1. Who we are</a><a href="#scope">2. Apps this policy covers</a><a href="#model">3. How Ky apps handle data</a><a href="#relays">4. Services we operate</a><a href="#kypost">5. KyPost</a><a href="#kyauth">6. KyAuth and KyIdentity</a><a href="#servers">7. Other Ky apps and installers</a><a href="#permissions">8. App permissions</a><a href="#payments">9. Tips and payments</a><a href="#third-parties">10. Third parties</a><a href="#dont">11. What we do not do</a><a href="#delete">12. Deleting data and unpairing</a><a href="#security">13. Security</a><a href="#rights">14. Your rights</a><a href="#children">15. Children</a><a href="#website">16. This website and correspondence</a><a href="#changes">17. Changes</a><a href="#contact">18. Contact</a></nav>
       <article>
         <h2 id="who">1. Who we are</h2>
         <p>Busnes.app is a d/b/a operated by <strong>Matthew Beacher</strong>. In this policy, “Busnes.app,” “we,” and “us” refer to Matthew Beacher doing business as Busnes.app. We publish the Ky apps and operate the services described in section 4. Contact us at <a href="mailto:privacy@busnes.app">privacy@busnes.app</a>.</p>
         <!-- UNVERIFIED: postal address / jurisdiction of the controller. Google Play does not require one in the policy, but GDPR-style notices often list it. Yoshi to decide. -->
 
         <h2 id="scope">2. Apps this policy covers</h2>
-        <p>This policy covers every app and service published by Busnes.app:</p>
+        <p>This policy covers the following Busnes.app software and services, including evaluation and source builds. Listing an app here does not mean it is available in every app store:</p>
         <ul>
           <li><strong>KyPost for Android</strong>: Google Play package <code>org.kysecurity.mail</code>. The same app is also published on GitHub as <code>org.kysecurity.mail.github</code> and for F-Droid as <code>org.kysecurity.mail.fdroid</code>.</li>
           <li><strong>KyPost for Linux</strong> (Flatpak <code>com.kysecurity.mail</code>), <strong>KyPost for iPhone</strong> and <strong>KyPost for Mac</strong> (bundle ID <code>org.kysecurity.mail</code>, in testing), and the browser client that ships with KyPost Server.</li>
           <li><strong>KyAuth</strong>, the sign-in approver for KyIdentity: Android <code>org.kysecurity.authenticator</code> (Google Play, GitHub and F-Droid builds), iPhone (in development) and Linux phones (<code>kyauth.busnes</code>, in development).</li>
-          <li><strong>Self-hosted server software</strong>: KyPost Server, KyIdentity, KyNotes, KyCalendar, KyDrive, KyMessages, KyRecovery, KyDNS, KyPulse, KyYard, and the KyQuickStart installer.</li>
-          <li><strong>Services we operate</strong>: the KyPost and KyIdentity push relays, and this website.</li>
+          <li><strong>Self-hosted server software</strong>: KyPost Server, KyIdentity, KyNotes, KyCalendar, KyDrive, KyMessages, KyRecovery, KyDNS, KyPulse and KyYard.</li>
+          <li><strong>KyDrive Desktop</strong> for Windows, macOS and Linux: syncs selected workspaces with your KyDrive server.</li>
+          <li><strong>Installation tools</strong>: KyQuickStart, KyQuickStart AI and the Ky Kubernetes deployment configuration.</li>
+          <li><strong>Services we operate</strong>: the push relay services described below, and this website.</li>
         </ul>
 
         <h2 id="model">3. How Ky apps handle data</h2>
-        <p>Every Ky app is self-hosted. You, or someone you trust such as your employer or IT provider (the <strong>operator</strong>), runs the server. When an app sends your data “to the server,” it means that server and no other. We do not receive your mail, contacts, notes, files, calendars, messages or passwords just because you use our software.</p>
+        <p>Ky server apps are self-hosted. You, or someone you trust such as your employer or IT provider (the <strong>operator</strong>), runs the server. When this policy says “your server,” it means that operator’s installation. Your server and clients also communicate with mail providers, identity services, push providers and other integrations as described below. We do not receive your mail, contacts, notes, files, calendars, messages or passwords just because you use our software.</p>
         <p>The operator decides who has access, how long data is kept, and how it is backed up, so for data held on a server, the operator is responsible. If you are not the operator, ask them for their privacy notice. If you run your own server, you are the operator.</p>
         <p>This policy explains what our apps send and to whom, and what we receive when an operator uses the services we run.</p>
 
@@ -94,7 +96,7 @@
         <h2 id="kypost">5. KyPost</h2>
         <p>KyPost connects your existing email account to a KyPost Server that your operator runs. The server fetches and sends your mail, and the apps sync with it.</p>
         <table><thead><tr><th scope="col">Data</th><th scope="col">Purpose</th><th scope="col">Where it goes</th><th scope="col">Required?</th></tr></thead><tbody>
-          <tr><td>Email messages, folders, drafts, attachments, PGP keys</td><td>Read, write and send mail</td><td>Your KyPost server; a copy on the device</td><td>Required</td></tr>
+          <tr><td>Email messages, folders, drafts, attachments and public PGP keys</td><td>Read, write and send mail</td><td>Your KyPost server; a copy on the device</td><td>Required</td></tr>
           <tr><td>Pairing details: device ID, push token, app version, and a device name. On Android that is the phone’s model (for example “Pixel 8”); on iPhone and Mac, the name you gave the device; on Linux, the computer’s hostname</td><td>Pair the device, deliver notifications, and let you recognise and remove the device in your device list</td><td>Your KyPost server. The push token also goes to Google (Android) or Apple (iPhone, Mac), and with each notification through our relay (section 4)</td><td>Required to pair</td></tr>
           <tr><td>Your KyPost contacts</td><td>Address autocomplete and encryption keys, shown in your phone’s Contacts app</td><td>Your KyPost server; a copy on the device</td><td>Optional</td></tr>
           <tr><td>Contacts from other accounts on your phone, such as Google contacts (names, email addresses, phone numbers, postal addresses, organisation, birthdays and other dates, relations, IM handles, websites, notes and groups; not photos)</td><td>Use your existing address book in KyPost</td><td>Uploaded to your KyPost server</td><td>Optional and off by default. You pick each phone account to upload; nothing is uploaded until you do</td></tr>
@@ -102,6 +104,7 @@
           <!-- UNVERIFIED: whether Mac/iOS contact upload is opt-in per account like Android. The agent found new Contacts.app cards are uploaded (SystemContactsExporter.swift:5-8) while the usage string only says "exports". -->
           <tr><td>Notification history and app settings</td><td>Show recent notifications and remember your choices</td><td>Device only</td><td>Required</td></tr>
         </tbody></table>
+        <p><strong>OpenPGP private keys.</strong> Current KyPost uses client-held private keys for end-to-end encryption; server-side private-key generation, import and decryption are retired. A server may retain client-sealed recovery copies and legacy key records for migration. Retaining those records does not let current KyPost decrypt mail on the server. Ordinary mail that is not end-to-end encrypted is readable by your mail provider and KyPost server. See the <a href="https://github.com/Busnes-app/KyPost-Server/blob/main/docs/E2E_PGP.md">KyPost key and migration guide</a>.</p>
         <p><strong>On the device.</strong> KyPost for Android keeps mail and contacts in an encrypted database, keeps pairing secrets encrypted with keys in the Android Keystore, and excludes all app data from Android cloud backup and device-to-device transfer. Attachments you save go to your Downloads folder, where other apps can read them. With Hostile Location Protection on, mail is kept in memory only.</p>
         <p><strong>No Busnes servers.</strong> KyPost for Android connects to your KyPost server, to Google services on Google Play and GitHub builds (section 10), and to nothing operated by us. It has no analytics, crash-reporting or advertising SDK.</p>
         <p><strong>Things only you can trigger.</strong> Remote images in an email are blocked until you tap to show them; showing them contacts the sender’s servers and can tell the sender you opened the message. Scanning someone else’s PGP key QR code fetches their key from the server named in the code, which sees your IP address.</p>
@@ -117,6 +120,7 @@
           <tr><td>One-time-code secrets and the device signing key</td><td>Generate codes and sign approvals</td><td>Device only, in the Android Keystore or iOS Keychain or an encrypted file, excluded from backups</td><td>Required</td></tr>
         </tbody></table>
         <p>KyIdentity stores accounts, devices, sessions, and audit events, including the IP address and browser of each sign-in. Audit events are deleted automatically after 180 days. By default it also contacts Google’s Android attestation revocation list and, for Linux phones, the UBports push service, which receives encrypted payloads only.</p>
+        <p><strong>Identity sharing and email.</strong> KyIdentity sends identity claims to applications you sign in to, and account, group and access changes to provisioning connectors your operator configures. Those applications keep their own records. If the operator configures SMTP delivery, the mail provider handles recipient addresses and verification or recovery messages, including their one-time links. Your operator controls these connections and their credentials.</p>
         <p>On iPhone and Linux phones, unpairing in KyAuth removes the pairing from the phone only; ask your operator, or use your KyIdentity account page, to remove the device from the server. KyAuth for Android also asks the server to delete it, as described below.</p>
 
         <h3 id="kyauth-android">KyAuth for Android</h3>
@@ -141,18 +145,39 @@
         </ul>
         <p><strong>Security.</strong> All traffic to KyIdentity uses HTTPS only, and KyAuth follows no redirects. KyAuth blocks screenshots and Android backup. KyAuth is not directed to children under 13.</p>
 
-        <h2 id="servers">7. Other Ky server apps</h2>
-        <p>KyNotes, KyCalendar, KyDrive, KyMessages, KyRecovery, KyDNS, KyPulse and KyYard are server software with a browser interface. None of them ships a phone app or contacts a Busnes.app service by default. Their browser interfaces load no third-party scripts and use cookies only to keep you signed in and protect forms, plus local storage for your light or dark theme.</p>
-        <ul>
-          <li><strong>KyNotes</strong> encrypts notes and attachments in your browser before they reach the server.</li>
-          <li><strong>KyMessages</strong> keeps chats on your server. Federation with other chat servers is off unless the operator enables it, and push notifications carry no message content.</li>
-          <li><strong>KyRecovery</strong> stores encrypted backups sent by other Ky apps and copies them only to destinations the operator chooses.</li>
-          <li><strong>KyDNS</strong> by default forwards DNS lookups it cannot answer to Cloudflare and Quad9 over encrypted DNS, and downloads a public blocklist from GitHub once a day. The operator can change both.</li>
-          <li><strong>KyPulse</strong> sends alerts only to webhooks the operator configures.</li>
-          <li><strong>KyYard</strong> contacts container registries only when the operator checks for updates or sets an update policy.</li>
-          <li><strong>KyQuickStart</strong> downloads container images and, only if the operator chooses a tunnel, configures Cloudflare Tunnel or frp.</li>
-        </ul>
-        <p>Accounts in these apps are created and deleted by the operator, usually through KyIdentity.</p>
+        <h2 id="servers">7. Other Ky apps and installation tools</h2>
+        <p>These products keep their application data on the operator’s infrastructure. Their data, encryption and retention differ. Optional identity, document editing, notifications, backups and AI integrations may send information to additional services. Ask your operator which connections are enabled.</p>
+        <p>Find your product: <a href="#kynotes">KyNotes</a>, <a href="#kycalendar">KyCalendar</a>, <a href="#kydrive">KyDrive and Desktop</a>, <a href="#kymessages">KyMessages</a>, <a href="#kyrecovery">KyRecovery</a>, <a href="#kydns">KyDNS</a>, <a href="#kypulse">KyPulse</a>, <a href="#kyyard">KyYard</a>, or <a href="#installers">installation tools</a>.</p>
+
+        <h3 id="kynotes">KyNotes</h3>
+        <p>Note and attachment content is encrypted in your browser before upload. Your server stores the encrypted content, accounts, notebook access and operational records. Sharing a notebook gives the recipients access to its content. Exported notes and content opened on an authorised device need that device’s protection. Configured recovery destinations receive sealed backups. See <a href="kynotes.html">KyNotes</a> and its <a href="https://github.com/Busnes-app/KyNotes-server#readme">documentation</a>.</p>
+
+        <h3 id="kycalendar">KyCalendar</h3>
+        <p>Your server stores calendars and event details, such as titles, descriptions, times and locations, together with sharing permissions, accounts and device credentials. Calendar content is not end-to-end encrypted from the server. Members of a shared calendar can read what their permissions allow. CalDAV clients such as Apple Calendar, DAVx5 and Thunderbird download copies to their own devices. An AI agent you connect can read the calendars its token permits and may send event content to its model provider. Recovery destinations receive sealed backups when configured. See <a href="kycalendar.html">KyCalendar</a> and its <a href="https://github.com/Busnes-app/KyCalendar#readme">documentation</a>.</p>
+
+        <h3 id="kydrive">KyDrive and KyDrive Desktop</h3>
+        <p>Your KyDrive server holds files, versions, names, sharing permissions, account records and an audit trail. Stored file content and names are encrypted at rest, but the server holds the decryption key and decrypts downloads. This is not end-to-end encryption. Shared-workspace members, people using sharing links and applications with authorised access can receive file content. If document editing is enabled, the configured Euro-Office Document Server processes plaintext documents and previews.</p>
+        <p>KyDrive Desktop uploads and downloads the workspaces you choose and keeps local files and sync state on Windows, macOS or Linux. Linking sends device details to your server; credentials are stored in the operating system’s keyring. Local synced files are readable on that computer. A revoke that requests a wipe removes synced copies, while changes that never uploaded are preserved in the local <code>Unsynced</code> folder. Revocation cannot recall copies someone exported. Server trash, versions, Restic snapshots and KyRecovery capsules have separate retention settings. See <a href="kydrive.html">KyDrive</a>, the <a href="https://github.com/Busnes-app/kydrive-server#readme">server guide</a> and the <a href="https://github.com/Busnes-app/kydrive-desktop#readme">desktop guide</a>.</p>
+
+        <h3 id="kymessages">KyMessages</h3>
+        <p>KyMessages manages a Matrix deployment with Synapse, Matrix Authentication Service and Element. The server sees account details, room names, membership, timestamps and other metadata. Element encrypts messages in encrypted rooms, but Synapse does not prevent another client from sending plaintext; do not assume that every stored message is encrypted. Voice and video use the configured call infrastructure, including LiveKit and TURN where enabled. Text-message encryption does not by itself establish how calls are protected.</p>
+        <p>Federation is closed by default. If the operator permits named servers, room data and metadata can reach their operators and members. An agent invited to a room can decrypt messages it reads and send that content to its configured model; a hosted model takes it off your infrastructure. Closing a room or deleting an account does not erase its history. Permanent room-history deletion does not remove the room’s attachments from the media store. See <a href="kymessages.html">KyMessages</a> and its <a href="https://github.com/Busnes-app/KyMessage-Server#readme">current deployment and encryption limits</a>.</p>
+
+        <h3 id="kyrecovery">KyRecovery</h3>
+        <p>Other Ky products seal backup capsules before depositing them. KyRecovery stores that ciphertext, capsule metadata such as service name, version, size and recovery key ID, custodian names, pairing records and an audit ledger. It does not receive the recovery private key or custodian shares and cannot decrypt a capsule. During the browser key ceremony, the private key and printable shares exist in the ceremony tab and any copies you print or save; keep those copies secure. Retention and any storage destinations are controlled by the operator. Removing a live account does not automatically remove older capsules. See <a href="kyrecovery.html">KyRecovery</a> and its <a href="https://github.com/Busnes-app/KyRecovery-server#readme">recovery and retention guide</a>.</p>
+
+        <h3 id="kydns">KyDNS</h3>
+        <p>KyDNS processes queried domain names and client network addresses, and stores the service directory, DNS configuration and any DHCP leases it manages. Upstream resolvers receive lookups KyDNS cannot answer locally, together with the resolver host’s network address; encrypted DNS protects the connection, not the query from the upstream provider. The example configuration uses Cloudflare and Quad9. Blocklist downloads contact the configured list provider, which can see the server’s IP address. The operator chooses upstreams, lists, access rules and diagnostic logging. See <a href="kydns.html">KyDNS</a> and its <a href="https://github.com/Busnes-app/KyDNS-server#readme">configuration guide</a>.</p>
+
+        <h3 id="kypulse">KyPulse</h3>
+        <p>KyPulse polls configured health endpoints and can collect KyYard container facts, application logs and audit activity. These records can include user names, IP addresses, resource names and anything an application writes to its logs. Administrators can inspect collected logs and activity. Configured webhook recipients receive alert details. Removing a source stops future collection but does not erase historical records immediately; retention settings control their lifetime. Sealed recovery backups have their own retention and do not include every collected log or activity row. See <a href="kypulse.html">KyPulse</a> and its <a href="https://github.com/Busnes-app/KyPulse-server#readme">logging and retention guide</a>.</p>
+
+        <h3 id="kyyard">KyYard</h3>
+        <p>KyYard manages the Docker hosts and Kubernetes clusters you connect. It handles endpoint addresses, inventory, deployment configuration, environment values, access credentials, metrics, logs and audit events. People granted management or terminal access can see application data exposed by those privileges. Agents communicate with the configured control plane; deployments, image operations and updates contact the registries and infrastructure providers you use. Pairing KyPulse sends selected operational records there, and configured recovery destinations receive sealed backups. See <a href="kyyard.html">KyYard</a> and its <a href="https://github.com/Busnes-app/KyYard-server#readme">access and deployment guide</a>.</p>
+
+        <h3 id="installers">KyQuickStart, KyQuickStart AI and Ky Kubernetes</h3>
+        <p>Installation and deployment tools use host names, IP addresses, user names, SSH access and configuration or credentials needed to install the selected services. They contact source repositories, package and container registries, and the DNS, certificate or tunnel providers you configure. Those providers receive the requests needed to deliver their service.</p>
+        <p>KyQuickStart AI launches the coding agent you choose. Prompts, commands, outputs and files read by that agent can be processed by its model provider under that provider’s terms. Instructions and redaction reduce accidental secret exposure but cannot guarantee that an agent never reads or transmits a secret. Local run reports and the handover sheet can contain sensitive deployment details and passwords. Protect them, and remove them when you no longer need them. Uninstalling an installer does not delete the servers, provider accounts or credentials it created. See the guides for <a href="https://github.com/Busnes-app/KyQuickStart#readme">KyQuickStart</a>, <a href="https://github.com/Busnes-app/KyQuickStart-AI#readme">KyQuickStart AI</a> and <a href="https://github.com/Busnes-app/ky-kubernetes#readme">Ky Kubernetes</a>.</p>
 
         <h2 id="permissions">8. App permissions</h2>
         <ul>
@@ -178,9 +203,12 @@
           <tr><td>Apple Push Notification service and App Attest (<a href="https://www.apple.com/legal/privacy/">policy</a>)</td><td>KyPost and KyAuth on Apple devices</td><td>Push token and notification text; for KyAuth, an attestation of the app at pairing</td></tr>
           <tr><td>Cloudflare (<a href="https://www.cloudflare.com/privacypolicy/">policy</a>)</td><td>Hosts our push relays</td><td>Everything the relay receives, as described in section 4</td></tr>
           <tr><td>Your UnifiedPush distributor, such as ntfy (<a href="https://unifiedpush.org/">UnifiedPush</a>)</td><td>F-Droid builds, or if you choose UnifiedPush</td><td>Notifications from your server, encrypted end to end; our relay is not used</td></tr>
-          <tr><td>GitHub (<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">policy</a>)</td><td>KyPost Server update checks; the KyDNS blocklist download</td><td>The server’s IP address</td></tr>
+          <tr><td>GitHub (<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">policy</a>)</td><td>Hosts this website through GitHub Pages; source, update and configured blocklist downloads; issue reports</td><td>Request metadata, including IP address; anything you submit to an issue or discussion</td></tr>
           <tr><td>keys.openpgp.org (<a href="https://keys.openpgp.org/about/privacy">policy</a>)</td><td>KyPost Server looking up a recipient’s public key</td><td>The recipient’s email address and the server’s IP address</td></tr>
           <tr><td>UBports push (<a href="https://ubports.com/">UBports</a>)</td><td>KyAuth on Linux phones</td><td>Encrypted sign-in requests from your KyIdentity server</td></tr>
+          <tr><td>Configured mail, identity and provisioning providers</td><td>Sending mail, signing in or synchronising assigned accounts</td><td>Message content and recipients, or the identity and access fields required by the connection</td></tr>
+          <tr><td>Configured document, storage, monitoring, DNS and infrastructure providers</td><td>Editing, sharing, backup, alerts, name resolution or deployment</td><td>Documents, encrypted backups, alert details, queries or deployment data as described in section 7; the caller’s network address</td></tr>
+          <tr><td>Your selected coding agent or AI model provider</td><td>KyQuickStart AI, connected calendar or chat agents, or an externally configured mail classifier</td><td>Prompts and content the integration sends, which can include commands, outputs, event details or messages</td></tr>
         </tbody></table>
         <p>The F-Droid builds contain no Google code. Some of these providers process data outside your country under their own safeguards.</p>
         <!-- UNVERIFIED: KyAuth for Android's Firebase config names project "device-streaming-e3aa5b87", which looks like a reused Android Studio project rather than a dedicated KyAuth project. Confirm before KyAuth ships on Play. -->
@@ -190,7 +218,7 @@
           <li>We do not sell or rent personal information, or share it for cross-context behavioural advertising.</li>
           <li>Our apps contain no advertising, and no analytics or crash-reporting SDK. The Google services in section 10 collect their own diagnostics; we do not receive them.</li>
           <li>We do not track you across other companies’ apps or websites.</li>
-          <li>We do not use your data to train AI models. KyPost’s mail classifier runs on the model your operator configures, not on a service of ours.</li>
+          <li>We do not use your data to train AI models. If you or your operator connects an external model or coding agent, that provider’s terms govern its handling of the content it receives; review them before enabling it.</li>
         </ul>
 
         <h2 id="delete">12. Deleting data and unpairing</h2>
@@ -201,8 +229,10 @@
           <li><strong>Data we hold.</strong> We hold no account for you. Once a device is unpaired, the hashed token at the relay refers to a token that no longer works. Operators can ask us to delete a server’s relay key and its token records, and anyone can ask us to delete correspondence, by writing to <a href="mailto:privacy@busnes.app">privacy@busnes.app</a>. We aim to respond within 30 days.</li>
         </ul>
 
+        <p><strong>Copies and backups.</strong> Revoking access, unpairing or deleting a live item does not necessarily erase downloaded files, exports, other participants’ copies, log records or backups. Each product’s retention and purge controls apply separately. Ask the operator about backup expiry and any copies held by connected services. KyDrive Desktop may preserve unsent changes locally, and Matrix account deletion can leave room history and media.</p>
+
         <h2 id="security">13. Security</h2>
-        <p>Our apps connect only over HTTPS, encrypt stored data on the device, and keep keys in the operating system’s secure storage. The relays never write notification text to storage, hold no admin interface, and keep their credentials as encrypted secrets. No system is perfectly secure. Report vulnerabilities to <a href="mailto:privacy@busnes.app">privacy@busnes.app</a> or through the project’s GitHub security page.</p>
+        <p>Encryption depends on the product and configuration. Use HTTPS for remotely accessible web apps and client connections; local development and some DNS or infrastructure protocols have different transports. KyNotes content and encrypted Matrix messages use client-side encryption; KyDrive decrypts files on its server; KyCalendar stores readable event content; KyRecovery holds sealed capsules. Device key storage does not encrypt every local download or export. The relays never write notification text to storage, hold no admin interface, and keep their credentials as encrypted secrets. No system is perfectly secure. Report vulnerabilities to <a href="mailto:privacy@busnes.app">privacy@busnes.app</a> or through the project’s GitHub security page.</p>
 
         <h2 id="rights">14. Your rights</h2>
         <p>Depending on where you live, you may have rights to access, correct, delete, restrict or receive a copy of personal information; to object to certain processing; to withdraw consent; and to complain to a privacy regulator. We rely on providing the service you asked for, and on our legitimate interest in keeping it secure, to process the limited data described in section 4.</p>
@@ -212,8 +242,7 @@
         <p>Our apps and services are not directed to children under 13, and we do not knowingly collect personal information from children. If you believe a child’s information reached a service we operate, contact us and we will delete it.</p>
 
         <h2 id="website">16. This website and correspondence</h2>
-        <p>busnes.app is a static site with no advertising, analytics, cookies, accounts or embedded third-party content. Its host receives ordinary request logs (IP address, requested page, referrer, browser and time) to deliver and protect the site. The theme switch stores your light or dark choice in your browser only.</p>
-        <!-- UNVERIFIED: site host and its log retention. -->
+        <p>busnes.app is a static site with no advertising, analytics, cookies, accounts or embedded third-party content. GitHub Pages hosts the site. GitHub receives request metadata, such as your IP address, requested page, referrer, browser and time, to deliver and protect it, under <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s privacy statement</a>. GitHub controls its infrastructure log retention; we do not promise a separate deletion period for those logs. The theme switch stores your light or dark choice in your browser only.</p>
         <p>If you email us or contact us through GitHub, we use your name, address and message to reply, provide support, and handle security reports. Email providers and GitHub process this under their own terms. Please do not send passwords, keys or other credentials by email.</p>
 
         <h2 id="changes">17. Changes to this policy</h2>
