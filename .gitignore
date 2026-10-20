@@ -1,2 +1,3 @@
 .impeccable/
 core.*
+__pycache__/

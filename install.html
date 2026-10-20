@@ -50,20 +50,20 @@
     <section class="page-hero shell">
       <p class="eyebrow">Install</p>
       <h1>Three ways in.<br><span class="h1-soft">Pick how hands-on you want to be.</span></h1>
-      <p class="page-lede">Every path ends with the same thing: Ky apps on your own hardware, signing in through KyIdentity, with backups sealed to KyRecovery.</p>
+      <p class="page-lede">Every path ends with Ky apps on your own hardware. Add KyIdentity for shared sign-in and KyRecovery for sealed backups when you want them.</p>
     </section>
 
     <section class="shell install-paths" aria-label="Installation paths">
       <article class="install-path">
         <p class="eyebrow"><span class="status-dot"></span> 01 · Least effort</p>
         <h2>Let your AI agent do it</h2>
-        <p>KyQuickStart AI connects your servers over SSH and starts Claude Code, Codex, Gemini CLI or opencode with a tested install prompt. It interviews you once, shows a plan, then works on its own and comes back only for steps a person must do.</p>
+        <p>KyQuickStart AI connects your servers over SSH, or uses this computer, and starts Claude Code, Codex, Gemini CLI or opencode with an install prompt. It interviews you once, shows a plan, then works on its own and comes back only for steps a person must do.</p>
 <pre class="code-block"><code>git clone https://github.com/Busnes-app/KyQuickStart-AI.git
 cd KyQuickStart-AI
 ./kyqs-ai</code></pre>
         <ul class="col-list">
-          <li>Linux or macOS with bash, ssh and git</li>
-          <li>Target servers with Docker Engine and Compose</li>
+          <li>Linux or macOS with bash, ssh, git and one supported agent CLI</li>
+          <li>Linux targets with Docker Engine and the Compose plugin, plus a sudo login once per server</li>
           <li>A domain you control (LAN-only is fine)</li>
         </ul>
         <p class="install-note">At the end you get a printable sheet of URLs and logins, and a report of every place a README was wrong. Status: first test.</p>
@@ -78,7 +78,7 @@ cd KyQuickStart-AI
 cd KyQuickStart &amp;&amp; make build
 ./kyquickstart plan --demo --state ./demo</code></pre>
         <ul class="col-list">
-          <li>Go, to build from source until a release ships</li>
+          <li>Go 1.26.6 or later, to build from source until a release ships</li>
           <li>Docker hosts or a Kubernetes cluster you prepared</li>
           <li>DNS and HTTPS set up as the guided setup describes</li>
         </ul>

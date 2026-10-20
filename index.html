@@ -113,12 +113,12 @@
           <li>
             <span class="feature-number">01</span>
             <h3>One sign-in, done properly</h3>
-            <p>KyIdentity is your own OpenID Connect provider with push approval and number matching, passkeys and authenticator codes. KyAuth is the phone app, for Android, iPhone and Linux phones.</p>
+            <p>KyIdentity is your own OpenID Connect provider with push approval and number matching, passkeys and authenticator codes. KyAuth is the phone app for Android, with iPhone and Linux phone versions in development.</p>
           </li>
           <li>
             <span class="feature-number">02</span>
             <h3>Backups the server can't read</h3>
-            <p>Each app seals its own backup before it leaves. KyRecovery only ever holds ciphertext, and a test fails the build if the server gains a way to decrypt one.</p>
+            <p>Each app seals its own backup before it leaves. KyRecovery stores the sealed backup and a short unencrypted label, and a test fails the build if the server's code reaches for anything that could decrypt one.</p>
           </li>
           <li>
             <span class="feature-number">03</span>
@@ -128,7 +128,7 @@
           <li>
             <span class="feature-number">04</span>
             <h3>Your agent installs it</h3>
-            <p>KyQuickStart AI hands Claude Code, Codex, Gemini CLI or opencode a tested install prompt and your servers over SSH, then prints a sheet of URLs and logins.</p>
+            <p>KyQuickStart AI hands Claude Code, Codex, Gemini CLI or opencode an install prompt and your servers over SSH, then prints a sheet of URLs and logins.</p>
           </li>
           <li>
             <span class="feature-number">05</span>
@@ -167,7 +167,6 @@
         <div class="hub-col">
           <p class="hub-label">Apps you already run</p>
           <ul class="hub-apps hub-other">
-            <li>Portainer</li>
             <li>Anything that speaks OpenID Connect</li>
           </ul>
         </div>
