@@ -29,7 +29,7 @@
 .policy-layout th { background:var(--surface-subtle, #f2efe7); color:var(--ink); font-weight:600; }
 @media (max-width:760px) {
   .policy-hero { padding:56px 0 44px; }
-  .section-heading,.policy-layout { grid-template-columns:1fr; gap:24px; }
+  .section-heading,.policy-layout { grid-template-columns:minmax(0, 1fr); gap:24px; }
   .section-heading .eyebrow { grid-column:auto; margin:0; }
   .ledger { margin-top:32px; }
   .ledger div { grid-template-columns:1fr; gap:5px; }
