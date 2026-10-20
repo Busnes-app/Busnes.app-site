@@ -8,12 +8,12 @@ The launch website presents the Ky Suite: small self-hosted apps that share one 
 
 - `index.html` owns the public narrative: the suite pitch, the launch-series trailer slot, the five reasons, the KyIdentity/KyRecovery diagram and the status board. Status labels are `In daily use` and `Tested`; keep them in line with the `status-pill` text on `apps.html` and the product pages.
 - `install.html` owns the three installation paths (KyQuickStart AI, KyQuickStart, one app at a time). Copy commands from those repositories' READMEs; do not invent flags.
-- Every page shares the primary navigation Apps · Install · Custom work · About with a GitHub button, and the same footer links.
+- Every page shares the primary navigation Apps · Install · Custom work · About with a GitHub button, and the same footer links (including Privacy policy and Security).
 - `apps.html` owns the app directory; `kypost.html`, `kyyard.html`, `kynotes.html`, `kycalendar.html`, `kydrive.html`, `kymessages.html`, `kyidentity.html`, `kyrecovery.html`, `kydns.html`, and `kypulse.html` explain each product, availability, setup requirements and documentation.
 - `how-it-works.html` and `about.html` explain the engagement and company; `pages.css` supplies their shared layouts and product-page styles.
 - `styles.css` owns the visual system and responsive layout, including the light and dark token sets.
 - `theme.js` is the site's only script: it applies the stored or OS colour scheme before first paint and wires the header theme switch. No inline scripts; every page's CSP allows same-origin scripts only.
-- `privacy.html` and `privacy.css` own the company privacy notice; `privacy.css` holds policy layout only and depends on `styles.css` for tokens, header, footer and nav.
+- `privacy.html` and `privacy.css` own the company privacy notice; `security.html` owns the per-app security summary (what each app protects, what the server can see, third parties, unproven parts, how to report) and reuses `privacy.css`. Source every security claim from the app's own SECURITY.md, docs or code on its default branch, and never claim an audit until one exists. `privacy.css` holds policy layout only and depends on `styles.css` for tokens, header, footer and nav.
 - `share/` holds the social share cards (`home.png` for `index.html`, `custom-work.png` for `how-it-works.html`, otherwise the page's own name) and `share/build.py`, which renders them with headless Chrome. Edit its `CARDS` table and rerun `python3 -I share/build.py` when a page title, tagline or status label changes.
 - `404.html` is the not-found page; point the host's 404 handler at it.
 - `prototype-light-systems.html` is a retained design prototype; it is not linked, not served as part of the site, and not kept in sync.

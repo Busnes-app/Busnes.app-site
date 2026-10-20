@@ -1,4 +1,4 @@
-/* Privacy policy layout. Tokens, header, footer and nav come from styles.css. */
+/* Policy page layout for privacy.html and security.html. Tokens, header, footer and nav come from styles.css. */
 .policy-hero { padding:72px 0 60px; border-bottom:1px solid var(--line); }
 .policy-hero h1 { margin:0; max-width:760px; font-size:clamp(44px,6vw,68px); line-height:1.06; letter-spacing:-.04em; font-weight:600; }
 .effective { margin:20px 0 0; color:var(--muted); font-size:14px; }
@@ -11,6 +11,7 @@
 .ledger div { display:grid; grid-template-columns:190px 1fr; gap:30px; padding:20px 0; border-bottom:1px solid var(--line); font-size:14px; }
 .ledger dt { font-weight:600; }
 .ledger dd { margin:0; max-width:680px; color:var(--muted); }
+.ledger dd a { color:var(--ink); text-decoration:underline; text-decoration-color:var(--orange); text-underline-offset:3px; }
 .policy-content { padding:72px 0 96px; }
 .policy-layout { display:grid; grid-template-columns:230px minmax(0, 720px); gap:80px; align-items:start; }
 .policy-toc { position:sticky; top:24px; display:flex; flex-direction:column; align-items:flex-start; gap:9px; font-size:13px; }

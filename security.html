@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="What each Ky app protects, what your server can still see, and what has not been independently audited or proven yet.">
+  <meta name="theme-color" content="#f8f6f0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'">
+  <title>Security — Busnes.app</title>
+  <link rel="icon" type="image/png" href="icons/busnes.png">
+    <link rel="canonical" href="https://busnes.app/security.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://busnes.app/security.html">
+  <meta property="og:title" content="Security — Busnes.app">
+  <meta property="og:description" content="What each Ky app protects, what your server can still see, and what has not been independently audited or proven yet.">
+  <meta property="og:image" content="https://busnes.app/share/security.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Security, plainly: What each Ky app protects, what your server can see, and what is not yet audited.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="privacy.css">
+</head>
+<body class="interior">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="index.html" aria-label="Busnes.app home">
+        <img src="icons/busnes.png" alt="Busnes.app Systems mark" width="36" height="36">
+        <span>busnes<span class="brand-dot">.</span>app</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="apps.html"><span class="nav-index">01</span>Apps</a>
+        <a href="install.html"><span class="nav-index">02</span>Install</a>
+        <a href="how-it-works.html"><span class="nav-index">03</span>Custom work</a>
+        <a href="about.html"><span class="nav-index">04</span>About</a>
+        <a class="nav-cta" href="https://github.com/Busnes-app">GitHub <span aria-hidden="true">↗</span></a>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="policy-hero"><div class="shell"><p class="eyebrow">Busnes.app / Security</p><h1>Security, plainly</h1><p class="effective">What each Ky app protects, what your server can still see, and what has not been proven yet. Last updated October 20, 2026.</p></div></section>
+
+    <section class="summary"><div class="shell">
+      <div class="section-heading"><p class="eyebrow">The short version</p><h2>Built carefully. Not yet audited.</h2><p>This page summarises each app's own security documentation. Where they differ, the repository is the source of truth, and the difference is a bug worth reporting.</p></div>
+      <dl class="ledger">
+        <div><dt>No independent audit</dt><dd>No Ky app has had an independent security audit yet. Every app has automated tests, and most run Go vulnerability scanning, CodeQL or OpenSSF Scorecard in CI, but that is not the same as an outside review.</dd></div>
+        <div><dt>You run the server</dt><dd>Whoever controls the host, its data volume or the Docker socket controls the app. Most apps keep their encryption key on the same volume as their database, so a copy of that volume can be decrypted. The servers speak plain HTTP; HTTPS comes from the reverse proxy you put in front.</dd></div>
+        <div><dt>The server ships the web app</dt><dd>Web clients, including the end-to-end encrypted ones, run JavaScript your server sends. A compromised server could send code that leaks what you type. End-to-end encryption protects stored data and backups, not a server that has been taken over.</dd></div>
+        <div><dt>Backups the apps can't read</dt><dd>Each app seals its backup to a recovery key that only k of n custodians can open together. KyRecovery stores the sealed files plus a small unencrypted label (app, version, size, hash). KyRecovery, KyIdentity, KyNotes and KyDNS each carry a test that fails if server code outside the offline restore command gains a way to decrypt.</dd></div>
+        <div><dt>What we run</dt><dd>Push relays for the published phone apps (Cloudflare Workers that pass a notification to Google or Apple) and this website. The <a href="privacy.html#relays">privacy policy</a> lists what the relays receive and keep.</dd></div>
+        <div><dt>Found a problem?</dt><dd>Use "Report a vulnerability" on the repository's Security tab, or email <a href="mailto:hello@busnes.app?subject=Security">hello@busnes.app</a> with "Security" in the subject. <a href="#report">How reports are handled</a>.</dd></div>
+      </dl>
+    </div></section>
+
+    <section class="policy-content"><div class="shell policy-layout">
+      <nav class="policy-toc" aria-label="Security page contents"><strong>Contents</strong><a href="#glance">At a glance</a><a href="#kyidentity">KyIdentity and KyAuth</a><a href="#kypost">KyPost</a><a href="#kyrecovery">KyRecovery</a><a href="#kynotes">KyNotes</a><a href="#kydns">KyDNS</a><a href="#kycalendar">KyCalendar</a><a href="#kydrive">KyDrive</a><a href="#kymessages">KyMessages</a><a href="#kyyard">KyYard</a><a href="#kypulse">kyPulse</a><a href="#installers">KyQuickStart and KyQuickStart AI</a><a href="#report">Reporting a vulnerability</a></nav>
+      <article>
+        <h2 id="glance">At a glance</h2>
+        <table><thead><tr><th scope="col">App</th><th scope="col">End-to-end encrypted</th><th scope="col">Your server can read</th></tr></thead><tbody>
+          <tr><td>KyIdentity</td><td>Not applicable</td><td>Accounts, groups and the audit log. Passwords and recovery codes are stored hashed.</td></tr>
+          <tr><td>KyPost</td><td>PGP mail, with keys held on your devices</td><td>All ordinary mail, plus metadata of PGP mail, and its subject unless the sender hid it</td></tr>
+          <tr><td>KyRecovery</td><td>Yes, sealed by each app</td><td>Backup labels and sizes, not contents</td></tr>
+          <tr><td>KyNotes</td><td>Yes</td><td>Who shares what, sizes and times, not note contents</td></tr>
+          <tr><td>KyDNS</td><td>No</td><td>DNS records, leases, and query history if you turn it on</td></tr>
+          <tr><td>KyCalendar</td><td>No</td><td>Every event</td></tr>
+          <tr><td>KyDrive</td><td>No. Files are encrypted at rest with a server-held key</td><td>Every file</td></tr>
+          <tr><td>KyMessages</td><td>Yes, for messages in encrypted rooms in Element</td><td>Room names, members, times and devices; message text only in unencrypted rooms</td></tr>
+          <tr><td>KyYard, kyPulse</td><td>No</td><td>Container settings, logs and health data</td></tr>
+        </tbody></table>
+
+        <h2 id="kyidentity">KyIdentity and KyAuth</h2>
+        <p><strong>Protects.</strong> Passwords are hashed with Argon2id, and ten failed attempts lock an account for 15 minutes. Second factors are passkeys, authenticator codes, recovery codes and push approval with two-digit number matching, limited to five pushes per user per hour. Sessions are server-side, and only a hash of each session token is stored. TOTP secrets, connector credentials and mail settings are encrypted at rest with AES-256-GCM. Calls to connected apps and to phones' push services go through one guarded client: HTTPS only, no redirects, private addresses refused by default. The push relay and Google's attestation list are fixed HTTPS addresses.</p>
+        <p><strong>KyAuth</strong>, the phone app, keeps authenticator secrets in an encrypted vault unlocked by biometrics or screen lock, and signs approvals with a key held in secure hardware (the Android Keystore or the iPhone Secure Enclave). On Linux phones the vault is encrypted with your passcode, and there is no hardware keystore. Secrets never leave the phone, and the app has no backup or sync, so a lost phone means re-enrolling.</p>
+        <p><strong>Your server can see</strong> usernames, email addresses, groups, app assignments and the audit log with client IP addresses, all unencrypted. Anyone with the data volume has the encryption key too.</p>
+        <p><strong>Talks to.</strong> If your operator sets up our push relay, sign-in requests to Android (Firebase) and iPhone go through it to Google or Apple. iPhone pushes are encrypted to keys on the phone, for pairings made with a current version of KyAuth; iPhones paired before October 13, 2026 should pair again. Android pushes through Firebase are not encrypted: the relay and Google see the request's opaque IDs, but not your username. UnifiedPush and Ubuntu Touch pushes are encrypted and skip our relay entirely. By default the server also fetches Google's Android attestation status list.</p>
+        <p><strong>Doesn't protect against</strong> a compromised host, or a misconfigured trusted-proxy setting, which lets callers fake their IP address and slip past rate limits. Apps that don't support back-channel logout keep their own sessions after you sign out of KyIdentity.</p>
+        <p><strong>Still unproven.</strong> Device attestation and encrypted iPhone pushes have not yet been confirmed on real hardware, and KyAuth for iPhone has no published release. Before a recent fix, push approval could be bypassed; that is now covered by regression tests.</p>
+
+        <h2 id="kypost">KyPost</h2>
+        <p><strong>Protects.</strong> Your PGP private key is created or imported and wrapped in your browser, and the server receives only the wrapped copy. The browser splits your password so the server never sees the half that unlocks your key. Each device you set up for encrypted mail gets its own sealed copy of the key: in the Android Keystore, or the Secure Enclave on iPhone and Mac. KyPost for Linux imports the key into your GnuPG keyring. IMAP passwords and TOTP secrets are encrypted at rest. Sign-in supports authenticator codes, push approval, OpenID Connect and a local proof-of-work CAPTCHA.</p>
+        <p><strong>Your server can see</strong> all ordinary mail, since it reads it to label it, plus the routing details and labels of PGP mail. Contacts, rules and history are not encrypted. Anyone with the private key folder can decrypt the stored IMAP passwords and TOTP secrets.</p>
+        <p><strong>Talks to</strong> your mail provider, which can see a PGP message's subject unless the sender hid it, as KyPost does. The AI labelling model runs inside the container, and a test proves PGP mail is never sent to it. If you point it at another host, that host sees your ordinary mail. Android and iPhone notifications pass through our relay and Google or Apple, unencrypted. By default they carry no sender or subject, and PGP mail never shows a preview. UnifiedPush, App Pull and KyPost for Linux skip our relay.</p>
+        <p><strong>Doesn't protect against</strong> a compromised server serving malicious browser code, or prompt injection steering the labels. Labels are a convenience, not a security boundary.</p>
+        <p><strong>Still unproven.</strong> Receiving mail directly into KyPost is opt-in and still being qualified. The iPhone and Mac apps have no published release, and Android releases on GitHub are still drafts.</p>
+
+        <h2 id="kyrecovery">KyRecovery</h2>
+        <p><strong>Protects.</strong> Each app seals its own backup with hybrid post-quantum encryption (X-Wing: ML-KEM-768 with X25519, then AES-256-GCM) before upload. The recovery key is generated in the operator's browser and split into k-of-n custodian cards, and only the public key reaches the server. A test in CI, <code>TestNothingInTheServerDecrypts</code>, fails if any server code imports what it would need to decrypt.</p>
+        <p><strong>Your server can see</strong> each backup's size, hash and unencrypted label (app, version, key ID), plus custodian names, app tokens and the audit log. It cannot see backup contents.</p>
+        <p><strong>Talks to</strong> the off-site targets you configure: S3 or R2 over HTTPS, SFTP with a pinned host key, SMB, or a local mount. Each receives only the sealed files.</p>
+        <p><strong>Doesn't protect against</strong> an SMB server that grants an unsigned guest session. An impostor share could accept uploads that never land, so prefer S3 or SFTP. Restoring an old but valid backup is possible; check its date against the deposit record.</p>
+        <p><strong>Still unproven.</strong> Key rotation does not exist yet. The server records deposits but never claims a restore was verified, so test a restore yourself.</p>
+
+        <h2 id="kynotes">KyNotes</h2>
+        <p><strong>Protects.</strong> Notes are encrypted in the browser with a key per notebook (AES-256-GCM). Notebook keys are shared with teammates by wrapping them to each person's X25519 key. The server receives only a verifier derived from your password, never the password itself, and keeps a recovery copy sealed under a 128-bit recovery code it never sees. Tests check that a known plaintext marker never appears in logs, HTTP responses, database columns, blob storage or backups.</p>
+        <p><strong>Your server can see</strong> who shares which notebook, object sizes, versions and times, and reminder times if reminder push is on. It cannot see note contents or keys.</p>
+        <p><strong>Doesn't protect against</strong> a compromised server serving malicious browser code. An admin who resets a local account's password can also act as that user until the user changes it. Removed members keep whatever they already downloaded. Identical attachments are visibly identical.</p>
+
+        <h2 id="kydns">KyDNS</h2>
+        <p><strong>Protects.</strong> The admin login uses Argon2id and hardened cookies. The admin UI answers only to allowed hostnames, which blocks DNS rebinding, and refuses cross-site writes. Only networks you allow can query it; allowing a public range has to be retyped and leaves a permanent warning. The container runs as a non-root user with every capability dropped. Replication between nodes uses TLS 1.3 with pinned certificates.</p>
+        <p><strong>Your server can see</strong> your records and DHCP leases. Query logging is off by default, and logging client addresses is a separate opt-in.</p>
+        <p><strong>Talks to</strong> upstream resolvers over DNS-over-TLS, by default Cloudflare (1.1.1.1) and Quad9. They see the names you look up, not which device asked. Blocklists are fetched over HTTPS only.</p>
+        <p><strong>Doesn't protect against</strong> forged answers from upstream: KyDNS is not a validating DNSSEC resolver. Blocking is domain filtering, not malware protection. Write access to its database file equals admin access.</p>
+
+        <h2 id="kycalendar">KyCalendar</h2>
+        <p><strong>Protects.</strong> Sign-in is local accounts with authenticator codes, or one OpenID Connect provider such as KyIdentity. Sessions and app passwords are stored only as hashes. TOTP secrets, feed links and connector secrets are encrypted at rest. In production it refuses to start without an https address unless you explicitly allow plain HTTP.</p>
+        <p><strong>Your server can see</strong> every event. Calendar data is stored as plaintext. Inside the app, administrators get no access to anyone's calendars.</p>
+        <p><strong>AI agents</strong> connect over MCP with tokens you create and can revoke at any time. Each token has one scope: read, edit only events it created, or edit any. Tokens reach personal calendars only, can't delete anything, can't add or change who is invited, never work over CalDAV, and are revoked after 90 days unused. The agent and its model provider see the events it reads, and event text can carry prompt injection the server cannot stop.</p>
+        <p><strong>Still unproven.</strong> Server-side scheduling is unfinished and behind a flag. With PostgreSQL, KyCalendar makes no sealed backups; your own database dump holds every event in plain text.</p>
+
+        <h2 id="kydrive">KyDrive</h2>
+        <p><strong>Protects.</strong> Sign-in is through KyIdentity. Every file version is encrypted at rest with AES-256-GCM under its own derived key, and file names, thumbnails and extracted text are encrypted too. App passwords, agent tokens and share links are stored as hashes. The desktop app keeps its token in the operating system's keyring.</p>
+        <p><strong>Your server can see every file.</strong> This is not end-to-end encryption: whoever holds the deployment key can read everything, and that key sits beside the data unless you move it into a secret.</p>
+        <p><strong>Talks to</strong> the self-hosted document editor, which processes files in plaintext; your Restic backup target, which receives encrypted data only; and any AI agent you connect, with a token that never exceeds your role, can't delete permanently, and expires after 90 days unused.</p>
+        <p><strong>Still unproven.</strong> AI agent access and document text extraction are in current source, not yet in the v0.4.2 release. The desktop app has no published release; the Windows build is unsigned and the macOS build is only ad-hoc signed.</p>
+
+        <h2 id="kymessages">KyMessages</h2>
+        <p><strong>Protects.</strong> KyMessages runs unmodified Synapse, Matrix Authentication Service, Element and LiveKit, pinned by image digest. Members sign in through KyIdentity only, with no password login, open registration or guest access. New rooms are encrypted end to end in Element, and a CI test checks that message text never reaches the database.</p>
+        <p><strong>Your server can see</strong> room names and topics, membership, display names, times, devices and IP addresses. Synapse does not enforce encryption, so a client that doesn't encrypt can post readable messages into an encrypted room.</p>
+        <p><strong>Talks to</strong> nobody by default: federation is closed. Servers you allow keep copies you can't recall, and a room on a public server reaches every server in it, allowed or not. Element's integrations, widgets and telemetry are switched off.</p>
+        <p><strong>Still unproven.</strong> Encryption for calls, and encryption across federated servers, have not been verified.</p>
+
+        <h2 id="kyyard">KyYard</h2>
+        <p><strong>Protects.</strong> Sign-in uses Argon2id, authenticator codes and optional KyIdentity. Registry credentials are encrypted and write-only through the API. Remote agents join with a single-use token, then need a person to approve their fingerprint.</p>
+        <p><strong>Your server can do a lot.</strong> Mounting the Docker socket gives KyYard root on that host, and it is not a sandbox. On Kubernetes it reads workload specs, events and logs cluster-wide, never Secrets, and writes only in the namespaces you list. Organisation admins can read containers' environment variables. AI agents over MCP are read-only by default. An admin can let one restart containers and apply update plans, but no agent can stop, delete, run commands or read secrets, and container logs can steer an agent.</p>
+        <p><strong>Still unproven.</strong> The threat model is still a draft for review.</p>
+
+        <h2 id="kypulse">kyPulse</h2>
+        <p><strong>Protects.</strong> Sign-in uses Argon2id, authenticator codes and optional OpenID Connect. Webhooks, tokens and TOTP secrets are encrypted at rest, and the audit log is a keyed hash chain you can verify. Outbound checks refuse loopback, link-local and cloud metadata addresses. The container is read-only, non-root and published on loopback only by default.</p>
+        <p><strong>Your server can see</strong> the health data and, for admins only, the logs it collects. It is read-only towards the apps it watches. The optional log shipper reads the Docker socket, which is root-equivalent, so put a read-only socket proxy in front of it.</p>
+        <p><strong>Talks to</strong> your alert channels (ntfy, Gotify, Discord or a webhook). They receive the app name, its state and a link, never log lines, usernames or IP addresses.</p>
+
+        <h2 id="installers">KyQuickStart and KyQuickStart AI</h2>
+        <p><strong>KyQuickStart</strong> pins SSH host keys and generates each app's secrets on the target (owner-only files on Docker hosts, a locked-down pod on Kubernetes), and they never appear in command lines or its saved state. Its SSH user needs Docker access, which is effectively root on that host. It is pre-release, and its macOS build is unsigned.</p>
+        <p><strong>KyQuickStart AI</strong> gives your AI agent a dedicated <code>kyops</code> login on each server: key-only, no password, no sudo, but in the Docker group, which is root-equivalent. Host keys are pinned, and <code>revoke</code> removes access afterwards. On your own computer the agent runs as you, and the limits in its prompt are instructions, not a barrier. Everything the agent reads or prints goes to your AI vendor. Secrets are meant to stay on the servers, but a misbehaving agent could read them. The login sheet is written owner-only to your computer, and you should shred it once your passwords are stored. It is a first test: use it on servers you can rebuild.</p>
+
+        <h2 id="report">Reporting a vulnerability</h2>
+        <p>Report privately with <strong>Report a vulnerability</strong> on the affected repository's Security tab on <a href="https://github.com/Busnes-app">GitHub</a>, or email <a href="mailto:hello@busnes.app?subject=Security">hello@busnes.app</a> with "Security" in the subject. Please don't open a public issue.</p>
+        <p>You'll get an acknowledgement within 2 business days. The target is public disclosure within 30 days for critical issues, 60 for high and 90 for moderate. A fix ships before the advisory, and reporters are credited unless they'd rather not be. Ky is maintained by one person, so a clear reproduction helps most.</p>
+        <p>Each repository's own <code>SECURITY.md</code>, where it has one, holds the full threat model and takes precedence over this summary.</p>
+      </article>
+    </div></section>
+  </main>
+
+
+    <footer class="site-footer">
+    <div class="shell footer-bottom">
+      <a class="brand footer-brand" href="index.html" aria-label="Busnes.app home">
+        <img src="icons/busnes.png" alt="" width="28" height="28">
+        <span>busnes<span class="brand-dot">.</span>app</span>
+      </a>
+      <p class="footer-tagline">Ky Suite. Open source, self-hosted.</p>
+      <nav aria-label="Footer navigation">
+        <a href="apps.html">Apps</a>
+        <a href="install.html">Install</a>
+        <a href="how-it-works.html">Custom work</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="security.html">Security</a>
+        <a href="https://github.com/Busnes-app">GitHub</a>
+      </nav>
+      <small class="footer-copy">© 2026 Busnes.app</small>
+    </div>
+  </footer>
+</body>
+</html>

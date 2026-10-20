@@ -24,6 +24,7 @@ CARDS = {
     "install": ("Install Ky", "With your AI agent, with the installer, or one app at a time.", "busnes-icon.png", None),
     "custom-work": ("Custom work", "The person who built Ky can build your last mile.", "busnes-icon.png", None),
     "about": ("About Busnes.app", "One person building the Ky Suite in the open.", "busnes-icon.png", None),
+    "security": ("Security, plainly", "What each Ky app protects, what your server can see, and what is not yet audited.", "busnes-icon.png", None),
     "privacy": ("Privacy policy", "One policy for every Ky app and how each one handles your data.", "busnes-icon.png", None),
     "kyidentity": ("KyIdentity", "Sign-in, MFA and user directory", "kyidentity-icon.png", "In daily use"),
     "kypost": ("KyPost", "Webmail with PGP and local AI labels", "kypost-icon.png", "In daily use"),
