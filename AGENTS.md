@@ -14,6 +14,7 @@ The launch website presents the Ky Suite: small self-hosted apps that share one 
 - `styles.css` owns the visual system and responsive layout, including the light and dark token sets.
 - `theme.js` is the site's only script: it applies the stored or OS colour scheme before first paint and wires the header theme switch. No inline scripts; every page's CSP allows same-origin scripts only.
 - `privacy.html` and `privacy.css` own the company privacy notice; `privacy.css` holds policy layout only and depends on `styles.css` for tokens, header, footer and nav.
+- `share/` holds the social share cards (`home.png` for `index.html`, `custom-work.png` for `how-it-works.html`, otherwise the page's own name) and `share/build.py`, which renders them with headless Chrome. Edit its `CARDS` table and rerun `python3 -I share/build.py` when a page title, tagline or status label changes.
 - `404.html` is the not-found page; point the host's 404 handler at it.
 - `prototype-light-systems.html` is a retained design prototype; it is not linked, not served as part of the site, and not kept in sync.
 - `busnes-icon.png` is the Systems stamp brand mark master (1254px) and the GitHub avatar; `kypost-icon.png`, `kyyard-icon.png`, `kynotes-icon.png`, `kyidentity-icon.png`, `kyrecovery-icon.png`, `kydns-icon.png`, `kyauth-icon.png`, `kypulse-icon.png`, `kycalendar-icon.png`, `kydrive-icon.png` and `kymessages-icon.png` are the product icon masters in the same family. Consult `project-icon-prompts.md` when regenerating or extending the family.
@@ -33,7 +34,7 @@ The launch website presents the Ky Suite: small self-hosted apps that share one 
 - One accent: orange. Small orange or grey label text uses the `--orange-text` and `--light` tokens, which meet AA at 11px; `--orange` is for glyphs, dots and rules.
 - Dark mode follows `prefers-color-scheme` and the header switch stores an override in localStorage as `html[data-theme]`. Never hardcode a colour outside the two `:root` token blocks; the dark values appear twice (media query and `data-theme`) and must stay identical. Icons are the light masters inverted with `--icon-filter`.
 - Interior pages take `body class="interior"` and load `pages.css` after `styles.css`. All pages share the single header rule set in `styles.css`, including the mobile layout under 680px.
-- Every page carries canonical, Open Graph and Twitter card metadata pointing at `https://busnes.app/`; product pages use their own icon as the share image.
+- Every page carries canonical, Open Graph and Twitter card metadata pointing at `https://busnes.app/`; the share image is that page's 1200x630 card in `share/` with `summary_large_image`.
 
 ## Work Guidance
 
