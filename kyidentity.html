@@ -55,10 +55,10 @@
       <p class="eyebrow">At a glance</p>
       <h2>Is it for you?</h2>
       <p>For an organization that wants to manage its own user directory and sign-in across connected applications, with control over who can access each one.</p>
-      <dl><dt>How you use it</dt><dd>Run the server with Docker Compose and a persistent data volume. Configure a stable public HTTPS address and register the applications you want to connect.</dd><dt>Availability</dt><dd>Server source and setup documentation are available. KyIdentity is designed for a single organization; consult the repository for current integration requirements.</dd></dl>
+      <dl><dt>How you use it</dt><dd>Run the server with Docker Compose, persistent storage and a stable HTTPS address. Local accounts work without other Ky products. Configure an SMTP sender for account email, then register the applications you want to connect.</dd><dt>Availability</dt><dd>Server source and setup documentation are available. KyIdentity is designed for a single organization; consult the repository for current integration requirements.</dd></dl>
     </aside>
   </section>
-<section class="page-section shell"><p class="eyebrow">Screenshots</p><h2>See it in use.</h2><div class="screens"><figure><a href="screenshots/kyidentity-1.webp"><img src="screenshots/kyidentity-1.webp" alt="KyIdentity application launcher showing a signed-in administrator and the team’s connected apps." width="1440" height="900" loading="lazy"></a><figcaption>One launcher for every connected app.</figcaption></figure><figure><a href="screenshots/kyidentity-2.webp"><img src="screenshots/kyidentity-2.webp" alt="KyIdentity Groups admin page listing five staff groups with descriptions, member counts and MFA policy controls." width="1440" height="900" loading="lazy"></a><figcaption>Groups, members and MFA policy in one place.</figcaption></figure></div></section>
+<section class="page-section shell"><p class="eyebrow">Screenshots</p><h2>See it in use.</h2><p>Example screens from local builds with fictional data. Appearance varies by version.</p><div class="screens"><figure><picture><source media="(max-width:680px)" srcset="screenshots/kyidentity-mobile.webp" width="780" height="1688"><img src="screenshots/kyidentity-desktop.webp" alt="Alex Morgan’s application launcher with eight example Ky connections." width="1280" height="800" loading="lazy"></picture><figcaption>Alex Morgan’s application launcher with eight example Ky connections. <a href="screenshots/kyidentity-desktop.webp">Open desktop screenshot</a> <a href="screenshots/kyidentity-mobile.webp">Open phone screenshot</a></figcaption></figure></div></section>
   <section class="page-section cream"><div class="shell">
     <p class="eyebrow">Inside KyIdentity</p><h2>Give access a clear home.</h2>
     <div class="feature-grid">
@@ -72,8 +72,8 @@
     <figure class="architecture"><ol><li>Open a connected application</li><li>Sign in with KyIdentity and complete the required checks</li><li>Return to the app with your identity and assigned roles</li></ol><figcaption>Conceptual overview · OpenID Connect sign-in with KyIdentity</figcaption></figure>
     <div class="practical-note" id="kyauth">
       <h3>KyAuth: your phone as the second factor</h3>
-      <p>KyAuth is the companion authenticator. It approves push sign-ins, generates authenticator codes, and can sign you in to connected apps from a paired phone without typing a password. Push arrives through the FCM/APNs relay, or directly over UnifiedPush with no Google services.</p>
-      <p>KyAuth for Android is in beta, built from <a href="https://github.com/Busnes-app/kyauth-android">its repository</a>; no app-store listing yet. iPhone and Linux phone (postmarketOS, Ubuntu Touch) versions are in early development. Hardware attestation, which lets a verified phone count as MFA on its own, has not yet been tested on physical devices.</p>
+      <p>KyAuth generates local authenticator codes without a KyIdentity server. Pair it with KyIdentity for push MFA. Android and iOS also support sign-on to compatible apps; Linux sign-on is not implemented. Android supports Firebase or UnifiedPush, iOS uses Apple Push, and Linux delivery depends on the phone platform.</p>
+      <p>Android has signed release APKs. iOS and Linux have source-build instructions; store availability and physical-device qualification differ by platform. Follow the <a href="https://github.com/Busnes-app/KyAuth-android#readme">Android</a>, <a href="https://github.com/Busnes-app/KyAuth-iOS#readme">iOS</a> or <a href="https://github.com/Busnes-app/KyAuth-Linux#readme">Linux</a> guide. Keep each site’s recovery codes separately: KyAuth has no TOTP backup, export or sync.</p>
     </div>
   </section>
   <section class="page-section cream"><div class="shell">
@@ -84,7 +84,7 @@
       <article><h3>An audit trail</h3><p>Search recorded events by actor, action, time and outcome, and export filtered records. An alerts page surfaces privilege changes, recovery use and connector problems.</p></article>
       <article><h3>Share the admin work</h3><p>Delegate with Helpdesk, Auditor and App owner roles instead of handing out full administrator access.</p></article>
       <article><h3>Access that ends on time</h3><p>Grant access with an expiry date, set account end dates, and let people request access through an approval flow.</p></article>
-      <article><h3>Clean offboarding</h3><p>Disabling an account ends every session, revokes its tokens, and marks it inactive in every connected app, in one step.</p></article>
+      <article><h3>Clean offboarding</h3><p>Deactivation revokes KyIdentity sessions and drives configured downstream offboarding. Receiving apps must enforce the updates; offline tokens and application sessions have their own limits. Verify sign-out and access loss in each connected app.</p></article>
     </div>
   </div></section>
   <section class="page-section shell">

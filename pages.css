@@ -38,6 +38,7 @@
 .architecture figcaption { margin-top:20px; color:var(--muted); font-size:12px; }
 .screens { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; margin:0; }
 .screens figure { margin:0; }
+.screens figure:only-child { grid-column:1 / -1; }
 .screens img { display:block; width:100%; height:auto; border:1px solid var(--line-strong); border-radius:10px; background:var(--paper); }
 .screens a { display:block; border-radius:10px; cursor:zoom-in; }
 .screens a:hover img { border-color:var(--orange); }

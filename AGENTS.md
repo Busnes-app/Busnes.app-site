@@ -23,8 +23,8 @@ The launch website presents Busnes.app as a focused software studio, with Ky as 
 - Brand direction: 1970s bespoke-software consultancy; use the selected charcoal-and-cream Systems stamp B with square image proportions.
 - Use KyMessages (not the repository name KyMessage) as the public name of the chat product.
 - Use KyIdentity as the public name of the identity product (formerly KySignOn), including when source repositories use the older name.
-- Do not invent customer outcomes; label reference builds accurately.
-- Source product capabilities and requirements from their maintained repositories. Distinguish planned work from implemented features; link to product documentation for installation and current release details.
+- Do not invent customer outcomes; label reference builds accurately. Screenshots from local builds use fictional data and do not establish current release availability or functional acceptance.
+- Source product capabilities and requirements from their maintained repositories. Distinguish planned work from implemented features; link to product documentation for installation and current release details. Keep directory summaries, product pages and their social metadata aligned. Use existing README entry points for cross-repository links so independent documentation merges do not create unavailable installation URLs.
 - Keep KyPost-specific product details aligned with the maintained KyPost policy.
 - Preserve accessible headings, skip navigation, visible focus states, and responsive behavior.
 - Keep motion to short hover and focus transitions and honor reduced-motion preferences. If continuous animation is ever added, it needs a pause control.
