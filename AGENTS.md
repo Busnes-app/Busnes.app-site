@@ -6,7 +6,7 @@ The launch website presents the Ky Suite: small self-hosted apps that share one 
 
 ## Ownership
 
-- `index.html` owns the public narrative: the suite pitch, the launch-series trailer slot, the five reasons, the KyIdentity/KyRecovery diagram and the status board. Status labels are `In daily use` and `Tested`; every `status-pill` on `apps.html` and the product pages reads `Open source (MIT) · <label>` with the same label as the board.
+- `index.html` owns the public narrative: the suite pitch, the launch-series trailer card (a plain link to the YouTube video with a self-hosted thumbnail, `share/trailer-thumb.jpg`; never an embedded player), the five reasons, the KyIdentity/KyRecovery diagram and the status board. Status labels are `In daily use` and `Tested`; every `status-pill` on `apps.html` and the product pages reads `Open source (MIT) · <label>` with the same label as the board.
 - `install.html` owns the three installation paths (KyQuickStart AI, KyQuickStart, one app at a time). Copy commands from those repositories' READMEs; do not invent flags.
 - Every page shares the primary navigation Apps · Install · Custom work · About with a GitHub button, and the same footer links (including Privacy policy and Security).
 - `apps.html` owns the app directory; `kypost.html`, `kyyard.html`, `kynotes.html`, `kycalendar.html`, `kydrive.html`, `kymessages.html`, `kyidentity.html`, `kyrecovery.html`, `kydns.html`, and `kypulse.html` explain each product, availability, setup requirements and documentation.
