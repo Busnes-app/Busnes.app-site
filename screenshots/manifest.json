@@ -1,0 +1,202 @@
+[
+  {
+    "product": "KyCalendar",
+    "device": "desktop",
+    "file": "kycalendar-desktop.webp",
+    "width": 1280,
+    "height": 800,
+    "sha256": "8202f3d74bc65e5ad523b416fef41bb76124fd0bae08d3706397cfdb0d24086f",
+    "source_sha256": "f5dde67f894fd5dc06d7b38fbc54bcb503a2dff125fa728db14de6a8fbdea941",
+    "executable_sha256": "dccc58632e687c7dbb52b4f5009bcf8ce77f6d0aa58acd6e3a61d593bf1f2c67"
+  },
+  {
+    "product": "KyCalendar",
+    "device": "mobile",
+    "file": "kycalendar-mobile.webp",
+    "width": 780,
+    "height": 1688,
+    "sha256": "1d87240cb77143a801f0d9d28f85888cd8ae5fd3f6b6317d46660a36f8deec7f",
+    "source_sha256": "5b5ac822b6ca33a2e1c832656c49862376db15d3a2d769bb6a4bf83eb053ed12",
+    "executable_sha256": "dccc58632e687c7dbb52b4f5009bcf8ce77f6d0aa58acd6e3a61d593bf1f2c67"
+  },
+  {
+    "product": "KyDrive",
+    "device": "desktop",
+    "file": "kydrive-desktop.webp",
+    "width": 1280,
+    "height": 800,
+    "sha256": "6c0033cb115c83c7075adb499ab6e7d06c25afb8c065d74dae3aeafee2a768a0",
+    "source_sha256": "face61fd21617ce6e354166d3a74459f19abe94360dd3467b59ae0c08ff696a3",
+    "executable_sha256": "47e8e463411872875b7944e2c8f42dccd121ee073c6ccae550b42ce0cfbf37e5"
+  },
+  {
+    "product": "KyDrive",
+    "device": "mobile",
+    "file": "kydrive-mobile.webp",
+    "width": 780,
+    "height": 1688,
+    "sha256": "0a330e21b5ca6765ccece73b47813dd11631ccebdef459c3d1910cb1dca9eeb7",
+    "source_sha256": "7932a1445f90ed36dbac9aa2194b62fa0af464a2e3d9a9625b5f8ff348aef49f",
+    "executable_sha256": "47e8e463411872875b7944e2c8f42dccd121ee073c6ccae550b42ce0cfbf37e5"
+  },
+  {
+    "product": "KyIdentity",
+    "device": "desktop",
+    "file": "kyidentity-desktop.webp",
+    "width": 1280,
+    "height": 800,
+    "sha256": "323fafd76dc0b0e72f3394a774c644727ec922b59c9ad34ed71ef12ab0fea38b",
+    "source_sha256": "bc8de8606d70aab07e9e8827b1dac3be6f7a00aae64a178e386dac98f4739cb6",
+    "executable_sha256": "05f2d6eb56dfaabeacee18fd261c698b1f41552dfc7e30074041356051ca9982"
+  },
+  {
+    "product": "KyIdentity",
+    "device": "mobile",
+    "file": "kyidentity-mobile.webp",
+    "width": 780,
+    "height": 1688,
+    "sha256": "ab45f93fed77f8759cffeab221ba316089e8cca9d92e0237c3e1f3b5045c8126",
+    "source_sha256": "ae00e2f149730a526a3ba709d9185aa085ab630410d0ddf3fdcb6bf082fddf3e",
+    "executable_sha256": "05f2d6eb56dfaabeacee18fd261c698b1f41552dfc7e30074041356051ca9982"
+  },
+  {
+    "product": "KyMessage",
+    "device": "desktop",
+    "file": "kymessages-desktop.webp",
+    "width": 1280,
+    "height": 800,
+    "sha256": "3b0f67a470ca251c74ed245890a1ec8834cffb6bb43e3f11c584b79f93b7e2ca",
+    "source_sha256": "294c2e879118082b3ec60448a338a23f8b71542d230aa28aaea2d233b4e3d144",
+    "executable_sha256": "cab76d5d5198cfe1d953aab6736f387b2ce585dd157f89d8a8acb066ebe1893d"
+  },
+  {
+    "product": "KyMessage",
+    "device": "mobile",
+    "file": "kymessages-mobile.webp",
+    "width": 780,
+    "height": 1688,
+    "sha256": "74f1413a3d0a9a239dcad0915f6b2bf6c9bf15fdd3a02ebc310372713560fdbe",
+    "source_sha256": "76911da56767836676092295f4fc5135e3997cf5f9a8685517794bdc5eef96fe",
+    "executable_sha256": "cab76d5d5198cfe1d953aab6736f387b2ce585dd157f89d8a8acb066ebe1893d"
+  },
+  {
+    "product": "KyNotes",
+    "device": "desktop",
+    "file": "kynotes-desktop.webp",
+    "width": 1280,
+    "height": 800,
+    "sha256": "4c1fa0cb19fa49dfde5a338bc01dbcdeaab66525fded8ea30b95f7c46ba66888",
+    "source_sha256": "79a7f981cf0c90094d9ce1fc5182387668c3a8025711ae2028b9612d91b57326",
+    "executable_sha256": "26673fa01c7d837276059a5861c8892a3cd27ad22a73aceadb74c570fd769e02"
+  },
+  {
+    "product": "KyNotes",
+    "device": "mobile",
+    "file": "kynotes-mobile.webp",
+    "width": 780,
+    "height": 1688,
+    "sha256": "e6d062612f89d59404c871557e126e726b03e47ea50fe995fe96676386e39b25",
+    "source_sha256": "e103adba1a4a66545c880a8b91f7e834c11bb8858dcb71ecb0c4231281a18446",
+    "executable_sha256": "26673fa01c7d837276059a5861c8892a3cd27ad22a73aceadb74c570fd769e02"
+  },
+  {
+    "product": "KyPost",
+    "device": "desktop",
+    "file": "kypost-desktop.webp",
+    "width": 1280,
+    "height": 800,
+    "sha256": "aa714fd19a2e1e36bf00efc6145c044972fbad5d90dfdf582f6d8417e4fc3c23",
+    "source_sha256": "1313db700cbe209a703f4a8393fdafebd97f9cc4129717b930a611af5b1e54cb",
+    "executable_sha256": "47268c83aae635b9696cd9a532d899115f37c7e173f2ca467b7e427b801e66ed"
+  },
+  {
+    "product": "KyPost",
+    "device": "mobile",
+    "file": "kypost-mobile.webp",
+    "width": 780,
+    "height": 1688,
+    "sha256": "0f39dbf3345aa2a0a31b229b22c4b34170a2d326ddc603042d746b69f43506a0",
+    "source_sha256": "7805221992604fdba8e8a73452bf13a0881ef27ba5bff975c01d8046f9d0e887",
+    "executable_sha256": "47268c83aae635b9696cd9a532d899115f37c7e173f2ca467b7e427b801e66ed"
+  },
+  {
+    "product": "KyPulse",
+    "device": "desktop",
+    "file": "kypulse-desktop.webp",
+    "width": 1280,
+    "height": 800,
+    "sha256": "e11640880fee9754bc2e94bcdbd21f7f49ebfb63b39042de6c05a9decd5d26a3",
+    "source_sha256": "7dbe53b790870868b8739a455a93b5d36820619d052ac9b8a3337348e7e3e0b9",
+    "executable_sha256": "5f622b4d0d5cde97d9ebb6e85b3fea181ea9b82b3ec28a47cca4e733d072c03c"
+  },
+  {
+    "product": "KyPulse",
+    "device": "mobile",
+    "file": "kypulse-mobile.webp",
+    "width": 780,
+    "height": 1688,
+    "sha256": "ba8501107ebc12799628da56bb9810061ddd283eed16590e6738d70f6b44cc05",
+    "source_sha256": "4a597e2e44b305dcddc567395fdc92151efd56e9635138c3772939ba7170f217",
+    "executable_sha256": "5f622b4d0d5cde97d9ebb6e85b3fea181ea9b82b3ec28a47cca4e733d072c03c"
+  },
+  {
+    "product": "KyRecovery",
+    "device": "desktop",
+    "file": "kyrecovery-desktop.webp",
+    "width": 1280,
+    "height": 800,
+    "sha256": "c62074d0d1c7438553ba1d806ff5740347008621a5b9ae91e55db25f4b341a4e",
+    "source_sha256": "894b9e8c96268c081254397128e681b88be2920da8d02760852cf7d0faf26650",
+    "executable_sha256": "03d2360da3b21924b740c24cd81fc29379c6eb6d3964de825bf4c4af045ba90e"
+  },
+  {
+    "product": "KyRecovery",
+    "device": "mobile",
+    "file": "kyrecovery-mobile.webp",
+    "width": 780,
+    "height": 1688,
+    "sha256": "1a790247b6f16f1e9e00228ae6fd327f2d51f8090e9c6e0162852bee8cb0b048",
+    "source_sha256": "adfd727bd89042b8cfed9ef8ce3a86003b5c994719adcbce860c7202677aa228",
+    "executable_sha256": "03d2360da3b21924b740c24cd81fc29379c6eb6d3964de825bf4c4af045ba90e"
+  },
+  {
+    "product": "KyYard",
+    "device": "desktop",
+    "file": "kyyard-desktop.webp",
+    "width": 1280,
+    "height": 800,
+    "sha256": "b8ddedc954bafc136ee4308674461c34cdf81e6c324602933cf42ee48a933194",
+    "source_sha256": "31ae24da629f74626bbd53bbd76a229c97ff0ff3c2c66eba7a5720e8d24ebf45",
+    "executable_sha256": "cb67a29d73580f1cb3021e9b1357609d8d09656f800b64bddc54ac98a7f0ad98"
+  },
+  {
+    "product": "KyYard",
+    "device": "mobile",
+    "file": "kyyard-mobile.webp",
+    "width": 780,
+    "height": 1688,
+    "sha256": "fe00fa5ee702d9aaaf29d813dad64130c6d0eab272988ea0b962842bc661185a",
+    "source_sha256": "baf1b6b9d58f5fede7a53c2dccdbe41f38d31026ae52833ecad9559cf8bcf14f",
+    "executable_sha256": "cb67a29d73580f1cb3021e9b1357609d8d09656f800b64bddc54ac98a7f0ad98"
+  },
+  {
+    "product": "KyDNS",
+    "device": "desktop",
+    "file": "kydns-desktop.webp",
+    "width": 1280,
+    "height": 800,
+    "sha256": "480b7e31cd9d548d81bdb7002299af187c32882f4fa0d24c4456eb9cfaee3e90",
+    "source_sha256": "b3e8079dff8f913caae46f919b24d5e98da7ec58116cad7293ff15416d8a973e",
+    "source_revision": "7faa1480"
+  },
+  {
+    "product": "KyDNS",
+    "device": "mobile",
+    "file": "kydns-mobile.webp",
+    "width": 780,
+    "height": 1688,
+    "sha256": "0ac7327188e426d00249b3182ea6156aeb27824298ab67aa93af6a3090907127",
+    "source_sha256": "aacd45b01a64cc3bda78ed7751f975fc3fa889f25a6a83a3bcd836d465af2edd",
+    "source_revision": "7faa1480"
+  }
+]
