@@ -130,7 +130,7 @@
 
         <h2 id="kyyard">KyYard</h2>
         <p><strong>Protects.</strong> Sign-in uses Argon2id, authenticator codes and optional KyIdentity. Registry credentials are encrypted and write-only through the API. Remote agents join with a single-use token, then need a person to approve their fingerprint.</p>
-        <p><strong>Your server can do a lot.</strong> Mounting the Docker socket gives KyYard root on that host, and it is not a sandbox. On Kubernetes it reads workload specs, events and logs cluster-wide, never Secrets, and writes only in the namespaces you list. Organisation admins can read containers' environment variables. AI agents over MCP are read-only by default. An admin can let one restart containers and apply update plans, but no agent can stop, delete, run commands or read secrets, and container logs can steer an agent.</p>
+        <p><strong>Your server can do a lot.</strong> Mounting the Docker socket gives KyYard root on that host, and it is not a sandbox. On Kubernetes it reads workload specs, events and logs cluster-wide, but no Secrets, and makes changes only in the namespaces you list. In those namespaces it can read any Secret by name, run pods that mount them, and open a shell in any pod, so list only namespaces that enforce Pod Security <code>baseline</code> or stricter (KyYard refuses to deploy into any other). Organisation admins can read containers' environment variables. AI agents over MCP are read-only by default. An admin can let one restart containers and apply update plans, but no agent can stop, delete, run commands or read secrets, and container logs can steer an agent.</p>
         <p><strong>Still unproven.</strong> The threat model is still a draft for review.</p>
 
         <h2 id="kypulse">kyPulse</h2>
