@@ -96,7 +96,8 @@
         <p><strong>Your server can see</strong> each backup's size, hash and unencrypted label (app, version, key ID), plus custodian names, app tokens and the audit log. It cannot see backup contents.</p>
         <p><strong>Talks to</strong> the off-site targets you configure: S3 or R2 over HTTPS, SFTP with a pinned host key, SMB, or a local mount. Each receives only the sealed files.</p>
         <p><strong>Doesn't protect against</strong> an SMB server that grants an unsigned guest session. An impostor share could accept uploads that never land, so prefer S3 or SFTP. Restoring an old but valid backup is possible; check its date against the deposit record.</p>
-        <p><strong>Still unproven.</strong> Key rotation does not exist yet. The server records deposits but never claims a restore was verified, so test a restore yourself.</p>
+        <p><strong>Key rotation.</strong> You can rotate the recovery key with a new ceremony and new cards. Old backups still open only with the old cards, because the server cannot re-seal what it cannot read. Each app picks up the new key only when you re-pair it and confirm the key ID printed on the new cards; until the Ky apps ship that support, re-pairing to a new key is refused.</p>
+        <p><strong>Still unproven.</strong> The server records deposits but never claims a restore was verified, so test a restore yourself.</p>
 
         <h2 id="kynotes">KyNotes</h2>
         <p><strong>Protects.</strong> Notes are encrypted in the browser with a key per notebook (AES-256-GCM). Notebook keys are shared with teammates by wrapping them to each person's X25519 key. The server receives only a verifier derived from your password, never the password itself, and keeps a recovery copy sealed under a 128-bit recovery code it never sees. Tests check that a known plaintext marker never appears in logs, HTTP responses, database columns, blob storage or backups.</p>

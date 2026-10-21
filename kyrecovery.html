@@ -78,7 +78,7 @@
     <figure class="architecture"><ol><li>The product seals its backup to the suite’s public key</li><li>KyRecovery stores the sealed container and records its digest</li><li>Custodians type enough shares into the KyQuickStart restore command</li></ol><figcaption>Conceptual overview · KyRecovery stores and delivers the backup; KyQuickStart performs the restore.</figcaption></figure>
     <div class="practical-note"><h3>Know the limits before you rely on it.</h3><ul>
       <li><strong>Integrity is not a restore test.</strong> KyRecovery can check that stored bytes still match their recorded digest. It cannot decrypt a container or prove that your application will restore successfully. Follow the product’s recovery runbook and test your recovery process.</li>
-      <li><strong>Recovery-key rotation is not yet implemented.</strong> Choose a threshold your custodians can actually meet. If too few shares remain available, the server cannot unlock the backups for you.</li>
+      <li><strong>Rotating the key re-pairs every app.</strong> A rotation is a new ceremony with new cards. Old backups still need the old cards, so keep them until those backups expire. Each app must be re-paired and confirm the new key ID; the Ky apps are still gaining that support. Choose a threshold your custodians can actually meet: if too few shares remain, the server cannot unlock the backups for you.</li>
       <li><strong>A purge can remove a product’s last local backup.</strong> Review the expiry preview before manually purging. Offsite destinations need their own retention policies.</li>
       <li><strong>Offsite transports have documented limitations.</strong> Verify your offsite copies rather than assuming replication succeeded.</li>
     </ul></div>
