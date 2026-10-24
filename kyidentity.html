@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KyIdentity — Busnes.app</title>
-<meta name="description" content="A self-hosted identity provider for your organization: shared sign-in, user accounts, multi-factor authentication and app access.">
+<meta name="description" content="Single sign-on you host yourself: one account per person for all your apps, with MFA by authenticator code, passkey or a push approval in the KyAuth app.">
 <meta name="theme-color" content="#f8f6f0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://busnes.app/kyidentity.html">
 <meta property="og:title" content="KyIdentity — Busnes.app">
-<meta property="og:description" content="A self-hosted identity provider for your organization: shared sign-in, user accounts, multi-factor authentication and app access.">
+<meta property="og:description" content="Single sign-on you host yourself: one account per person for all your apps, with MFA by authenticator code, passkey or a push approval in the KyAuth app.">
 <meta property="og:image" content="https://busnes.app/share/kyidentity.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -51,14 +51,14 @@
       <img class="product-icon" src="icons/kyidentity.png" alt="" width="56" height="56">
 <p class="eyebrow">KyIdentity / Accounts &amp; access</p>
       <h1>Your people.<br>Your apps.<br><span class="h1-soft">One sign-in.</span></h1>
-      <p class="page-lede">A shared home for your organization’s accounts and app access. Run your own identity provider and let connected applications use the same sign-in.</p>
+      <p class="page-lede">KyIdentity is the sign-in server you run yourself. Each person gets one account for all your apps, protected by an authenticator code, a passkey or a push approval in the KyAuth phone app. Your apps sign people in through OpenID Connect, and KyIdentity can create and remove their accounts in those apps over SCIM.</p>
       <span class="status-pill">Open source (MIT) · In daily use</span>
       <div class="actions"><a class="button button-dark" href="https://github.com/Busnes-app/KyIdentity-server#quickstart-with-docker-compose">Read setup guide ↗</a><a class="text-link" href="https://github.com/Busnes-app/KyIdentity-server">View source ↗</a><a class="text-link" href="https://youtu.be/2j-Jkx2609I" target="_blank" rel="noopener"><span aria-hidden="true">▶</span> Watch: KyIdentity and KyAuth in 2:44 (YouTube)</a></div>
     </div>
     <aside class="product-facts">
       <p class="eyebrow">At a glance</p>
       <h2>Is it for you?</h2>
-      <p>For an organization that wants to manage its own user directory and sign-in across connected applications, with control over who can access each one.</p>
+      <p>For one organization that wants single sign-on and MFA across its own apps without a cloud identity service. KyIdentity runs as one container with a SQLite database and decides who may use each app.</p>
       <dl><dt>How you use it</dt><dd>Run the server with Docker Compose, persistent storage and a stable HTTPS address. Local accounts work without other Ky products. Configure an SMTP sender for account email, then register the applications you want to connect.</dd><dt>Availability</dt><dd>Server source and setup documentation are available. KyIdentity is designed for a single organization; consult the repository for current integration requirements.</dd></dl>
     </aside>
   </section>
