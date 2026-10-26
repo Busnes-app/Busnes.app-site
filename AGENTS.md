@@ -6,6 +6,7 @@ The launch website presents the Ky Suite: small self-hosted apps that share one 
 
 ## Ownership
 
+- `tests/test_site.py` and `.github/workflows/site.yml` own the dependency-free checks for root-page references; generated documents and visual/behavioral acceptance stay outside that check's scope. `CHANGELOG.md` records notable source revisions identified by Git commit SHA.
 - `README.md`, `CONTRIBUTING.md` and `LICENSE.txt` own repository setup, contribution guidance and source licensing. `SECURITY.md` owns private reporting and the security boundary of this website; product security remains in each product's repository.
 - `index.html` owns the public narrative: the suite pitch, the launch-series trailer card (a plain link to the YouTube video with a self-hosted thumbnail, `share/trailer-thumb.jpg`; never an embedded player), the five reasons, the KyIdentity/KyRecovery diagram and the status board. Status labels are `In daily use` and `Tested`; every `status-pill` on `apps.html` and the product pages reads `Open source (MIT) · <label>` with the same label as the board.
 - `install.html` owns the three installation paths (KyQuickStart AI, KyQuickStart, one app at a time). Copy commands from those repositories' READMEs; do not invent flags.
@@ -45,6 +46,7 @@ The launch website presents the Ky Suite: small self-hosted apps that share one 
 
 ## Verification
 
+- Run `python3 -m unittest discover -s tests -v`. Add regression checks with major new functionality and update `CHANGELOG.md` for user-visible or security-related changes.
 - Product theme behavior is owned and tested by the sibling `ky-ui` repository (`npm test`); each app verifies its vendored copy with `node <ky-ui dir>/check-vendor.mjs`.
 
 - Serve the folder with a local static server and check the page at desktop and mobile widths.
