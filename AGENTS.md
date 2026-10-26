@@ -40,6 +40,7 @@ The launch website presents the Ky Suite: small self-hosted apps that share one 
 
 ## Work Guidance
 
+- Follow `CONTRIBUTING.md` for major-feature test requirements and compiler/linter warning handling.
 - Use the strategy in `deep-research-report.md` as the content source.
 - Prefer plain HTML and CSS before adding JavaScript or a build system. The theme switch is the one accepted script; keep it dependency-free and keep every page working without it.
 - Do not add analytics, embedded third-party content, or intake storage to the static launch site.

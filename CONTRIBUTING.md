@@ -21,6 +21,9 @@ for page ownership, design rules and existing verification commands.
 
 ## Verification and pull requests
 
+Fix valid compiler/linter warnings, or document why a warning is a false positive
+in the relevant source or check configuration. Do not silently ignore warnings.
+
 Run `python3 -m unittest discover -s tests -v`. Add automated regression checks
 with major new functionality, and update [CHANGELOG.md](CHANGELOG.md) for
 user-visible or security-related changes.
