@@ -65,3 +65,10 @@ The website source is available under the [MIT License](LICENSE.txt).
 Third-party assets retain their accompanying license notices.
 
 [![OctoCounts](https://api.octocounts.com/badge/Busnes-app/Busnes.app-site/branch/master)](https://octocounts.com/github/Busnes-app/Busnes.app-site/tree/master)
+
+## Documentation
+
+- [Hosting](HOSTING.md) — how the static site is hosted and served.
+- [Contributing](CONTRIBUTING.md) — how to propose a change and what it must pass.
+- [Security policy](SECURITY.md) — how to report a vulnerability privately.
+- [Website changes](CHANGELOG.md) — what changed in each published revision of the site.
