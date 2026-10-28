@@ -1,5 +1,7 @@
 # Busnes.app website
 
+[![OctoCounts](https://api.octocounts.com/badge/Busnes-app/Busnes.app-site/branch/master)](https://octocounts.com/github/Busnes-app/Busnes.app-site/tree/master)
+
 The public website at <https://busnes.app> introduces the Ky Suite, links to
 each application's source and installation guide, and describes Busnes.app's
 custom software work. This repository contains the static website, not the Ky
