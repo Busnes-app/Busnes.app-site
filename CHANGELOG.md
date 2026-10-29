@@ -5,6 +5,8 @@ revision; no packaged or SemVer-tagged releases are currently published.
 
 ## Unreleased
 
+- Link the @busnesapp@mastodon.social account in every page footer, with
+  `rel="me"` so Mastodon can verify the site.
 - Add public, dependency-free checks for root-page links and local assets,
   including a guard against misspelled suite repository links, and run them in CI.
 - Document the website interface, verification command and source-version policy.
