@@ -19,7 +19,7 @@ The launch website presents the Ky Suite: small self-hosted apps that share one 
 - `share/` holds the social share cards (`home.png` for `index.html`, `custom-work.png` for `how-it-works.html`, otherwise the page's own name) and `share/build.py`, which renders them with headless Chrome. Edit its `CARDS` table and rerun `python3 -I share/build.py` when a page title, tagline or status label changes.
 - `404.html` is the not-found page; point the host's 404 handler at it.
 - `prototype-light-systems.html` is a retained design prototype; it is not linked, not served as part of the site, and not kept in sync.
-- `busnes-icon.png` is the Systems stamp brand mark master (1254px) and the GitHub avatar; `kypost-icon.png`, `kyyard-icon.png`, `kynotes-icon.png`, `kyidentity-icon.png`, `kyrecovery-icon.png`, `kydns-icon.png`, `kyauth-icon.png`, `kypulse-icon.png`, `kycalendar-icon.png`, `kydrive-icon.png` and `kymessages-icon.png` are the product icon masters in the same family. Consult `project-icon-prompts.md` when regenerating or extending the family.
+- `busnes-icon.png` is the Systems stamp brand mark master (1254px) and the GitHub avatar; `kypost-icon.png`, `kyyard-icon.png`, `kynotes-icon.png`, `kyidentity-icon.png`, `kyrecovery-icon.png`, `kydns-icon.png`, `kyauth-icon.png`, `kypulse-icon.png`, `kycalendar-icon.png`, `kydrive-icon.png`, `kymessages-icon.png` and `kydash-icon.png` are the product icon masters in the same family. KyDash is an internal tool: its icon ships here for the family and the other repositories, but it has no product page and appears on no page. Consult `project-icon-prompts.md` when regenerating or extending the family.
 - `icons/` holds the web exports (256px, badge cropped to a transparent canvas) the pages actually load: `icons/busnes.png` for the favicon, header and footer mark; `icons/<product>.png` for the directory card, the product-page hero and favicon, and the home foundation bar. Every product shown anywhere on the site uses its `icons/` file, never a glyph or a colour tile. Regenerate with the command in `project-icon-prompts.md`.
 
 ## Local Contracts
@@ -58,6 +58,6 @@ The launch website presents the Ky Suite: small self-hosted apps that share one 
 
 None.
 
-- `project-icon-prompts.md` owns icon prompts and platform export contracts. `kypulse-icon.svg`, `kycalendar-icon.svg`, `kydrive-icon.svg` and `kymessages-icon.svg` are the sources for the hand-drawn masters.
+- `project-icon-prompts.md` owns icon prompts and platform export contracts. `kypulse-icon.svg`, `kycalendar-icon.svg`, `kydrive-icon.svg`, `kymessages-icon.svg` and `kydash-icon.svg` are the sources for the hand-drawn masters.
 - `screenshots/` holds product screenshots, in the Busnes Light theme unless a caption says otherwise, captured from local builds with fictional data only.
 - `icon-rollout.md` and `theme-audit.md` are dated 2026-09-24 records; repositories they name have since been renamed or archived.
