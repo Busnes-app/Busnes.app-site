@@ -33,7 +33,7 @@ KyRecovery sealed backups and restore: a broad counterclockwise circular restore
 The pages load `icons/<name>.png`, not the masters. Regenerate after changing a master:
 
 ```sh
-for f in busnes kypost kyyard kynotes kyidentity kyrecovery kydns kyauth kypulse kycalendar kydrive kymessages; do
+for f in busnes kypost kyyard kynotes kyidentity kyrecovery kydns kyauth kypulse kycalendar kydrive kymessages kydash; do
   magick "$f-icon.png" -alpha set -fuzz 10% -fill none -draw 'color 0,0 floodfill' \
     -trim +repage -resize 256x256 -background none -gravity center -extent 256x256 -strip "icons/$f.png"
 done
@@ -49,6 +49,7 @@ Generated with the built-in image-generation tool using the approved Busnes stam
 - `kycalendar-icon.png`: hand-drawn in `kycalendar-icon.svg`: an ivory calendar page with two binder rings, a header seam and a grid of charcoal day cells, one of them orange.
 - `kydrive-icon.png`: hand-drawn in `kydrive-icon.svg`: an ivory folder with a charcoal flap seam and one orange upload arrow.
 - `kymessages-icon.png`: hand-drawn in `kymessages-icon.svg`: an ivory speech bubble with three typing dots, the last one orange.
+- `kydash-icon.png`: hand-drawn in `kydash-icon.svg`: an ivory gauge, a thick open arc with an ivory needle pointing up and right from one orange hub. KyDash is internal, so no page loads `icons/kydash.png`.
 
 ## Application exports
 

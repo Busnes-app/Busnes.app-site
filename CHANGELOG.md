@@ -5,6 +5,8 @@ revision; no packaged or SemVer-tagged releases are currently published.
 
 ## Unreleased
 
+- Add the KyDash gauge icon (`kydash-icon.svg`, `kydash-icon.png`, `icons/kydash.png`) to the
+  icon family. KyDash is an internal tool, so no page shows it.
 - Link the @busnesapp@mastodon.social account in every page footer, with
   `rel="me"` so Mastodon can verify the site.
 - Point the Bluesky footer link at the new `@busnes.app` handle.
