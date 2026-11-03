@@ -33,7 +33,7 @@ CARDS = {
     "kycalendar": ("KyCalendar", "CalDAV calendars with MCP access", "kycalendar-icon.png", "Tested"),
     "kyyard": ("KyYard", "Docker and Kubernetes console", "kyyard-icon.png", "Tested"),
     "kynotes": ("KyNotes", "End-to-end encrypted notes", "kynotes-icon.png", "Tested"),
-    "kypulse": ("kyPulse", "Health checks and alerts", "kypulse-icon.png", "Tested"),
+    "kypulse": ("KyPulse", "Health checks and alerts", "kypulse-icon.png", "Tested"),
     "kydrive": ("KyDrive", "Files, WebDAV and document editing", "kydrive-icon.png", "Tested"),
     "kymessages": ("KyMessages", "Team chat on Matrix", "kymessages-icon.png", "Tested"),
 }

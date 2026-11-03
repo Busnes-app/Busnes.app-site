@@ -57,16 +57,16 @@
       <article class="install-path">
         <p class="eyebrow"><span class="status-dot"></span> 01 · Least effort</p>
         <h2>Let your AI agent do it</h2>
-        <p>KyQuickStart AI connects your servers over SSH, or uses this computer, and starts Claude Code, Codex, Gemini CLI or opencode with an install prompt. It interviews you once, shows a plan, then works on its own and comes back only for steps a person must do.</p>
+        <p>KyQuickStart AI connects your servers over SSH and your Kubernetes clusters, or uses this computer, and starts Claude Code, Codex, Gemini CLI or opencode with an install prompt. A setup form asks your choices once, the agent shows a plan, then it works on its own beside a live status board and comes back only for steps a person must do.</p>
 <pre class="code-block"><code>git clone https://github.com/Busnes-app/KyQuickStart-AI.git
 cd KyQuickStart-AI
 ./kyqs-ai</code></pre>
         <ul class="col-list">
-          <li>Linux or macOS with bash, ssh, git and one supported agent CLI</li>
-          <li>Linux targets with Docker Engine and the Compose plugin, plus a sudo login once per server</li>
+          <li>Linux or macOS with bash, OpenSSH 9.1 or later, git, an SSH agent, the kyquickstart binary and one supported agent CLI</li>
+          <li>Linux targets with Docker Engine and the Compose plugin (not Podman) and a sudo login once per server, or Kubernetes clusters with an admin kubeconfig and a persistent StorageClass</li>
           <li>A domain you control (LAN-only is fine)</li>
         </ul>
-        <p class="install-note">At the end you get a printable sheet of URLs and logins, and a report of every place a README was wrong. Tested in five complete install runs.</p>
+        <p class="install-note">At the end you get a printable sheet of URLs and logins, and a report of every place a README was wrong. Released since v0.5.0, after five complete install runs.</p>
         <p><a class="text-link" href="https://youtu.be/4jpWEWl0mRs" target="_blank" rel="noopener"><span aria-hidden="true">▶</span> Watch: KyQuickStart AI in 2:36 (YouTube)</a></p>
         <a class="directory-link" href="https://github.com/Busnes-app/KyQuickStart-AI#readme">KyQuickStart AI on GitHub <span aria-hidden="true">↗</span></a>
       </article>
@@ -74,12 +74,12 @@ cd KyQuickStart-AI
       <article class="install-path">
         <p class="eyebrow">02 · Repeatable</p>
         <h2>Use the KyQuickStart installer</h2>
-        <p>A command-line installer with prerequisite checks, a plan you review before anything changes, and the same handover sheet. It targets Docker hosts over SSH and existing Kubernetes clusters.</p>
+        <p>The engine KyQuickStart AI drives, also usable on its own or unattended from a saved <code>stack.yaml</code>. Prerequisite checks, a plan you review before anything changes, and the same handover sheet. It targets Docker hosts over SSH and existing Kubernetes clusters.</p>
 <pre class="code-block"><code>git clone https://github.com/Busnes-app/KyQuickStart.git
 cd KyQuickStart &amp;&amp; make build
 ./kyquickstart plan --demo --state ./demo</code></pre>
         <ul class="col-list">
-          <li>Go 1.26.6 or later, to build from source until a release ships</li>
+          <li>A released binary for Linux or macOS, verified with its GitHub attestation, or Go 1.26.6 or later to build from source (a source build cannot install KyYard)</li>
           <li>Docker hosts or a Kubernetes cluster you prepared</li>
           <li>DNS and HTTPS set up as the guided setup describes</li>
         </ul>
