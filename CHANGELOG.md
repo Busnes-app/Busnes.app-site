@@ -24,6 +24,8 @@ revision; no packaged or SemVer-tagged releases are currently published.
 - Add public, dependency-free checks for root-page links and local assets,
   including a guard against misspelled suite repository links, and run them in CI.
 - Document the website interface, verification command and source-version policy.
+- Fail CI when a compiled binary is committed (`scripts/check-no-binaries.sh`, the
+  OpenSSF Scorecard Binary-Artifacts check).
 
 ## 2026-10-25
 
