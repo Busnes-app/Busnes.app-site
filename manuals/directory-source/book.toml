@@ -1,0 +1,14 @@
+[book]
+title = "Ky suite manuals"
+authors = ["Busnes.app"]
+language = "en"
+src = "src"
+
+[build]
+build-dir = "../.directory-build"
+create-missing = false
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "coal"
+git-repository-url = "https://github.com/Busnes-app/Busnes.app-site"

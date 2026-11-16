@@ -1,0 +1,162 @@
+[
+  {
+    "slug": "kyauth-android",
+    "title": "KyAuth for Android",
+    "repository": "https://github.com/Busnes-app/kyauth-android",
+    "source_commit": "883315f270dbeff87bbf0f7d04150aec1fb6351f",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kyauth-android/"
+  },
+  {
+    "slug": "kyauth-ios",
+    "title": "KyAuth for iOS",
+    "repository": "https://github.com/Yoshiofthewire/KyAuth-iOS",
+    "source_commit": "7e932614f03e22dec3f1dafcd947cabb65f165fe",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kyauth-ios/"
+  },
+  {
+    "slug": "kyauth-linux",
+    "title": "KyAuth for Linux",
+    "repository": "https://github.com/Busnes-app/KyAuth-Linux",
+    "source_commit": "b6a5583b084efac428c7b34904ef8ecdf2bc0914",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kyauth-linux/"
+  },
+  {
+    "slug": "kycalendar",
+    "title": "KyCalendar",
+    "repository": "https://github.com/Busnes-app/KyCalendar",
+    "source_commit": "2e2d6926b81aef6c04190411a25241b0c7bd4ed6",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kycalendar/"
+  },
+  {
+    "slug": "kydns-server",
+    "title": "KyDNS",
+    "repository": "https://github.com/Busnes-app/KyDNS-server",
+    "source_commit": "ec97ae0911c11c2b693f0d4eaa6956bd44a8d864",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kydns-server/"
+  },
+  {
+    "slug": "kydrive-desktop",
+    "title": "KyDrive Desktop",
+    "repository": "https://github.com/Busnes-app/kydrive-desktop",
+    "source_commit": "3399583e19c5f5e895164a628b2c12315609b8d3",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kydrive-desktop/"
+  },
+  {
+    "slug": "kydrive-for-android",
+    "title": "KyDrive for Android",
+    "repository": "https://github.com/Busnes-app/KyDrive-for-Android",
+    "source_commit": "7fb52d0344091b6bc5ec8e956799dc8d73e07e58",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kydrive-for-android/"
+  },
+  {
+    "slug": "kydrive-server",
+    "title": "KyDrive Server",
+    "repository": "https://github.com/Busnes-app/kydrive-server",
+    "source_commit": "b1944ffbe76992513f1c08aa402c9c6e7163e686",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kydrive-server/"
+  },
+  {
+    "slug": "kyidentity-server",
+    "title": "KyIdentity",
+    "repository": "https://github.com/Busnes-app/KyIdentity-server",
+    "source_commit": "72de5a86c5047560a799deace418b58c7c54daa4",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kyidentity-server/"
+  },
+  {
+    "slug": "kymessage-server",
+    "title": "KyMessages",
+    "repository": "https://github.com/Busnes-app/KyMessage-Server",
+    "source_commit": "2a18b3442d509858b61e32eb66284a0ff18a8c11",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kymessage-server/"
+  },
+  {
+    "slug": "kynotes-server",
+    "title": "KyNotes",
+    "repository": "https://github.com/Busnes-app/KyNotes-server",
+    "source_commit": "6d3ecacffd0f90cffb92cebf3a5232fac0c57aca",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kynotes-server/"
+  },
+  {
+    "slug": "kypost-android",
+    "title": "KyPost for Android",
+    "repository": "https://github.com/Busnes-app/KyPost-for-Android",
+    "source_commit": "be1da98bdaecdb88469d4ee61ace942ec61b9ba3",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kypost-android/"
+  },
+  {
+    "slug": "kypost-linux",
+    "title": "KyPost for Linux",
+    "repository": "https://github.com/Busnes-app/KyPost-for-Linux",
+    "source_commit": "b88e9087069a4ea987ef64d94f6d5f6277ba0910",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kypost-linux/"
+  },
+  {
+    "slug": "kypost-for-mac",
+    "title": "KyPost for macOS and iOS",
+    "repository": "https://github.com/Busnes-app/KyPost-for-Mac",
+    "source_commit": "2305b545359c9fe4cd4f8095e362c7cb1f60acd6",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kypost-for-mac/"
+  },
+  {
+    "slug": "kypost-server",
+    "title": "KyPost Server",
+    "repository": "https://github.com/Busnes-app/kypost-site",
+    "source_commit": "62710db18ac0ba6bf75f3e385cdacc9df0fc1630",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kypost-server/"
+  },
+  {
+    "slug": "kypulse-server",
+    "title": "KyPulse",
+    "repository": "https://github.com/Busnes-app/KyPulse-server",
+    "source_commit": "b2c9fa49cf0f2913cbd968b355f621e3cf10025f",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kypulse-server/"
+  },
+  {
+    "slug": "kyquickstart",
+    "title": "KyQuickStart",
+    "repository": "https://github.com/Busnes-app/KyQuickStart",
+    "source_commit": "7783c2680925259d3367f82c64aaefe5f8612576",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kyquickstart/"
+  },
+  {
+    "slug": "kyquickstart-ai",
+    "title": "KyQuickStart AI",
+    "repository": "https://github.com/Busnes-app/KyQuickStart-AI",
+    "source_commit": "a7777c6f1a8a9bb41883573e57431b37cf451717",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kyquickstart-ai/"
+  },
+  {
+    "slug": "kyrecovery-server",
+    "title": "KyRecovery",
+    "repository": "https://github.com/Busnes-app/KyRecovery-server",
+    "source_commit": "4499d9106fc4aa749673a0ee21d864df6ec12570",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kyrecovery-server/"
+  },
+  {
+    "slug": "kyyard-server",
+    "title": "KyYard",
+    "repository": "https://github.com/Busnes-app/KyYard-server",
+    "source_commit": "61f6ffe30146e6fdc3ee5c87469944c91a3f9818",
+    "source_path": "docs/",
+    "url": "https://busnes.app/manuals/kyyard-server/"
+  }
+]

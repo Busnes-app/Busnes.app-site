@@ -6,6 +6,8 @@ The launch website presents the Ky Suite: small self-hosted apps that share one 
 
 ## Ownership
 
+- `manuals/` publishes the public mdBook directory and checked snapshots; internal KyDash documentation stays in its private repository.
+
 - `tests/test_site.py` and `.github/workflows/site.yml` own the dependency-free checks for root-page references; generated documents and visual/behavioral acceptance stay outside that check's scope. `CHANGELOG.md` records notable source revisions identified by Git commit SHA.
 - `README.md`, `CONTRIBUTING.md` and `LICENSE.txt` own repository setup, contribution guidance and source licensing. `SECURITY.md` owns private reporting and the security boundary of this website; product security remains in each product's repository.
 - `index.html` owns the public narrative: the suite pitch, the launch-series trailer card (a plain link to the YouTube video with a self-hosted thumbnail, `share/trailer-thumb.jpg`; never an embedded player), the five reasons, the KyIdentity/KyRecovery diagram and the status board. Status labels are `In daily use` and `Tested`; every `status-pill` on `apps.html` and the product pages reads `Open source (MIT) · <label>` with the same label as the board.
@@ -14,7 +16,7 @@ The launch website presents the Ky Suite: small self-hosted apps that share one 
 - `apps.html` owns the app directory; `kypost.html`, `kyyard.html`, `kynotes.html`, `kycalendar.html`, `kydrive.html`, `kymessages.html`, `kyidentity.html`, `kyrecovery.html`, `kydns.html`, and `kypulse.html` explain each product, availability, setup requirements and documentation.
 - `how-it-works.html` and `about.html` explain the engagement and company; `pages.css` supplies their shared layouts and product-page styles.
 - `styles.css` owns the visual system and responsive layout, including the light and dark token sets.
-- `theme.js` is the site's only script: it applies the stored or OS colour scheme before first paint and wires the header theme switch. No inline scripts; every page's CSP allows same-origin scripts only.
+- `theme.js` is the marketing pages' only script; generated manuals retain mdBook's standard scripts. It applies the stored or OS colour scheme before first paint and wires the header theme switch. No inline scripts; every page's CSP allows same-origin scripts only.
 - `privacy.html` and `privacy.css` own the company privacy notice; `security.html` owns the per-app security summary (what each app protects, what the server can see, third parties, unproven parts, how to report) and reuses `privacy.css`. Source every security claim from the app's own SECURITY.md, docs or code on its default branch, and never claim an audit until one exists. `privacy.css` holds policy layout only and depends on `styles.css` for tokens, header, footer and nav.
 - `share/` holds the social share cards (`home.png` for `index.html`, `custom-work.png` for `how-it-works.html`, otherwise the page's own name) and `share/build.py`, which renders them with headless Chrome. Edit its `CARDS` table and rerun `python3 -I share/build.py` when a page title, tagline or status label changes.
 - `404.html` is the not-found page; point the host's 404 handler at it.
@@ -56,7 +58,7 @@ The launch website presents the Ky Suite: small self-hosted apps that share one 
 
 ## Child DOX Index
 
-None.
+- `manuals/AGENTS.md` — public mdBook directory, product snapshots, source catalog and link verification.
 
 - `project-icon-prompts.md` owns icon prompts and platform export contracts. `kypulse-icon.svg`, `kycalendar-icon.svg`, `kydrive-icon.svg`, `kymessages-icon.svg` and `kydash-icon.svg` are the sources for the hand-drawn masters.
 - `screenshots/` holds product screenshots, in the Busnes Light theme unless a caption says otherwise, captured from local builds with fictional data only.
