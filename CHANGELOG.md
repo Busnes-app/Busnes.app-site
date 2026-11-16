@@ -5,6 +5,9 @@ revision; no packaged or SemVer-tagged releases are currently published.
 
 ## Unreleased
 
+- Link the AlternativeTo About listings from KyYard, KyCalendar, KyNotes, KyDNS,
+  KyIdentity, KyDrive and KyPost product pages.
+
 - Bring every page in line with the apps' default branches as of 2026-11-03:
   - KyAuth is on Google Play and the App Store, and its Android pushes are now end-to-end encrypted.
   - KyIdentity uses its own KyAuth relays by default, and KyPost's relays moved to `*.relay.kypost.busnes.app`.
