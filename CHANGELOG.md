@@ -5,6 +5,8 @@ revision; no packaged or SemVer-tagged releases are currently published.
 
 ## Unreleased
 
+- Publish 20 public Ky app/client/installer mdBook manuals at `/manuals/`, with a searchable directory, pinned source catalog and offline checks for every book link. Keep internal KyDash documentation private.
+
 - Link the AlternativeTo About listings from KyYard, KyCalendar, KyNotes, KyDNS,
   KyIdentity, KyDrive and KyPost product pages.
 

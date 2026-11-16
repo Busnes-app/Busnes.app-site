@@ -1,0 +1,869 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>KyDrive for Android Documentation</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-e96d0476.css">
+        <link rel="stylesheet" href="css/chrome-d279d366.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "coal";
+            window.path_to_searchindex_js = "searchindex-bc07a663.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-632134f4.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">KyDrive for Android Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Busnes-app/KyDrive-for-Android" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="kydrive-for-android"><a class="header" href="#kydrive-for-android">KyDrive for Android</a></h1>
+<p>KyDrive is the Android client for your organization’s self-hosted
+<a href="https://github.com/Busnes-app/kydrive-server">KyDrive server</a>. Use it to browse your
+personal files and shared workspaces, open files in another Android app, upload files,
+save copies to your phone, create folders, rename items and restore items from trash.</p>
+<p>The server holds the files and decides who may access them. Your phone links to your
+account by scanning a short-lived QR code from the web app. You do not type your suite
+password into the Android app.</p>
+<p>This manual follows the chapter-based mdBook format used by
+<a href="https://www.kypost.org/docs/book/index.html">KyPost’s documentation</a>. The chapter menu,
+search button and print button help you find a task or save a reading copy. Markdown
+sources are also readable directly on GitHub.</p>
+<h2 id="start-here"><a class="header" href="#start-here">Start here</a></h2>
+<ul>
+<li>New user: <a href="#getting-started">requirements and installation</a>, then <a href="#link-a-phone">link your phone</a>.</li>
+<li>Everyday work: <a href="#files-and-workspaces">files and workspaces</a> and <a href="#uploads-and-downloads">uploads and downloads</a>.</li>
+<li>Protect or remove a link: <a href="#settings-and-app-lock">app lock</a> and <a href="#sign-out-revocation-and-unlinking">unlinking</a>.</li>
+<li>Something went wrong: <a href="#troubleshooting">troubleshooting</a>.</li>
+<li>Working on the app: <a href="#development-and-testing">development and testing</a>.</li>
+</ul>
+<h2 id="current-scope"><a class="header" href="#current-scope">Current scope</a></h2>
+<p>The app is pre-release software. This book describes implemented behavior, rather than
+the full product roadmap. There are no published production releases or store listings
+offered by this repository yet.</p>
+<p>Automatic photo backup, persistent offline copies, two-way folder synchronization,
+in-app document editing and a system DocumentsProvider are not available in this app.
+Opening a file uses another installed app. Receiving an existing share is supported;
+creating a new share or guest link uses the web app. The separate
+<a href="https://github.com/Busnes-app/kydrive-desktop">desktop client</a> provides two-way folder sync.</p>
+<p>The approved roadmap and owner decisions are in
+<a href="https://github.com/Busnes-app/KyDrive-for-Android/blob/main/docs/DESIGN.md">DESIGN.md</a>.
+An item in that design document is not a claim that the feature has shipped.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="getting-started"><a class="header" href="#getting-started">Getting started</a></h1>
+<h2 id="requirements"><a class="header" href="#requirements">Requirements</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Requirement</th><th>What you need</th></tr>
+</thead>
+<tbody>
+<tr><td>Phone or tablet</td><td>Android 12 (API 31) or newer</td></tr>
+<tr><td>Account</td><td>An active account on a KyDrive server with phone QR linking and device request signing</td></tr>
+<tr><td>Network</td><td>The phone must reach the server’s HTTPS hostname; connect to the organization’s LAN or VPN if required</td></tr>
+<tr><td>Server certificate</td><td>A valid certificate for that hostname, chaining to an Android system CA</td></tr>
+<tr><td>Camera</td><td>Needed to scan the link code; permit camera access when Android asks</td></tr>
+<tr><td>File viewer</td><td>An installed app that can open the file type you choose</td></tr>
+</tbody>
+</table>
+</div>
+<p>Google Play Services, Firebase, a push distributor and a separate KyAuth app are not
+required. KyDrive Android contains no analytics or crash-reporting SDK.</p>
+<p>The app refuses cleartext HTTP, user-installed certificate authorities and redirects.
+An administrator must configure the final HTTPS origin directly. Installing a private
+CA on the phone does not make that CA acceptable to this app.</p>
+<h2 id="install-a-development-build"><a class="header" href="#install-a-development-build">Install a development build</a></h2>
+<p>No production download is currently published. Developers can build and install a
+debug APK for testing; follow <a href="#build-and-install">Development and testing</a>.
+Use a test account and a disposable device or emulator when evaluating a development
+build. An unsigned release APK is a build check, not an installable published release.</p>
+<p>When updating an existing development installation, use a build signed with the same
+key. Android rejects an update signed with a different key. Uninstalling to switch
+keys removes the app’s local session and requires linking again; copies saved outside
+KyDrive and files on the server remain separate.</p>
+<h2 id="first-run"><a class="header" href="#first-run">First run</a></h2>
+<ol>
+<li>Open KyDrive. An unlinked app shows <strong>Link this phone</strong> and <strong>Scan the code</strong>.</li>
+<li><a href="#link-a-phone">Link the phone</a> from a browser session on a second screen.</li>
+<li>Check the displayed account, then choose whether to set an app PIN when offered.</li>
+<li>Open <strong>Files</strong> for your personal workspace or <strong>Shared</strong> for shared workspaces and
+directly shared items.</li>
+</ol>
+<p>Settings remains available before linking for appearance preferences and version
+information. Account and security controls appear after a phone is linked.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="link-a-phone"><a class="header" href="#link-a-phone">Link a phone</a></h1>
+<p>Linking authorizes this installation to access your account. Each phone has its own
+device token and signing key, so an administrator can revoke one phone independently.</p>
+<h2 id="scan-and-confirm"><a class="header" href="#scan-and-confirm">Scan and confirm</a></h2>
+<ol>
+<li>On another screen, sign in to the KyDrive web app using your ordinary account.</li>
+<li>Open <strong>Settings → Phones &amp; apps → Link a phone</strong> and complete the server’s step-up
+check. The server may label its device-management section differently in older versions.</li>
+<li>On Android, tap <strong>Scan the code</strong>. Allow camera access and scan the QR code displayed
+by the server. The app scans QR codes; it does not accept a typed password or manual token.</li>
+<li>Read the server hostname in <strong>Link this phone?</strong>. Continue only if it is the server
+where you opened the link screen yourself, then tap <strong>Link</strong>.</li>
+<li>Wait for <strong>Linked as …</strong>. Open Settings to check the server and account.</li>
+</ol>
+<p>The code is single-use and expires after two minutes. If it is already used or expired,
+show a fresh one and scan again. Do not send the QR code to someone else or attach it
+to a bug report: anyone who redeems it in time may link a device.</p>
+<p>The app generates a non-exportable signing key before redeeming the code and verifies
+that the returned device token belongs to the account the server identified. It then
+stores the encrypted session on the phone. Scanning a code without confirming and
+successfully completing the exchange does not link a phone.</p>
+<h2 id="linking-again"><a class="header" href="#linking-again">Linking again</a></h2>
+<p>If the app says <strong>This phone was signed out. Link it again</strong>, show a new code on the
+same server and for the same account. A signed-out installation retains its account
+binding. Linking it directly to a different account or server is refused; first use
+<a href="#unlink-from-the-phone">Unlink this phone</a>.</p>
+<p>If the server revokes the device, the app erases its local session when it next receives
+that result. It must then link again as a new device.</p>
+<h2 id="after-linking"><a class="header" href="#after-linking">After linking</a></h2>
+<p>The app offers <strong>Lock KyDrive with a PIN?</strong>. Choose <strong>Choose a PIN</strong> to enable it, or
+<strong>Not now</strong> and configure it later under Settings → Security. See
+<a href="#settings-and-app-lock">Settings and app lock</a> for the consequences of each setting.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="files-and-workspaces"><a class="header" href="#files-and-workspaces">Files and workspaces</a></h1>
+<h2 id="navigate"><a class="header" href="#navigate">Navigate</a></h2>
+<p><strong>Files</strong> opens <strong>My files</strong>, your private personal workspace. The server creates that
+workspace on first use if necessary. <strong>Shared</strong> lists organization workspaces you may
+access and files or folders shared directly with you.</p>
+<p>Tap a workspace or folder to enter it. The Up button and Android Back move through the
+current tab’s folder history. Files and Shared keep separate histories during the
+current session. Workspaces and folders appear before files, sorted by name; file rows
+show their size and modification date when available.</p>
+<p>Use <strong>More options → Refresh</strong> to reload the current listing. An empty personal folder
+says <strong>This folder is empty</strong>. An empty Shared list means there are no visible shared
+destinations for this account; ask the workspace owner about membership.</p>
+<h2 id="permissions"><a class="header" href="#permissions">Permissions</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Label</th><th>What Android exposes</th></tr>
+</thead>
+<tbody>
+<tr><td>Can view</td><td>Browse, open and save permitted files</td></tr>
+<tr><td>Can edit</td><td>View actions, uploads, new folders, rename, trash and restore</td></tr>
+<tr><td>Can manage</td><td>The same file actions; permission management uses the web app</td></tr>
+</tbody>
+</table>
+</div>
+<p>The server remains authoritative. A permission can change while a screen is open, and
+the server can refuse an action even when it was previously visible. A direct share
+does not grant access to the rest of its workspace. People and group membership are
+managed through the suite’s directory and web administration, not the Android app.</p>
+<h2 id="open-a-file"><a class="header" href="#open-a-file">Open a file</a></h2>
+<p>Tap the file, or use its <strong>Actions → Open</strong> menu. Android starts a compatible installed
+viewer. KyDrive grants that viewer read access to a stream of the selected revision;
+it does not make a persistent offline copy. If the file changes on the server, the
+old stream cannot silently switch to the new revision.</p>
+<p>If no viewer is installed, the app says <strong>No app on this phone opens this kind of
+file</strong>. Install a suitable viewer, or use <a href="#save-a-copy">Save to this phone</a>.
+Changes made in another app are not automatically uploaded to KyDrive.</p>
+<h2 id="new-folder-and-rename"><a class="header" href="#new-folder-and-rename">New folder and rename</a></h2>
+<ol>
+<li>Open a writable workspace and the destination folder.</li>
+<li>For a new folder, choose <strong>Add → New folder</strong>. To rename an item, open the <strong>Actions</strong>
+button beside its name and choose <strong>Rename</strong>.</li>
+<li>Enter the name and tap <strong>OK</strong>. Cancel leaves the item unchanged.</li>
+</ol>
+<p>Names must occupy 1–255 UTF-8 bytes, without slashes, backslashes, control/format
+characters or leading/trailing whitespace; <code>.</code> and <code>..</code> are not accepted. Some
+non-English characters occupy several bytes. The server can also reject a conflicting
+name. Refresh the listing before retrying a conflict.</p>
+<h2 id="trash-and-restore"><a class="header" href="#trash-and-restore">Trash and restore</a></h2>
+<p>Choose <strong>Actions → Move to trash</strong> to trash an item. The confirmation message offers
+<strong>Undo</strong>, which asks the server to restore it. To restore later:</p>
+<ol>
+<li>Open its workspace and choose <strong>More options → Trash</strong>.</li>
+<li>Find the item, open <strong>Actions</strong>, and choose <strong>Restore</strong>.</li>
+<li>Return to the live listing and refresh if needed.</li>
+</ol>
+<p>Trash is a flat list for the workspace. Restore requires write permission. Android
+does not expose permanent deletion or trash-retention controls. Trashed content and
+retained versions may still count against the server’s storage quota.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="uploads-and-downloads"><a class="header" href="#uploads-and-downloads">Uploads and downloads</a></h1>
+<h2 id="upload-files"><a class="header" href="#upload-files">Upload files</a></h2>
+<ol>
+<li>Open the writable workspace and folder where the files should go.</li>
+<li>Choose <strong>Add → Upload files</strong>.</li>
+<li>Select one or more files in Android’s file picker.</li>
+<li>Watch for <strong>Uploading …</strong>, followed by <strong>Uploaded …</strong> or an error.</li>
+</ol>
+<p>The selected provider must expose a valid filename and a known size. If either is
+missing or unsupported, the app says <strong>Can’t upload …: its name or size is unknown or
+not allowed</strong>. Save the item as an ordinary file in a provider that supplies both,
+then select that copy.</p>
+<p>Uploads run in the app process and may continue after you leave the screen. They are
+not scheduled work that is guaranteed to survive Android killing the process. The
+wire layer uses 8 MiB chunks and asks the server for the accepted offset after a failed
+chunk, with at most five failures for that chunk. There is no user-facing persistent
+transfer queue or restart/resume button yet. Refresh after an uncertain result before
+starting another upload.</p>
+<h2 id="save-a-copy"><a class="header" href="#save-a-copy">Save a copy</a></h2>
+<ol>
+<li>Open a file’s <strong>Actions</strong> menu and choose <strong>Save to this phone</strong>.</li>
+<li>In Android’s save picker, choose a destination and filename, then confirm.</li>
+<li>Wait for <strong>Saved …</strong> before relying on the copy.</li>
+</ol>
+<p>The destination may be local storage or another document provider. The downloaded
+bytes must match the size and SHA-256 digest the server listed. A changed or damaged
+file fails with <strong>The file changed or arrived damaged, so nothing was kept. Try again</strong>.
+The app attempts to remove the incomplete destination; a provider that refuses removal
+may leave a partial file, which you should delete using that provider’s own controls.</p>
+<h2 id="opening-and-saving-are-different"><a class="header" href="#opening-and-saving-are-different">Opening and saving are different</a></h2>
+<p><strong>Open</strong> lets another app read a stream while KyDrive remains linked, unlocked and able
+to reach the server. It does not create an offline copy for you.</p>
+<p><strong>Save to this phone</strong> writes a separate copy to your chosen destination. That copy is
+outside KyDrive’s encrypted session storage and remains after unlinking or revocation.
+Protect and delete it using the destination app or Android’s file manager. Edits to a
+saved copy do not synchronize automatically; upload a file explicitly if you need it
+stored on the server.</p>
+<h2 id="failed-transfers"><a class="header" href="#failed-transfers">Failed transfers</a></h2>
+<ul>
+<li><strong>Not enough space:</strong> the workspace quota is full. Ask its manager about quota and
+retained content. Android cannot increase a quota or empty server trash permanently.</li>
+<li><strong>Permission denied:</strong> refresh and check your workspace access with its owner.</li>
+<li><strong>Changed on the server/name taken:</strong> refresh; do not assume a retry may overwrite
+someone else’s version.</li>
+<li><strong>Network lost or app stopped:</strong> reconnect, refresh and verify the server/destination
+before repeating the transfer.</li>
+</ul>
+<p>See <a href="#troubleshooting">Troubleshooting</a> for connection and account errors.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="settings-and-app-lock"><a class="header" href="#settings-and-app-lock">Settings and app lock</a></h1>
+<p>Open <strong>Settings</strong> from the main screen. Linked installations show the server, account
+and device name under <strong>Account</strong>, followed by the security options.</p>
+<h2 id="appearance-and-navigation"><a class="header" href="#appearance-and-navigation">Appearance and navigation</a></h2>
+<p><strong>Appearance → Mode</strong> offers <strong>System</strong>, <strong>Light</strong> and <strong>Dark</strong>. System follows Android;
+the other choices override it for this app. On a large screen, choose <strong>Left</strong> or
+<strong>Right</strong> for <strong>Navigation rail on large screens</strong>. The initial rail side is Right.
+These preferences are stored on this installation.</p>
+<p><strong>About</strong> shows the app version and licence information. Include the version and full
+source commit, if known, when reporting a development-build problem.</p>
+<h2 id="enable-a-pin"><a class="header" href="#enable-a-pin">Enable a PIN</a></h2>
+<ol>
+<li>Under <strong>Security</strong>, turn on <strong>Lock KyDrive with a PIN</strong>.</li>
+<li>Enter a new PIN of 8–12 digits, then enter it again.</li>
+<li>Complete setup while the app remains on screen. If it leaves the screen during
+setup or checking, the lock may require you to unlock again before showing files.</li>
+</ol>
+<p>Very common PINs, repeated digits and simple ascending/descending runs are refused.
+Do not use your account password as the PIN. A PIN protects this app’s user interface;
+it is not your server password and cannot recover a server account.</p>
+<h2 id="lock-and-erase-settings"><a class="header" href="#lock-and-erase-settings">Lock and erase settings</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Setting</th><th>Choices</th><th>Initial value</th></tr>
+</thead>
+<tbody>
+<tr><td>Lock after leaving the app</td><td>At once, 30 s, 5 min</td><td>30 s</td></tr>
+<tr><td>Erase KyDrive from this phone after wrong PINs</td><td>10, 20, 30, Never</td><td>30</td></tr>
+<tr><td>Unlock with fingerprint or face</td><td>Strong biometric when supported</td><td>Off until enabled</td></tr>
+</tbody>
+</table>
+</div>
+<p>The third wrong PIN introduces a 30-second delay. Later failed attempts increase the
+delay through one minute, five minutes, 15 minutes and 30 minutes to an hour. Failed
+attempts are persisted; restarting the app is not a way to gain fresh guesses.</p>
+<p>Reaching the selected erase threshold removes the app’s local keys and session. Server
+files and separately saved copies remain. <strong>Never</strong> disables that automatic erase
+threshold; it does not disable the delays.</p>
+<p>Turning the lock off, lengthening its grace period or increasing/disabling its erase
+threshold requires the current PIN. <strong>Change PIN</strong> asks for the current PIN first.
+Strengthening the settings does not require weakening the existing protection.</p>
+<h2 id="biometric-unlock"><a class="header" href="#biometric-unlock">Biometric unlock</a></h2>
+<p>If Android supports a strong fingerprint or face authenticator, enable <strong>Unlock with
+fingerprint or face</strong> and confirm your PIN. The option may be absent when the device
+does not support a sufficiently strong authenticator.</p>
+<p>Adding or changing biometric enrollment invalidates the app’s biometric key. Use the
+PIN, then authorize biometrics again. Biometric availability and screen-unlock settings
+are also controlled by Android.</p>
+<h2 id="if-you-forget-the-pin"><a class="header" href="#if-you-forget-the-pin">If you forget the PIN</a></h2>
+<p>There is no PIN recovery or remote unlock. You can remove the app’s local data through
+Android settings or reinstall it and link again. That removes this installation’s
+session; revoke the old phone entry in the server’s device settings as well. Server
+files remain available through another authorized session.</p>
+<p>Locking also stops further file reads through KyDrive’s open-file stream. It cannot
+recall bytes that another app already read. Background transfers may continue while
+the screen is locked; see <a href="#privacy-and-security">Privacy and security</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="sign-out-revocation-and-unlinking"><a class="header" href="#sign-out-revocation-and-unlinking">Sign-out, revocation and unlinking</a></h1>
+<p>These actions have different effects. Copies you saved outside KyDrive are not part of
+the app’s local session and are not removed by any of them.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Event</th><th>What the phone does</th><th>What remains on the server</th></tr>
+</thead>
+<tbody>
+<tr><td>Ordinary invalid/expired token</td><td>Shows signed out and asks to link again; retains the account binding</td><td>Server files and the server’s device record</td></tr>
+<tr><td>Server revokes this device</td><td>Erases local keys and session when the next request receives <code>device_revoked</code></td><td>Server files; server manages the revoked record</td></tr>
+<tr><td>Unlink this phone</td><td>Tries to revoke the device, then erases local keys/session even when unreachable</td><td>Server files; remove a stale device record manually if the request failed</td></tr>
+<tr><td>Wrong-PIN erase threshold reached</td><td>Erases the app’s local keys/session</td><td>Server files; manage the old device record in the web app</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="link-again-after-sign-out"><a class="header" href="#link-again-after-sign-out">Link again after sign-out</a></h2>
+<p>Generate a fresh code for the same account and server, then <a href="#link-a-phone">link again</a>.
+The app refuses a replacement link to another account or origin until you unlink.</p>
+<h2 id="unlink-from-the-phone"><a class="header" href="#unlink-from-the-phone">Unlink from the phone</a></h2>
+<ol>
+<li>Open <strong>Settings → Account → Unlink this phone</strong>.</li>
+<li>Read the confirmation naming the server, then choose <strong>Unlink this phone</strong>.</li>
+<li>The app attempts revocation and wipes its local session regardless of the result.</li>
+<li>If it says the server could not be reached, remove that phone under <strong>Settings →
+Phones &amp; apps</strong> in the web app too.</li>
+</ol>
+<p>Unlinking deletes keys before removing the stored session, making encrypted session
+data unreadable. An interrupted wipe is retried when the app next loads its session.
+It does not delete your server workspace or files you saved through Android’s picker.</p>
+<h2 id="revoke-a-lost-phone"><a class="header" href="#revoke-a-lost-phone">Revoke a lost phone</a></h2>
+<p>Use an authorized browser session to revoke the phone in the server’s device settings.
+Future server requests using that credential are refused. A phone that is offline
+cannot receive the revocation until it contacts the server; revocation is not a
+remote guarantee that every previously delivered byte has vanished.</p>
+<p>Also use Android’s own lost-device controls as appropriate. Protect separately saved
+copies and copies already delivered to other apps using their own controls.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="troubleshooting"><a class="header" href="#troubleshooting">Troubleshooting</a></h1>
+<h2 id="linking-and-connection-errors"><a class="header" href="#linking-and-connection-errors">Linking and connection errors</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Message or symptom</th><th>What to check</th></tr>
+</thead>
+<tbody>
+<tr><td>That is not a KyDrive link code</td><td>Scan the server’s phone-link QR code, not a browser sign-in, desktop link or file-share QR code</td></tr>
+<tr><td>Code was already used or expired</td><td>Generate a fresh code and scan within two minutes</td></tr>
+<tr><td>Phone holds another account’s files</td><td>Unlink in Settings before switching account or server</td></tr>
+<tr><td>Could not reach the server</td><td>Check Wi-Fi/mobile data, LAN/VPN requirements, DNS and the exact HTTPS hostname</td></tr>
+<tr><td>Phone does not trust the certificate</td><td>Ask the operator to check validity dates, hostname and complete certificate chain to Android system CAs; the app also enforces its certificate-strength policy</td></tr>
+<tr><td>Server refused to link this phone</td><td>Check server compatibility and its device quota; provide the error number to the operator</td></tr>
+<tr><td>Camera cannot scan</td><td>Grant camera permission in Android settings, improve lighting and show a fresh unobstructed code</td></tr>
+</tbody>
+</table>
+</div>
+<p>The app has no “ignore certificate errors” switch. User-installed CAs are intentionally
+not trusted. Fix the server certificate or use an appropriately trusted HTTPS endpoint.
+Android’s clock must be accurate for both certificate validity and signed-request time
+checks. Older servers may require an upgrade to support phone linking and device signing.</p>
+<h2 id="files-and-workspace-access"><a class="header" href="#files-and-workspace-access">Files and workspace access</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Message or symptom</th><th>Next step</th></tr>
+</thead>
+<tbody>
+<tr><td>Shared is empty</td><td>Ask the workspace owner to verify your group membership or direct share</td></tr>
+<tr><td>You don’t have permission</td><td>Refresh; ask the owner about current access</td></tr>
+<tr><td>That is no longer there</td><td>Refresh; the item may have moved, been trashed or become inaccessible</td></tr>
+<tr><td>Changed on the server/name taken</td><td>Refresh and use a different name where appropriate</td></tr>
+<tr><td>Not enough space</td><td>Ask the workspace manager about quota, trash and retained versions</td></tr>
+<tr><td>No app opens this kind of file</td><td>Install a compatible viewer, or save a copy using the file’s Actions menu</td></tr>
+<tr><td>Can’t upload: name/size unknown</td><td>Choose a normal file whose document provider exposes a valid name and size</td></tr>
+<tr><td>File changed or arrived damaged</td><td>Refresh the listing and retry; remove any partial destination if its provider refused cleanup</td></tr>
+</tbody>
+</table>
+</div>
+<p>Write controls depend on the current workspace and role. They are absent in read-only
+destinations and trash, and the server independently checks every request.</p>
+<h2 id="lock-problems"><a class="header" href="#lock-problems">Lock problems</a></h2>
+<p>For <strong>Too many wrong PINs</strong>, wait for the displayed delay. Restarting the app does not
+clear failed attempts. If biometrics stopped after enrollment changed, unlock with
+the PIN and enable biometrics again. If you forgot the PIN, see
+<a href="#if-you-forget-the-pin">If you forget the PIN</a>.</p>
+<p>A blank recent-app card or blocked screenshot is intentional screen protection in
+production builds. It is not a rendering failure.</p>
+<h2 id="report-a-bug"><a class="header" href="#report-a-bug">Report a bug</a></h2>
+<p>Use <a href="https://github.com/Busnes-app/KyDrive-for-Android/issues">GitHub Issues</a> for ordinary
+bugs. Include the app version/source commit, Android version and device type, the
+server version, reproduction steps, expected result, actual result and displayed
+error number. Say whether it happens on Wi-Fi, mobile data or a VPN.</p>
+<p>Do not include device tokens, PINs, QR codes, private filenames or file contents.
+Report suspected vulnerabilities privately through
+<a href="https://github.com/Busnes-app/KyDrive-for-Android/blob/main/SECURITY.md">SECURITY.md</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="privacy-and-security"><a class="header" href="#privacy-and-security">Privacy and security</a></h1>
+<p>The authoritative reporting process and maintainer commitments are in
+<a href="https://github.com/Busnes-app/KyDrive-for-Android/blob/main/SECURITY.md">SECURITY.md</a>.
+This chapter explains what a person using the app can rely on and where protection ends.</p>
+<h2 id="data-on-the-phone"><a class="header" href="#data-on-the-phone">Data on the phone</a></h2>
+<p>The device token and linked account record are stored in the app’s private
+<code>noBackupFilesDir</code>, encrypted with a non-exportable Android Keystore AES-256-GCM key.
+The per-link P-256 request-signing key also stays in Keystore. Display preferences and
+the salted, iterated PIN verifier are separate from that token; the verifier is mixed
+with a Keystore HMAC key. Raw PINs are not saved.</p>
+<p>The current app streams opened files instead of maintaining a persistent offline file
+cache. <strong>Save to this phone</strong> deliberately creates a copy at the destination you choose.
+That destination and any external viewer have their own storage and confidentiality
+rules. KyDrive cannot revoke or erase copies they already received.</p>
+<p>Android backup and device-transfer extraction are disabled. There is no Android-session
+export or restore feature. If the installation or its Keystore keys are lost, link
+again; authoritative files remain on the server. Server disaster recovery is the
+server operator’s responsibility, not a backup performed by this Android client.</p>
+<h2 id="network-trust"><a class="header" href="#network-trust">Network trust</a></h2>
+<p>The app uses HTTPS to the confirmed server origin, with Android’s system CAs and normal
+hostname verification. It refuses redirects and cleartext traffic. The certificate
+strength policy adds checks during the TLS handshake: RSA keys of at least 2048 bits,
+elliptic-curve keys of at least 256 bits, and SHA-2 or stronger verified certificate
+signatures across the validated chain. The self-signature of a trust anchor is not
+used as a security proof; the anchor’s key strength is still checked.</p>
+<p>The current policy accepts measurable RSA and EC certificate keys and named SHA-2
+signature algorithms. Ed25519 keys and RSASSA-PSS certificate signatures are currently
+refused because this policy does not measure them; that refusal is not a claim that
+those algorithms are weak. Operators need a certificate chain the policy supports.</p>
+<p>Each linked-device request is signed using its non-exportable P-256 key and SHA-256.
+The signed request format binds origin, method, target, timestamp, nonce, selected
+state-changing headers and body digest. The server enforces device permissions and
+replay checks. These signatures supplement HTTPS; they do not hide file contents
+from the server or from a TLS endpoint the phone trusts.</p>
+<p>Dedicated developer screenshot/test builds can trust a throwaway CA through Android’s
+debug-only configuration. This does not enable user CAs or certificate bypass in a
+production build.</p>
+<h2 id="screens-and-app-lock"><a class="header" href="#screens-and-app-lock">Screens and app lock</a></h2>
+<p>Production screens use Android’s secure-window and overlay protection. Text fields ask
+keyboards not to learn from entered text. An installed keyboard and Android remain
+part of the trusted device environment; these requests are not a defense against a
+compromised OS or malicious root-level software.</p>
+<p>The optional PIN/strong-biometric lock gates the screen and further reads through
+KyDrive’s shared-file stream. It does not require user authentication for the device
+token/signing key because in-process background transfers must continue while locked.
+Set a secure Android screen lock as well as the app lock.</p>
+<h2 id="collection-and-limits"><a class="header" href="#collection-and-limits">Collection and limits</a></h2>
+<p>The app has no analytics, crash SDK, advertisements or Google Play Services requirement.
+It sends API requests and selected uploads to your configured KyDrive server. The
+server and its operators can read its stored files: this is not end-to-end encryption.</p>
+<p>The app cannot protect against a compromised server, root-level phone compromise,
+bytes retained by another app, or copies you saved outside it. No independent security
+audit is claimed. Review this chapter before relying on the pre-release app for
+sensitive work.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="architecture-and-api-reference"><a class="header" href="#architecture-and-api-reference">Architecture and API reference</a></h1>
+<p>This chapter is for developers integrating or changing the Android client. The KyDrive
+server source defines the API; the Android app does not define a separate wire protocol.</p>
+<h2 id="layout"><a class="header" href="#layout">Layout</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Path</th><th>Responsibility</th></tr>
+</thead>
+<tbody>
+<tr><td><code>app/src/main/java/org/kysecurity/drive/core/</code></td><td>Portable wire models, request signing, file operations, transfer and certificate policy; no Android imports</td></tr>
+<tr><td><code>MainActivity.kt</code>, <code>Rows.kt</code></td><td>Files/Shared navigation, item actions and system file pickers</td></tr>
+<tr><td><code>Session.kt</code>, <code>DeviceSigningKey.kt</code>, <code>DeviceTls.kt</code></td><td>Android storage, Keystore and platform TLS adapters</td></tr>
+<tr><td><code>OpenProvider.kt</code></td><td>Read-only proxy file descriptors for external viewers; not a DocumentsProvider</td></tr>
+<tr><td><code>lock/</code>, <code>SecureActivity.kt</code>, <code>UnlockActivity.kt</code></td><td>PIN/biometric policy and protected-screen lifecycle</td></tr>
+<tr><td><code>Work.kt</code></td><td>Process-owned background transfers and user-facing error mapping</td></tr>
+<tr><td><code>app/src/test/</code>, <code>app/src/androidTest/</code></td><td>JVM tests, fuzz seeds, TLS fixtures and device lifecycle/transport tests</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="linking-input-and-output"><a class="header" href="#linking-input-and-output">Linking input and output</a></h2>
+<p>The QR payload is <code>kydrive://link?srv=&lt;encoded-origin&gt;&amp;code=&lt;code&gt;</code>. <code>srv</code> must be a bare
+HTTPS origin with a hostname, optional port, no user information, query or fragment.
+<code>code</code> is exactly 43 base64url characters. Duplicate/unknown parameters, malformed
+escapes and unsupported origins are refused before a network request.</p>
+<p><code>POST /api/devices/token</code> sends form fields <code>grant=qr</code>, <code>code</code>, <code>name</code>, <code>platform=android</code>
+and <code>publicKey</code> (standard-base64 SPKI DER). The response supplies a <code>kyd_</code> token,
+<code>user_id</code> and <code>user</code>. <code>GET /api/drive/device</code> must identify the same account before
+the session is saved. <code>DELETE /api/devices/self</code> revokes the current phone.</p>
+<p>Never log or place the device token in a URL. The app sends it as <code>Authorization: Bearer …</code>; request signatures are separate headers. The signature golden vector in
+<code>app/src/test/resources/device-signing-v1.json</code> is shared with the server.</p>
+<h2 id="file-operations"><a class="header" href="#file-operations">File operations</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Operation</th><th>Request</th><th>Result used by the client</th></tr>
+</thead>
+<tbody>
+<tr><td>Visible workspaces</td><td><code>GET /api/drive/workspaces</code></td><td>Array with workspace ID, name, kind, role and head</td></tr>
+<tr><td>Ensure personal workspace</td><td><code>POST /api/drive/personal-workspace</code></td><td>Workspace ID, followed by a workspace reload</td></tr>
+<tr><td>Folder/file listing</td><td><code>GET /api/drive/workspaces/{id}/folders</code> and <code>/files</code></td><td>Arrays; <code>?trash=true</code> selects trash</td></tr>
+<tr><td>Direct shares</td><td><code>GET /api/drive/shared-with-me</code></td><td>Shared item kind, IDs, workspace name and role</td></tr>
+<tr><td>Shared folder children</td><td><code>GET /api/drive/folders/{id}/children</code></td><td><code>folders</code> and <code>files</code> arrays</td></tr>
+<tr><td>File metadata</td><td><code>GET /api/drive/files/{id}</code></td><td>Revision, size, SHA-256 digest and modification time</td></tr>
+<tr><td>New folder</td><td><code>POST /api/drive/workspaces/{id}/folders</code></td><td>New folder metadata</td></tr>
+<tr><td>Rename</td><td><code>PUT /api/drive/files/{id}/location</code> or <code>/folders/{id}/location</code></td><td>Updated item; files include an expected revision</td></tr>
+<tr><td>Trash/restore</td><td><code>PUT /api/drive/files/{id}/trash</code> or <code>/folders/{id}/trash</code></td><td>Change confirmation; the client reloads</td></tr>
+<tr><td>Download/open</td><td><code>GET /api/drive/files/{id}/download</code></td><td>File bytes; range opens require <code>206</code> and bind the listed digest with <code>If-Range</code></td></tr>
+<tr><td>Upload</td><td><code>POST /api/drive/workspaces/{id}/upload-sessions</code>, then <code>PUT /api/drive/upload-sessions/{id}</code> and <code>POST …/complete</code></td><td>Session ID, accepted offset and completed file metadata</td></tr>
+</tbody>
+</table>
+</div>
+<p>Names from the server are display values, not local paths. API JSON responses are
+bounded; malformed JSON becomes an I/O failure. Non-success replies expose a status,
+structured error code and optional wipe field internally. Raw server error text is
+not displayed verbatim to users.</p>
+<p><code>401</code> with <code>device_revoked</code> wipes regardless of its <code>wipe</code> boolean. Ordinary <code>401</code>
+marks the account signed out. Other status codes map to the messages in
+<a href="#troubleshooting">Troubleshooting</a>.</p>
+<h2 id="change-the-wire-contract"><a class="header" href="#change-the-wire-contract">Change the wire contract</a></h2>
+<p>Read the server’s current API and both repositories’ AGENTS.md files before changing
+a request. Put server changes in a separate server PR. Update the shared signature
+vector and interoperability tests when its format changes. Bump the real-server CI
+pin when a client needs newer routes; a local test against a different server is not
+evidence that the pinned CI integration ran.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="development-and-testing"><a class="header" href="#development-and-testing">Development and testing</a></h1>
+<p>Read the root <a href="https://github.com/Busnes-app/KyDrive-for-Android/blob/main/CONTRIBUTING.md">contributor guide</a>
+and the AGENTS.md chain for paths you will change. The repository uses Gradle’s Android
+application plugin and a version catalog; use its committed wrapper, not a globally
+installed Gradle.</p>
+<h2 id="toolchain"><a class="header" href="#toolchain">Toolchain</a></h2>
+<ul>
+<li>JDK 25 for the Gradle daemon and the Android SDK with API 36.1.</li>
+<li><code>ANDROID_HOME</code> pointing to that SDK; platform-tools for <code>adb</code>.</li>
+<li>An API 36 disposable emulator for device regressions, with hardware acceleration.</li>
+<li>A built KyDrive server for integration tests; CI builds a pinned public commit.</li>
+<li>mdBook 0.5.4 and Python 3 to build and check this manual.</li>
+</ul>
+<p>Agent Android builds and emulator work run on the Major build host, each in a
+memory-capped <code>systemd-run</code> scope. Reuse the toolchain’s normal caches. Do not run Gradle
+on the owner’s workstation or switch test instances onto production push relays.
+Set <code>PUSH_RELAY_URL=</code> and <code>APNS_RELAY_URL=</code> for throwaway instances.</p>
+<h2 id="build-and-install"><a class="header" href="#build-and-install">Build and install</a></h2>
+<p>From the repository root on the build host:</p>
+<pre><code class="language-sh">./gradlew assembleDebug
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+</code></pre>
+<p>The application ID is <code>org.kysecurity.drive</code>. Android displays the name <strong>KyDrive</strong>.
+The debug APK uses the build host’s debug signing key. A production release signing
+and distribution process has not been published; <code>assembleRelease</code> currently builds
+an unsigned APK to exercise R8 and resource shrinking.</p>
+<h2 id="required-checks"><a class="header" href="#required-checks">Required checks</a></h2>
+<pre><code class="language-sh">./gradlew testDebugUnitTest lintDebug checkExportedComponentsDebug checkExportedComponentsRelease assembleRelease
+git diff --exit-code -- gradle/verification-metadata.xml
+scripts/check-no-binaries.sh
+mdbook build docs
+python3 scripts/check-docs.py
+</code></pre>
+<p>Record commands, results and skips in the PR. A plain JVM run skips <code>RealServerTest</code>
+unless the server binary is supplied; it does not establish integration success.</p>
+<h3 id="real-server"><a class="header" href="#real-server">Real server</a></h3>
+<pre><code class="language-sh">KYDRIVE_SERVER_BIN=/absolute/path/to/kydrive-server ./gradlew testDebugUnitTest --tests '*RealServerTest'
+</code></pre>
+<p>Use a binary matching the commit pinned in <code>.github/workflows/ci.yml</code> when reproducing
+CI. That job fails if the integration report contains skipped or zero tests.</p>
+<h3 id="fuzzing"><a class="header" href="#fuzzing">Fuzzing</a></h3>
+<pre><code class="language-sh">JAZZER_FUZZ=1 ./gradlew testDebugUnitTest --tests 'org.kysecurity.drive.core.LinkUriFuzzTest'
+</code></pre>
+<p>The fuzz run is bounded by <code>maxDuration</code> in the test. Ordinary unit runs replay the
+committed seeds. Preserve a fixed finding as a regression input instead of claiming
+that one clean fuzz run proves the parser has no bugs.</p>
+<h3 id="device-tests"><a class="header" href="#device-tests">Device tests</a></h3>
+<pre><code class="language-sh">./gradlew connectedDebugAndroidTest
+</code></pre>
+<p>Use a disposable emulator. <code>LockRecreationTest</code> checks lock gating across Activity
+recreation. Certificate-floor device tests require a dedicated debug build trusting
+their throwaway CA; their exact invocation and no-skip report checks are in
+<code>.github/workflows/ci.yml</code>. Regular builds trust only system CAs. Test keys/certificates
+must never enter a production APK.</p>
+<p>The fixture CA’s private key is public in the repository. An APK explicitly built to
+trust it is for isolated synthetic tests only; never link a real account with that APK.</p>
+<h2 id="dependency-verification"><a class="header" href="#dependency-verification">Dependency verification</a></h2>
+<p>Gradle verifies artifact SHA-256 values from <code>gradle/verification-metadata.xml</code>, and CI
+fails if that file changes unexpectedly. Dependency updates require their own reviewed
+metadata regeneration commit. Follow the clean-home procedure in AGENTS.md; do not
+disable verification or add metadata writes to ordinary CI.</p>
+<h2 id="screenshots"><a class="header" href="#screenshots">Screenshots</a></h2>
+<p><code>scripts/screenshots.sh</code> creates phone/tablet captures in light/dark mode. A debug-only
+<code>allowScreenshots</code> property permits those captures. With <code>KYDRIVE_SERVER_BIN</code> set, the
+script starts a seeded throwaway server and trusts its generated CA through
+<code>-PscreenshotCa</code>. Ordinary and release builds retain secure windows and system-CA trust.</p>
+<p>Changed screens need matching light/dark phone/tablet captures in the PR. A source-only
+TLS change does not require inventing a new screen for documentation.</p>
+<h2 id="build-the-documentation"><a class="header" href="#build-the-documentation">Build the documentation</a></h2>
+<pre><code class="language-sh">mdbook build docs
+python3 scripts/check-docs.py
+</code></pre>
+<p>Open <code>docs/book/index.html</code> from the build output. Navigation, search and the print
+view are generated by mdBook. The <code>documentation-book</code> CI artifact contains the same
+static book for review; it does not publish a production documentation site.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="versions-and-releases"><a class="header" href="#versions-and-releases">Versions and releases</a></h1>
+<p>KyDrive Android has no published user release yet. Its current development version is
+<code>0.1.0</code>, with Android <code>versionCode</code> 1. Identify a development build by its full Git
+commit ID as well as its display version; a version name alone does not distinguish
+unreleased snapshots.</p>
+<p>The human-written <a href="https://github.com/Busnes-app/KyDrive-for-Android/blob/main/CHANGELOG.md">changelog</a>
+records the changes in the current development series. It describes browsing,
+transfers, linking, locking and security/verification changes, with explicit limits.
+The Android Settings → About screen shows the display version.</p>
+<h2 id="release-requirements"><a class="header" href="#release-requirements">Release requirements</a></h2>
+<p>Before publishing a user release:</p>
+<ol>
+<li>Obtain the owner’s release authorization. Agent badge or documentation work does
+not authorize a tag, release or store submission.</li>
+<li>Assign a unique version name, increase Android’s version code, and record the exact
+source commit. Keep release identifiers retrievable from version control.</li>
+<li>Promote the changelog into dated human-readable release notes. Explain meaningful
+behavior and upgrade effects, including account relinking or server compatibility.</li>
+<li>Identify each fixed publicly known project vulnerability that already has a CVE or
+equivalent advisory identifier. Do not silently describe a security fix as routine cleanup.</li>
+<li>Pass full build/test/lint/exported-component checks, integration/device tests, static
+and dynamic analysis, and resolve confirmed security findings before release.</li>
+<li>Verify production configuration excludes test CAs, fixture keys and screenshot
+exceptions; use an owner-approved signing/distribution process.</li>
+</ol>
+<p>Installing an APK signed with another key is not an ordinary update. Document channel
+or signing-key migrations before release, including whether uninstall/relink is needed
+and what local data is removed.</p>
+<p>The <a href="https://www.bestpractices.dev/en/projects/16826/passing">Best Practices form</a> reports
+project practice status, not release readiness or an independent security audit. Read
+the live form for its current status rather than assuming every source snapshot has
+earned or retained a badge.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="contributing"><a class="header" href="#contributing">Contributing</a></h1>
+<p>Read <a href="https://github.com/Busnes-app/KyDrive-for-Android/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>
+for setup, security requirements and the pull-request process. The
+<a href="https://github.com/Busnes-app/.github/blob/main/CONTRIBUTING.md">suite contribution policy</a>
+also applies. Major functionality includes automated tests; warnings are fixed or
+documented as false positives.</p>
+<p>Report ordinary bugs and proposed enhancements in
+<a href="https://github.com/Busnes-app/KyDrive-for-Android/issues">Issues</a>. Include reproducible
+steps and environment details. Discuss a major feature before implementation so its
+scope and server/API dependencies can be assessed. Documentation, small fixes and test
+improvements can be proposed directly.</p>
+<p>Send vulnerabilities privately using
+<a href="https://github.com/Busnes-app/KyDrive-for-Android/blob/main/SECURITY.md">SECURITY.md</a>.
+Public bug reports are not the place to publish a working credential or exploit against
+someone’s deployment.</p>
+<h2 id="keep-this-book-current"><a class="header" href="#keep-this-book-current">Keep this book current</a></h2>
+<p>Edit Markdown under <code>docs/src/</code>; register new chapters in <code>SUMMARY.md</code>. Keep current
+UI labels and implemented workflows aligned with source. Put plans in <code>docs/DESIGN.md</code>
+and clearly distinguish them from instructions for available features.</p>
+<p>Build with mdBook and run the generated-link checker before submitting. Commit the
+sources and configuration; generated <code>docs/book/</code> is a review artifact. Screenshots
+must come from disposable test systems and must not contain real account data.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="licences"><a class="header" href="#licences">Licences</a></h1>
+<p>KyDrive for Android is free software under the
+<a href="https://github.com/Busnes-app/KyDrive-for-Android/blob/main/LICENSE.txt">MIT License</a>.
+Contributions are licensed under the project’s licence.</p>
+<p>The bundled Space Grotesk typeface is under the
+<a href="https://github.com/Busnes-app/KyDrive-for-Android/blob/main/fonts/Space_Grotesk/OFL.txt">SIL Open Font License 1.1</a>.
+Keep its notices with redistributed font files.</p>
+<p>The Android build uses AndroidX, Material Components and the embedded ZXing scanner;
+test/build tooling has its own upstream licences. The app’s MIT licence does not
+replace those dependency licences or claim that Android SDK distribution terms are
+the app’s licence.</p>
+<p>The documentation book is generated using <a href="https://rust-lang.github.io/mdBook/">mdBook</a>.
+The book source is part of this repository; mdBook and its bundled renderer assets
+retain their upstream notices in the generated output.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>

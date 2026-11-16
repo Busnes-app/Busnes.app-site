@@ -21,6 +21,9 @@ the saved or operating-system theme; pages remain readable without JavaScript.
 
 ## Website interface
 
+The [Ky suite manuals](manuals/index.html) contain setup, task and troubleshooting guides.
+See [manual refresh instructions](manuals/README.md) and the pinned source catalog there.
+
 Start at [index.html](index.html). [apps.html](apps.html) lists the product pages;
 [install.html](install.html) explains installation choices. Custom-work information
 is in [how-it-works.html](how-it-works.html) and [about.html](about.html). The

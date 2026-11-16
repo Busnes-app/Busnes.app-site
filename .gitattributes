@@ -1,0 +1,5 @@
+# Preserve mdBook's generated/vendor bytes, including upstream licence text.
+# These assets intentionally contain whitespace flagged by git diff --check.
+manuals/**/clipboard-*.min.js -whitespace
+manuals/**/fonts/*LICENSE*.txt -whitespace
+manuals/**/toc-*.js -whitespace
