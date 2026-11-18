@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "coal";
-            window.path_to_searchindex_js = "searchindex-ce84bf1c.js";
+            window.path_to_searchindex_js = "searchindex-2db0acd2.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-3c611002.js"></script>
+        <script src="toc-eae95ad4.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -181,6 +181,10 @@
                         <h1 id="ky-suite-manuals"><a class="header" href="#ky-suite-manuals">Ky suite manuals</a></h1>
 <p>Setup, everyday tasks, troubleshooting and recovery for your self-hosted Ky apps. Choose a product below. Each manual has chapter navigation, search and a printable whole-book view.</p>
 <p><a href="../install.html">Suite installation</a> · <a href="../apps.html">All apps</a></p>
+<p>Read <a href="#connect-the-ky-suite">Connect the Ky suite</a> for mail/calendar, file, chat, HR and
+monitoring workflows. <a href="#recent-changes--november-17-2026">Recent changes</a> records the default-branch
+source reviewed on November 17, 2026. Product books remain pinned snapshots; their
+<a href="catalog.json">catalog</a> identifies their source commits.</p>
 <h2 id="server-apps"><a class="header" href="#server-apps">Server apps</a></h2>
 <ul>
 <li>
@@ -252,6 +256,215 @@
 </ul>
 <h2 id="before-installing"><a class="header" href="#before-installing">Before installing</a></h2>
 <p>Read the manual for your version and check the product’s release and readiness limits. A documented feature or successful build does not establish production qualification. Source repositories own current configuration and security policies.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="connect-the-ky-suite"><a class="header" href="#connect-the-ky-suite">Connect the Ky suite</a></h1>
+<p>Start with a working product, an everyday account and the <a href="#ky-suite-manuals">manual for that product</a>.
+Connect only the workflows you need. These instructions describe source reviewed on
+November 17, 2026; use the product guides matching your installed revision for exact settings.</p>
+<h2 id="establish-people-and-access-first"><a class="header" href="#establish-people-and-access-first">Establish people and access first</a></h2>
+<ol>
+<li>Configure KyIdentity at a stable HTTPS origin and register each product’s exact callback
+addresses. Assign the people who should use each application.</li>
+<li>Configure the product’s supported provisioning connector. Shared sign-in, directory
+provisioning and administrator grants are separate: verify all three. Keep administrator
+and everyday identities separate; use the everyday identity for mail, calendars, files and chat.</li>
+<li>Set up suite groups in KyIdentity where supported. Participating apps reconcile a shared
+resource and its ordinary membership: Drive workspaces, Calendar calendars, Messages rooms
+and opt-in KyPost distribution lists. Product-specific permissions stay with each app;
+group membership grants no administrator role.</li>
+<li>In KyIdentity’s suite directory, configure the supported product pairs. Some products can
+instead use an explicit environment pair; follow their own guide. Keep the products on
+compatible versions and check their connection status. A launcher link alone enables no integration.</li>
+<li>Use each product’s documented private-network opt-in for LAN HTTPS endpoints when needed.
+Do not weaken HTTPS or copy a credential into a URL. Test one ordinary user’s workflow before
+enabling it for everyone, then verify deactivation removes access in every receiving service.</li>
+</ol>
+<p>Read <a href="kyidentity-server/index.html">KyIdentity’s setup manual</a> and its
+<a href="https://github.com/Busnes-app/KyIdentity-server/blob/master/docs/SUITE-DIRECTORY.md">current suite-directory contract</a>.</p>
+<h2 id="send-invitations-and-turn-mail-into-work"><a class="header" href="#send-invitations-and-turn-mail-into-work">Send invitations and turn mail into work</a></h2>
+<p>Link KyPost and KyCalendar for the same KyIdentity identities. Enable the user’s KyCalendar
+connection in KyPost and test an invitation, a reply, an update and a cancellation. Native
+KyPost mailboxes can send invitations too. Ordinary mailbox setup is separate from the pairing.
+Native clients’ supported RSVP behavior differs by release; check their own manual.</p>
+<p>In the KyPost web interface, flagging a message can create a task in KyCalendar’s Inbox list
+with its subject, due date and a link back to the message. Completing the task clears the flag;
+reopening it can set the flag again. The message body and attachments are not copied into the
+task. A failed synchronization leaves the local mail flag in place and reports that the task
+was not created; KyPost does not retry that send automatically. CalDAV task changes do not
+send the completion callback.</p>
+<p>KyCalendar also has task list, board and day views, planning and insights, public booking pages,
+and administrator-managed rooms and equipment. These are implemented features, separate from
+mail delivery and external CalDAV-client acceptance.</p>
+<p>See <a href="kycalendar/index.html">Calendar</a>, <a href="kypost-server/index.html">KyPost</a> and the
+<a href="https://github.com/Busnes-app/KyPost-Server/blob/main/docs/KYCALENDAR.md">mail/calendar contract</a>.</p>
+<h2 id="add-a-meeting-room-or-open-a-colleagues-chat"><a class="header" href="#add-a-meeting-room-or-open-a-colleagues-chat">Add a meeting room or open a colleague’s chat</a></h2>
+<p>Install the full KyMessages Matrix stack, including its media services for calls. Pair
+KyCalendar with KyMessages and enable Video meeting in the event editor. The room follows the
+meeting title and member list; cancelling the meeting closes the room. Members need the
+corresponding app assignments and provisioned chat accounts. A healthy console alone does
+not prove chat or calling works.</p>
+<p>Meeting guests are a separate administrator opt-in in KyMessages, off by default. Their links
+work only within the meeting windows; do not treat them as general guest access to the suite.
+Test admission, expiration and cancellation. The optional meeting-notes bot sees the call’s
+plaintext when invited; text-message encryption does not establish call privacy or quality.</p>
+<p>KyPost and KyCalendar can also open a colleague’s chat when the user has the configured
+KyMessages chat application. Read <a href="kymessage-server/index.html">KyMessages</a> and the
+<a href="https://github.com/Busnes-app/KyMessage-Server/blob/master/docs/KYCALENDAR.md">meeting-room and guest contract</a>.</p>
+<h2 id="share-a-drive-file-without-granting-new-access"><a class="header" href="#share-a-drive-file-without-granting-new-access">Share a Drive file without granting new access</a></h2>
+<p>KyIdentity provisions Drive staff; Drive owns file and workspace permissions. From KyPost or
+KyCalendar, open the Drive picker and explicitly choose a file or link. An organisation link
+still requires organisation access: an external attendee who can read the invitation cannot
+therefore open the file. KyPost can instead attach a copy or use an explicitly created guest
+link under Drive’s sharing rules. A sent attachment is a separate copy that later Drive
+revocation cannot recall.</p>
+<p>Drive search covers names and supported document content, prefixes and exact phrases, with
+access checked on each search. Its search index is rebuilt after restore. Desktop sync has
+published packages; the separate Android client is pre-release and supports browsing and
+transfers. Photo backup, persistent Android offline files and a document provider remain planned.</p>
+<p>See <a href="kydrive-server/index.html">Drive Server</a>, <a href="kydrive-desktop/index.html">Desktop</a>,
+<a href="kydrive-for-android/index.html">Android</a> and the
+<a href="https://github.com/Busnes-app/KyPost-Server/blob/main/docs/KYDRIVE.md">mail/Drive guide</a>.</p>
+<h2 id="share-status-and-out-of-office-dates"><a class="header" href="#share-status-and-out-of-office-dates">Share status and out-of-office dates</a></h2>
+<p>KyPost can send automatic out-of-office replies, with separate internal and external controls.
+External replies require both administrator and user opt-ins; not every incoming message
+qualifies for an automatic reply. An optional Calendar connection shows the absence there.</p>
+<p>With the relevant pairs configured, KyCalendar sends busy intervals and KyPost sends
+out-of-office dates to KyMessages, which answers colleague-status lookups. Titles, attendees,
+locations and reply text are excluded from this status exchange. Sharing is on by default
+for eligible members. In KyCalendar <strong>Settings → Status</strong>, turn off <strong>Show my status to
+colleagues</strong> to clear those inputs and stop further sharing. Matrix last-active presence
+remains disabled; Element does not show this suite status.</p>
+<p>Read the <a href="https://github.com/Busnes-app/KyMessage-Server/blob/master/docs/PRESENCE.md">status contract</a>
+and <a href="https://github.com/Busnes-app/KyPost-Server/blob/main/docs/OUT_OF_OFFICE.md">out-of-office rules</a>.</p>
+<h2 id="receive-alerts-and-watch-certificate-expiry"><a class="header" href="#receive-alerts-and-watch-certificate-expiry">Receive alerts and watch certificate expiry</a></h2>
+<p>Configure KyPulse health sources and an off-host webhook receiver. Its Certificates page
+tracks HTTPS leaf certificates from the health handshake and supports TLS-only targets.
+Defaults are warning at 21 days and critical at seven; administrators can change them.
+KyPulse reports expiry; it does not renew certificates.</p>
+<p>For optional mail alerts, pair KyPulse with KyPost through KyIdentity. In KyPost, the mailbox
+owner enables <strong>Let KyPulse send alerts from my mailbox</strong> and approves recipients; external
+recipients confirm by link. Select that member and recipients in KyPulse and verify delivery.
+Keep an independent off-host alert channel: mail can fail with the monitored service.</p>
+<p>See <a href="kypulse-server/index.html">KyPulse</a> and its
+<a href="https://github.com/Busnes-app/KyPulse-server/blob/master/docs/MONITORING.md">monitoring guide</a>.</p>
+<h2 id="reserve-work-email-before-creating-the-sso-account"><a class="header" href="#reserve-work-email-before-creating-the-sso-account">Reserve work email before creating the SSO account</a></h2>
+<p>The generic HR JSON integration stages a source UID, asks KyPost to reserve a work address,
+creates the KyIdentity account using the confirmed address, then writes it back to the HR
+integration. It needs native KyPost mail, a configured source connector, HTTPS writeback and
+separate application-access assignments. Configuration uses the administrator API; there is
+no HR setup form. A mailbox reservation alone grants no app access. Vendor-specific Workday
+adapters and tenant qualification are not included.</p>
+<p>Use the <a href="https://github.com/Busnes-app/KyIdentity-server/blob/master/docs/HR-PROVISIONING.md">HR provisioning guide</a>
+for its supported requests, retry handling and offboarding contract.</p>
+<h2 id="choose-placement-and-protect-device-connections"><a class="header" href="#choose-placement-and-protect-device-connections">Choose placement and protect device connections</a></h2>
+<p>KyQuickStart AI is the guided installation path; KyQuickStart is its deterministic execution
+layer and also runs unattended. Both use prepared infrastructure. In the installer catalog,
+KyDrive, KyPost, KyDNS and KyMessages are Docker-only; Euro-Office is Kubernetes-only. The
+other Ky servers support both targets, with a separate resident runner for KyYard.</p>
+<p>KyIdentity can run PostgreSQL replicas on Kubernetes, optionally with a CloudNativePG database.
+Other catalog Ky apps remain single-replica. This does not make a single-instance application
+highly available. Read the <a href="https://github.com/Busnes-app/KyQuickStart/blob/master/docs/redirect.md">installer placement and limitations</a>.</p>
+<p>Updated Drive clients sign requests with an enrolled device key and pin the server’s TLS leaf.
+Older links may need re-linking against a current server. For Drive and Post rollover, the
+catalog NPM/nginx path copies only the served public certificate chain to the Docker host as
+<code>KYDRIVE_TLS_CERT_FILE</code> or <code>KYPOST_TLS_CERT_FILE</code>; KyYard’s handed-off suite runner refreshes
+it daily and writes only on change. Keep the server’s long-term identity key in backups.
+An operator-owned API-only NPM has different limits. An explicitly enabled TLS probe is a
+weaker trust mode, not a fallback. Follow the <a href="https://github.com/Busnes-app/KyQuickStart/blob/master/docs/edge.md">TLS pin source guide</a>.</p>
+<p>KyAuth uses platform HTTPS trust rather than certificate pinning. Current QR pairing uses a
+proof derived from the scanned token without transmitting the token; short-PIN pairing retains
+trust-on-first-use limits. Current supported app sign-on binds the returned ID token to a
+per-attempt proof key. Upgrade both sides for those guarantees; see <a href="../security.html">the security summary</a>.</p>
+<h2 id="prove-the-whole-restore"><a class="header" href="#prove-the-whole-restore">Prove the whole restore</a></h2>
+<p>Run the KyRecovery ceremony, protect the custodian cards, compare the pinned public-key ID,
+and configure each product’s destinations and schedule. KyRecovery stores sealed containers
+it cannot decrypt; products restore outside it using their own commands and the custodian shares.</p>
+<p>A full restore may also require Drive bulk snapshots, Messages media and Matrix recovery
+keys, Notes encrypted blobs and user recovery material, plus deployment secrets. Calendar
+capsules cover SQLite only; PostgreSQL requires an independently protected database backup
+and deployment keys. Installer <code>backup</code>/<code>restore</code> covers Docker apps, not Kubernetes storage.
+Native product restore tests and installer acceptance fixtures prove their stated paths,
+not whole-suite production recovery. Restore disposable data and verify access and content
+before depending on the backups.</p>
+<p>Use <a href="kyrecovery-server/index.html">KyRecovery</a> and each product’s restore runbook. Keep
+synchronization, same-host backup copies and independent off-host recovery separate.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="recent-changes--november-17-2026"><a class="header" href="#recent-changes--november-17-2026">Recent changes — November 17, 2026</a></h1>
+<p>This review updates the suite overview and public site for changes since the November 3
+site synchronization. It covers the public application/installer repositories, shared
+libraries and documentation sites below. Internal application documentation stays private;
+retired products, duplicate worktrees and unmerged feature branches are excluded.</p>
+<p>Each source link pins the exact default-branch revision inspected. A source version or
+merged feature does not establish that an app-store build, container deployment or
+production acceptance has been completed. Use the release record for the artifact you
+install. The table records reviewed source, not test execution by this documentation task.</p>
+<h2 id="changes-by-product"><a class="header" href="#changes-by-product">Changes by product</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Product</th><th>What changed or still needs care</th><th>Reviewed source</th></tr>
+</thead>
+<tbody>
+<tr><td>KyIdentity</td><td>Replicas on shared PostgreSQL, suite groups, HR email reservation, forward-auth, and proof-based QR pairing/sign-on.</td><td><a href="https://github.com/Busnes-app/KyIdentity-server/blob/ee3a59270ef8404aae27062b64f617e9ea47df34/docs/HR-PROVISIONING.md">ee3a59270ef8</a></td></tr>
+<tr><td>KyPost Server</td><td>Native direct MX delivery remains opt-in; invitations/RSVP, Drive picker, chat, out-of-office, flagged-mail tasks, alert mail, and receiver/storage performance fixes landed. Existing relay settings remain supported.</td><td><a href="https://github.com/Busnes-app/KyPost-Server/blob/7b067ded42ca0ede5f3efdfd649cd6ffc3be3cad/docs/DIRECT_DELIVERY.md">7b067ded42ca</a></td></tr>
+<tr><td>KyCalendar</td><td>Tasks, planning/board/insights, booking pages, rooms/equipment, invitations, meeting rooms, file links and colleague status. SQLite capsule and PostgreSQL backup limits remain distinct.</td><td><a href="https://github.com/Busnes-app/KyCalendar/blob/814feb8cb9ce723916fa632e5f13e2b078215e8f/docs/SUITE-INTEGRATIONS.md">814feb8cb9ce</a></td></tr>
+<tr><td>KyDrive Server</td><td>Content/prefix/phrase search, Shared with me search, Drive picker and guest-link workflows, phone linking, required device signatures and signed TLS rollover.</td><td><a href="https://github.com/Busnes-app/kydrive-server/blob/cb492e0a0200d0ed9d478f0c700fdc872074d2f6/docs/CLIENTS-AND-EDITOR.md">cb492e0a0200</a></td></tr>
+<tr><td>KyMessages</td><td>Calendar meeting rooms and administrator-enabled guests, suite chat links, groups and member-only status from Calendar/OOO. Full Matrix/media setup is still required.</td><td><a href="https://github.com/Busnes-app/KyMessage-Server/blob/a981652f57b6abf2230b5199dcf0ad373bd91370/docs/KYCALENDAR.md">a981652f57b6</a></td></tr>
+<tr><td>KyNotes</td><td>Compatible dependency refresh and the published manual; recovery still needs the encrypted blob copy as well as metadata and user recovery material.</td><td><a href="https://github.com/Busnes-app/KyNotes-server/blob/ba93e8281b3f64a9b0c5a4b786971da56180dc65/README.md">ba93e8281b3f</a></td></tr>
+<tr><td>KyRecovery</td><td>Compatible dependency refresh and manual publication. It remains a blind store; a deposit or file count does not verify a restore.</td><td><a href="https://github.com/Busnes-app/KyRecovery-server/blob/e80df0f6426fc5e9723e4f604cd0a348e88cd13a/README.md">e80df0f6426f</a></td></tr>
+<tr><td>KyDNS</td><td>Local DNSSEC validation and optional IPv6 RDNSS/DNSSL advertisements. Upgrades keep prior validation settings; privileged/native networking and real-device limits are documented.</td><td><a href="https://github.com/Busnes-app/KyDNS-server/blob/087a81d121eb44fa578c229d091c7eeea14be631/docs/CONFIGURATION.md">087a81d121eb</a></td></tr>
+<tr><td>KyPulse</td><td>Certificate expiry tracking and TLS-only targets, plus consent-based alert mail through KyPost alongside webhooks.</td><td><a href="https://github.com/Busnes-app/KyPulse-server/blob/56438bbdd8ef7da94fa8ce4cc95ec746878ad851/docs/MONITORING.md">56438bbdd8ef</a></td></tr>
+<tr><td>KyYard</td><td>Revoked-endpoint deletion frees names; dependency/manual refresh. Suite management still requires a separate runner handoff.</td><td><a href="https://github.com/Busnes-app/KyYard-server/blob/ade9e2d5cf57bdb5f3d599b90d7655a6c3eb5074/README.md">ade9e2d5cf57</a></td></tr>
+<tr><td>KyAuth Android</td><td>Proof-based QR pairing and bound app sign-on, compatible dependencies and 0.6.1.1 release preparation. No TOTP backup/export/sync.</td><td><a href="https://github.com/Busnes-app/kyauth-android/blob/b2ae53de673f3decffd9cfc7fc547a4007c49a37/README.md">b2ae53de673f</a></td></tr>
+<tr><td>KyAuth iOS</td><td>Proof-based QR pairing, bound app sign-on and 0.6.1 build 5 source version. Platform HTTPS trust is deliberately unpinned.</td><td><a href="https://github.com/Yoshiofthewire/KyAuth-iOS/blob/e1783bef0bf7d2fc64add52027f3f921beb47a76/docs/ASSURANCE-CASE.md">e1783bef0bf7</a></td></tr>
+<tr><td>KyAuth Linux</td><td>Proof-based QR pairing, documented unpinned-channel limits, dependency and manual refresh. Native app sign-on remains unimplemented.</td><td><a href="https://github.com/Busnes-app/KyAuth-Linux/blob/d3e6a9b4af6a57bc3ed4f95f5f8fe87fbf80a61f/README.md">d3e6a9b4af6a</a></td></tr>
+<tr><td>KyPost Android</td><td>Native Calendar RSVP, proof-bound app sign-on, signed TLS pin rollover, dependencies and 0.6.1.1 release preparation.</td><td><a href="https://github.com/Busnes-app/KyPost-for-Android/blob/0cf4cc75b7afbe049bfc221f325b2038f3eba565/README.md">0cf4cc75b7af</a></td></tr>
+<tr><td>KyPost macOS/iOS</td><td>Proof-bound app sign-on and a task manual; source builds and actual release distribution remain separate.</td><td><a href="https://github.com/Busnes-app/KyPost-for-Mac/blob/38a7b18e2806308e83a88446fe195f01b6c7d659/README.md">38a7b18e2806</a></td></tr>
+<tr><td>KyPost Linux</td><td>Native Calendar RSVP, protected-subject support, packaged dependencies and a task manual.</td><td><a href="https://github.com/Busnes-app/KyPost-for-Linux/blob/9f7e439a31c074a188098bc73644892808f6b117/README.md">9f7e439a31c0</a></td></tr>
+<tr><td>KyDrive Desktop</td><td>Published packages, signed requests and pinned TLS with signed rollover. OS-keyring custody, pending edits and re-link behavior remain documented limits.</td><td><a href="https://github.com/Busnes-app/kydrive-desktop/blob/76cf0b29aa41902bcc0eef00e3ab2efef554387e/README.md">76cf0b29aa41</a></td></tr>
+<tr><td>KyDrive Android</td><td>Pre-release QR linking, workspace browsing and transfers, app lock, signed requests and pinned TLS. Photo backup, persistent offline copies and DocumentsProvider remain planned.</td><td><a href="https://github.com/Busnes-app/KyDrive-for-Android/blob/6ee3d2be2de0c755a02c1e8912727be70519f2ad/README.md">6ee3d2be2de0</a></td></tr>
+<tr><td>KyQuickStart</td><td>Verified image pins, public-chain copy/runner refresh, Identity replica/CloudNativePG placement, and pinned-image upgrade/recovery acceptance improvements. Docker-only bulk recovery and product placement limits remain.</td><td><a href="https://github.com/Busnes-app/KyQuickStart/blob/f2af41f118405a23a2f5d44407bc3f1d3b2dd87f/docs/redirect.md">f2af41f11840</a></td></tr>
+<tr><td>KyQuickStart AI</td><td>Primary guided installation path, Docker and Kubernetes onboarding, manual and CI updates. Findings and handover must retain failed/blocked checks.</td><td><a href="https://github.com/Busnes-app/KyQuickStart-AI/blob/a98922c2fa6ab66257fb8b80347238cef9c589c1/README.md">a98922c2fa6a</a></td></tr>
+<tr><td>ky-primitives</td><td>Suite people/groups helpers, compatible dependency refresh and the separate offsite v0.3.0 release preparation. Product adapters keep their own payload and recovery responsibilities.</td><td><a href="https://github.com/Busnes-app/ky-primitives/blob/e7786b9541d316ac892000079019e835d64cef62/README.md">e7786b9541d3</a></td></tr>
+<tr><td>ky-ui</td><td>Compatible dependency refresh and shared theme/navigation support. UI source changes and historical screenshot scores are not new owner acceptance.</td><td><a href="https://github.com/Yoshiofthewire/ky-ui/blob/cde8d38a181b25d6d6fbe990cafc98047f25bdb2/README.md">cde8d38a181b</a></td></tr>
+<tr><td>ky-server-base</td><td>Upstream dependency/CI maintenance; a shared library, outside the active-application manual inventory and the November 16 app dependency rollout.</td><td><a href="https://github.com/Busnes-app/ky-server-base/blob/467c147ae96fc676a7aef2a39b89b8ee9c9d590f/README.md">467c147ae96f</a></td></tr>
+<tr><td>KyPost documentation site</td><td>Existing ecosystem manual checked, policy links repaired and published as a pinned snapshot; its product-specific chapters remain owned here.</td><td><a href="https://github.com/Busnes-app/kypost-site/blob/3ecc8b41dfcb77d64059f600f1e9c1a15db8d243/README.md">3ecc8b41dfcb</a></td></tr>
+<tr><td>Busnes.app site</td><td>Twenty public manuals published November 16; this documentation refresh follows the later default-branch product changes.</td><td><a href="https://github.com/Busnes-app/Busnes.app-site/blob/24754c8457bb2981312219c882f09e4ab0c7d3a7/manuals/catalog.json">24754c8457bb</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="shared-maintenance-and-release-limits"><a class="header" href="#shared-maintenance-and-release-limits">Shared maintenance and release limits</a></h2>
+<p>The November 16–17 dependency pass refreshed compatible versions and bumped application
+patch versions. Shared-library pins newer than stable tags were retained, and SQLite stays
+paired with its required libc/runtime dependencies. Later patch releases and catalog pins
+may be newer than the initial 0.6.1 rollout; use the installer’s checked catalog, not this
+page as an image-version matrix. The server base was outside that coordinated app pass.</p>
+<p>Twenty public manuals were published on November 16 with source revisions recorded in the
+<a href="catalog.json">manual catalog</a>. Nineteen product snapshots remain intact. The KyPost book is refreshed for the identity
+product naming correction, with its new source commit recorded in the catalog.
+The new <a href="#connect-the-ky-suite">suite connections guide</a> describes cross-app tasks from the
+source review above; it does not silently repin the individual product books. Read the
+linked repository guides for later changes and exact commands.</p>
+<p>Recent security changes need compatible server and client versions. In particular, current
+Drive servers require device signatures and older links may need re-linking. Preserve server
+identity keys and configure the public certificate-chain source for signed rollover. KyAuth’s
+proof-based QR enrollment differs from its short-PIN fallback, and supported app sign-on now
+requires the consumer’s proof key. These mechanisms have different trust boundaries; see the
+<a href="../security.html">security summary</a>.</p>
+<h2 id="what-this-review-does-not-claim"><a class="header" href="#what-this-review-does-not-claim">What this review does not claim</a></h2>
+<ul>
+<li>Native KyPost receiving/direct delivery is implemented but not a whole workforce-mail
+qualification. Preserve the deployed provider/relay path until the intended mode is tested.</li>
+<li>Installer upgrade and recovery fixtures cover their documented cases, not every provider,
+edge, physical device, storage driver or a production stack’s complete restore.</li>
+<li>Calendar PostgreSQL deployments still require their own protected database backup;
+SQLite capsules do not cover that driver. Drive files, Matrix media/keys and Notes blobs
+have additional recovery requirements.</li>
+<li>Android Drive’s roadmap is not its current feature list. Its document provider, persistent
+offline files and automatic photo backup are not shipped features.</li>
+<li>Historical UI review scores, generated screenshots, manuals, badges and passing builds
+are not evidence of a new production deployment or independent security audit.</li>
+</ul>
 
                     </main>
 

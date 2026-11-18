@@ -5,6 +5,11 @@ unchanged by the existing GitHub Pages site. `catalog.json` records the exact pu
 source repository and commit for each product snapshot. Private/internal products
 are not mirrored here.
 
+The directory also contains [suite connections](suite-connections.html) and a dated
+[recent-changes review](recent-changes.html). Their Markdown lives in `directory-source/src/`.
+Update those chapters from maintained public sources and retain exact reviewed revisions;
+updating suite guidance does not repin an individual product book.
+
 To refresh a product, check out its recorded source revision in its existing repository,
 run `mdbook build docs` and its documented link checker, replace only that product's
 directory here with `docs/book/`, then update its catalog revision. Preserve every

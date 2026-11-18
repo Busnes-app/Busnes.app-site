@@ -115,7 +115,7 @@
     "slug": "kypost-server",
     "title": "KyPost Server",
     "repository": "https://github.com/Busnes-app/kypost-site",
-    "source_commit": "62710db18ac0ba6bf75f3e385cdacc9df0fc1630",
+    "source_commit": "3b7c8057ffb9f911327135186164041b86507df4",
     "source_path": "docs/",
     "url": "https://busnes.app/manuals/kypost-server/"
   },

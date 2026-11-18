@@ -29,7 +29,7 @@ Reviewed the 23 repositories directly under `/home/yoshi/git/busnes.app` on 2026
 | `kynotes-server` | Fifteen named themes | Added Busnes Light/Dark; OS default until explicitly selected. |
 | `kynotes-audit` | Fifteen named themes | Same; refreshed its embedded bundle too. |
 | `kypost-server` | Fifteen named themes | Added Busnes Light/Dark; preserved legacy saved-name aliases. |
-| `kysignon-server` (KyIdentity) | Fifteen named themes | Added Busnes Light/Dark; existing Appearance screen retained. |
+| `KyIdentity-server` (KyIdentity) | Fifteen named themes | Added Busnes Light/Dark; existing Appearance screen retained. |
 | `kydns-server` | Fifteen theme swatches | Added Busnes Light/Dark; existing Settings selector retained. |
 
 The source palettes are `Busnes.app-site/styles.css`: cream `#f8f6f0`, charcoal `#182326`, matching raised surfaces and readable orange text (`#bf3f18` / `#f5865f`). Product token names differ and are mapped to these values. Existing typography and layouts are retained.

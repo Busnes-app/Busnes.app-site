@@ -5,6 +5,10 @@ revision; no packaged or SemVer-tagged releases are currently published.
 
 ## Unreleased
 
+- Refresh the suite directory, product pages and installation guidance against default-branch source reviewed on 2026-11-17: Calendar tasks/bookings/resources, Drive Android and search, cross-app workflows, Identity replicas/HR, DNSSEC/IPv6 advertisements, and KyPulse certificate/email alerts.
+- Add a task-based suite connections guide and a dated source-revision review to the manual directory. Keep 19 product snapshots intact; refresh and repin the KyPost book to use the current identity product name.
+- Correct the security/privacy summaries for signed device requests, certificate rollover, proof-bound sign-on and QR pairing, meeting guests and colleague status. Add manual links throughout the site.
+
 - Publish 20 public Ky app/client/installer mdBook manuals at `/manuals/`, with a searchable directory, pinned source catalog and offline checks for every book link. Keep internal KyDash documentation private.
 
 - Link the AlternativeTo About listings from KyYard, KyCalendar, KyNotes, KyDNS,

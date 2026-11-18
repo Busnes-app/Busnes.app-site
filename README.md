@@ -22,6 +22,8 @@ the saved or operating-system theme; pages remain readable without JavaScript.
 ## Website interface
 
 The [Ky suite manuals](manuals/index.html) contain setup, task and troubleshooting guides.
+Start with [suite connections](manuals/suite-connections.html) for cross-app setup and
+[recent changes](manuals/recent-changes.html) for the November 17 source review.
 See [manual refresh instructions](manuals/README.md) and the pinned source catalog there.
 
 Start at [index.html](index.html). [apps.html](apps.html) lists the product pages;
