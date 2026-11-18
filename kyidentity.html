@@ -58,7 +58,7 @@
     <aside class="product-facts">
       <p class="eyebrow">At a glance</p>
       <h2>Is it for you?</h2>
-      <p>For one organization that wants single sign-on and MFA across its own apps without a cloud identity service. KyIdentity runs as one container with a SQLite database and decides who may use each app.</p>
+      <p>For one organization that wants single sign-on and MFA across its own apps without a cloud identity service. KyIdentity decides who may use each app. Run a single instance on SQLite, or configured replicas sharing PostgreSQL.</p>
       <dl><dt>How you use it</dt><dd>Run the server with Docker Compose, persistent storage and a stable HTTPS address. Local accounts work without other Ky products. Configure an SMTP sender for account email, then register the applications you want to connect.</dd><dt>Availability</dt><dd>Server source and setup documentation are available. KyIdentity is designed for a single organization; consult the repository for current integration requirements.</dd></dl>
     </aside>
   </section>
@@ -68,7 +68,7 @@
     <div class="feature-grid">
       <article><span class="feature-number">01</span><h3>Manage people and apps</h3><p>Invite users, organize groups, and assign access to applications. An app launcher gives people a place to find their connected tools.</p></article>
       <article><span class="feature-number">02</span><h3>Strengthen sign-in</h3><p>Use authenticator codes, passkeys, or push approval in <a class="text-link" href="#kyauth">KyAuth</a>. Set MFA policy per group or per app. Recovery codes help people regain access when a factor is lost.</p></article>
-      <article><span class="feature-number">03</span><h3>Connect your software</h3><p>OpenID Connect provides shared sign-in, with back-channel logout. SCIM works both ways: push accounts and groups to your apps, or let an upstream directory own accounts here.</p></article>
+      <article><span class="feature-number">03</span><h3>Connect your software</h3><p>OpenID Connect provides shared sign-in, with back-channel logout. SCIM works both ways: push accounts and groups to your apps, or let an upstream directory own accounts here. Suite groups can be used across connected apps; product permissions remain local.</p></article>
     </div>
   </div></section>
   <section class="page-section shell">
@@ -84,7 +84,7 @@
     <p class="eyebrow">For administrators</p><h2>Know who has access, and why.</h2>
     <div class="feature-grid">
       <article><h3>Access by user or group</h3><p>Assign people directly or through groups, map application roles, and preview effective access. Each connected application still needs to enforce the permissions it receives.</p></article>
-      <article><h3>Account lifecycle</h3><p>Manage invitations, password resets and account deactivation. Configure email delivery for mailed invitations and self-service resets; without it, an administrator hands over activation links.</p></article>
+      <article><h3>Account lifecycle</h3><p>Manage invitations, password resets and account deactivation. The optional generic HR JSON integration reserves a work address through KyPost before creating the SSO account, then returns the confirmed address to HR. It requires native mail and a configured HR bridge; vendor-specific Workday support is not included.</p></article>
       <article><h3>An audit trail</h3><p>Search recorded events by actor, action, time and outcome, and export filtered records. An alerts page surfaces privilege changes, recovery use and connector problems.</p></article>
       <article><h3>Share the admin work</h3><p>Delegate with Helpdesk, Auditor and App owner roles instead of handing out full administrator access.</p></article>
       <article><h3>Access that ends on time</h3><p>Grant access with an expiry date, set account end dates, and let people request access through an approval flow.</p></article>
@@ -106,7 +106,7 @@
   </section>
   <section class="page-section cream"><div class="shell page-ending">
     <div><p class="eyebrow">Next step</p><h2>Connect your first app.</h2><p>Start with the server setup guide, then review the integration requirements for your application.</p></div>
-    <div class="resource-links">
+    <div class="resource-links"><a href="manuals/kyidentity-server/index.html">User manual →</a>
       <a href="https://github.com/Busnes-app/KyIdentity-server#quickstart-with-docker-compose">Server setup ↗</a>
       <a href="https://github.com/Busnes-app/KyIdentity-server#integration-requirements">Integration guide ↗</a>
       <a href="https://github.com/Busnes-app/KyIdentity-server/issues">Questions &amp; issues ↗</a>
@@ -125,6 +125,7 @@
       <nav aria-label="Footer navigation">
         <a href="apps.html">Apps</a>
         <a href="install.html">Install</a>
+        <a href="manuals/index.html">Manuals</a>
         <a href="how-it-works.html">Custom work</a>
         <a href="about.html">About</a>
         <a href="privacy.html">Privacy policy</a>

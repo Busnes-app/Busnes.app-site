@@ -28,13 +28,13 @@ CARDS = {
     "privacy": ("Privacy policy", "One policy for every Ky app and how each one handles your data.", "busnes-icon.png", None),
     "kyidentity": ("KyIdentity", "Sign-in, MFA and user directory", "kyidentity-icon.png", "In daily use"),
     "kypost": ("KyPost", "Webmail with PGP and local AI labels", "kypost-icon.png", "In daily use"),
-    "kydns": ("KyDNS", "Local names and DNS blocklists", "kydns-icon.png", "In daily use"),
+    "kydns": ("KyDNS", "Local names, filtering and DNSSEC", "kydns-icon.png", "In daily use"),
     "kyrecovery": ("KyRecovery", "Blind store for sealed backups", "kyrecovery-icon.png", "Tested"),
-    "kycalendar": ("KyCalendar", "CalDAV calendars with MCP access", "kycalendar-icon.png", "Tested"),
+    "kycalendar": ("KyCalendar", "Calendars, tasks and room booking", "kycalendar-icon.png", "Tested"),
     "kyyard": ("KyYard", "Docker and Kubernetes console", "kyyard-icon.png", "Tested"),
     "kynotes": ("KyNotes", "End-to-end encrypted notes", "kynotes-icon.png", "Tested"),
-    "kypulse": ("KyPulse", "Health checks and alerts", "kypulse-icon.png", "Tested"),
-    "kydrive": ("KyDrive", "Files, WebDAV and document editing", "kydrive-icon.png", "Tested"),
+    "kypulse": ("KyPulse", "Health, certificate expiry and alerts", "kypulse-icon.png", "Tested"),
+    "kydrive": ("KyDrive", "Files, search, sync and editing", "kydrive-icon.png", "Tested"),
     "kymessages": ("KyMessages", "Team chat on Matrix", "kymessages-icon.png", "Tested"),
 }
 
