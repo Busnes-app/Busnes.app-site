@@ -15,7 +15,7 @@ Applied the Busnes Systems stamp family locally on 2026-09-24. KyPost-Site is ex
 | KyYard server rack | `KyYard-Server` | — |
 | KyNotes notebook | `kynotes-server`, `kynotes-audit` | — |
 | KyVault safe | `kypassword-server`, `kyvault-audit` | — |
-| KyIdentity identity card | `kysignon-server` | — |
+| KyIdentity identity card | `KyIdentity-server` | — |
 | KyRecovery restore box | `kyrecovery-server` | — |
 | KyMark bookmark — new | `kybookmarks-server` | — |
 | KyDNS network hub — new | `kydns-server` | — |

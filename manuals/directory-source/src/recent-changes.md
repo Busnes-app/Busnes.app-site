@@ -49,7 +49,8 @@ may be newer than the initial 0.6.1 rollout; use the installer's checked catalog
 page as an image-version matrix. The server base was outside that coordinated app pass.
 
 Twenty public manuals were published on November 16 with source revisions recorded in the
-[manual catalog](catalog.json). Those product snapshots remain intact in this refresh.
+[manual catalog](catalog.json). Nineteen product snapshots remain intact. The KyPost book is refreshed for the identity
+product naming correction, with its new source commit recorded in the catalog.
 The new [suite connections guide](suite-connections.md) describes cross-app tasks from the
 source review above; it does not silently repin the individual product books. Read the
 linked repository guides for later changes and exact commands.
