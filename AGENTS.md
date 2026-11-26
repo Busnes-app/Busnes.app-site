@@ -43,7 +43,6 @@ The launch website presents the Ky Suite: small self-hosted apps that share one 
 ## Work Guidance
 
 - Follow `CONTRIBUTING.md` for major-feature test requirements and compiler/linter warning handling.
-- Use the strategy in `deep-research-report.md` as the content source.
 - Prefer plain HTML and CSS before adding JavaScript or a build system. The theme switch is the one accepted script; keep it dependency-free and keep every page working without it.
 - Do not add analytics, embedded third-party content, or intake storage to the static launch site.
 
@@ -62,4 +61,3 @@ The launch website presents the Ky Suite: small self-hosted apps that share one 
 
 - `project-icon-prompts.md` owns icon prompts and platform export contracts. `kypulse-icon.svg`, `kycalendar-icon.svg`, `kydrive-icon.svg`, `kymessages-icon.svg` and `kydash-icon.svg` are the sources for the hand-drawn masters.
 - `screenshots/` holds product screenshots, in the Busnes Light theme unless a caption says otherwise, captured from local builds with fictional data only.
-- `icon-rollout.md` and `theme-audit.md` are dated 2026-09-24 records; repositories they name have since been renamed or archived.

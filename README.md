@@ -43,9 +43,9 @@ Run the public page/link checks with Python 3.9 or newer:
 python3 -m unittest discover -s tests -v
 ```
 
-These checks examine the published root pages, their local destinations and
-known misspelled repository links. They do not fetch external websites, check
-every generated document, or replace browser/accessibility checks. GitHub Actions
+These checks examine the published root pages, every mirrored manual's local
+files and heading fragments, and known misspelled repository links. They do not
+fetch external websites or replace browser/accessibility checks. GitHub Actions
 runs the suite on pushes and pull requests. Add regression checks when major new
 functionality is introduced.
 
